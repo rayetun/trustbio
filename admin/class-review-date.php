@@ -3,7 +3,8 @@
  * Expert Review Date & Freshness — Phase 12.
  *
  * Adds "Last Reviewed By / On" metadata to posts and pages.
- * Outputs a review bar on the frontend and injects dateReviewed into JSON-LD.
+ * Outputs a review bar on the frontend and injects the review signals into
+ * JSON-LD: reviewedBy on the article, lastReviewed on the page.
  *
  * @package TrustBio
  */
@@ -62,6 +63,9 @@ class TrustBio_Review_Date {
 
 		// Schema injection.
 		add_filter( 'wpseo_schema_article',    array( $this, 'inject_yoast_schema' ), 10, 1 );
+		// lastReviewed is a WebPage property, so it goes on Yoast's WebPage
+		// piece, not its Article piece. Two filters, two nodes.
+		add_filter( 'wpseo_schema_webpage',    array( $this, 'inject_yoast_webpage_schema' ), 10, 1 );
 		add_filter( 'rank_math/json_ld',       array( $this, 'inject_rankmath_schema' ), 10, 2 );
 	}
 
@@ -612,7 +616,10 @@ class TrustBio_Review_Date {
 	// =========================================================
 
 	/**
-	 * Inject dateReviewed into Yoast SEO Article schema.
+	 * Inject reviewedBy into Yoast SEO Article schema.
+	 *
+	 * Only reviewedBy: its domain is CreativeWork, which an Article is.
+	 * The review date goes to inject_yoast_webpage_schema() instead.
 	 *
 	 * @param array $trustbio_schema Yoast schema data.
 	 * @return array Modified schema.
@@ -631,7 +638,32 @@ class TrustBio_Review_Date {
 	}
 
 	/**
-	 * Inject dateReviewed into Rank Math Article schema.
+	 * Inject lastReviewed into Yoast SEO's WebPage schema.
+	 *
+	 * lastReviewed has domain WebPage. Yoast emits a WebPage node of its own,
+	 * so the date belongs there rather than on the Article beside it.
+	 *
+	 * @param array $trustbio_schema Yoast WebPage schema data.
+	 * @return array Modified schema.
+	 */
+	public function inject_yoast_webpage_schema( array $trustbio_schema ): array {
+		if ( ! is_singular() ) {
+			return $trustbio_schema;
+		}
+
+		$trustbio_additions = $this->get_webpage_additions( (int) get_the_ID() );
+		if ( empty( $trustbio_additions ) ) {
+			return $trustbio_schema;
+		}
+
+		return array_merge( $trustbio_schema, $trustbio_additions );
+	}
+
+	/**
+	 * Inject the review signals into Rank Math's JSON-LD graph.
+	 *
+	 * Rank Math hands over the whole graph, so both nodes are reachable in
+	 * one pass: reviewedBy onto the article, lastReviewed onto the page.
 	 *
 	 * @param array  $trustbio_json_ld Rank Math JSON-LD data.
 	 * @param object $trustbio_entity  Rank Math entity.
@@ -642,14 +674,47 @@ class TrustBio_Review_Date {
 			return $trustbio_json_ld;
 		}
 
-		$trustbio_additions = $this->get_schema_additions( get_the_ID() );
-		if ( empty( $trustbio_additions ) ) {
+		$trustbio_post_id = (int) get_the_ID();
+		$trustbio_article = $this->get_schema_additions( $trustbio_post_id );
+		$trustbio_webpage = $this->get_webpage_additions( $trustbio_post_id );
+
+		if ( empty( $trustbio_article ) && empty( $trustbio_webpage ) ) {
 			return $trustbio_json_ld;
 		}
 
+		/*
+		 * MedicalWebPage used to be listed here as an article type. It is a
+		 * WebPage, not a CreativeWork article, so it sits in the page list now
+		 * -- which is also the only place it can carry lastReviewed.
+		 */
+		$trustbio_article_types = array( 'Article', 'NewsArticle', 'BlogPosting' );
+		$trustbio_page_types    = array(
+			'WebPage', 'ItemPage', 'AboutPage', 'ContactPage',
+			'CollectionPage', 'ProfilePage', 'FAQPage', 'MedicalWebPage',
+		);
+
+		$trustbio_article_done = empty( $trustbio_article );
+		$trustbio_webpage_done = empty( $trustbio_webpage );
+
 		foreach ( $trustbio_json_ld as &$trustbio_item ) {
-			if ( isset( $trustbio_item['@type'] ) && in_array( $trustbio_item['@type'], array( 'Article', 'NewsArticle', 'BlogPosting', 'MedicalWebPage' ), true ) ) {
-				$trustbio_item = array_merge( $trustbio_item, $trustbio_additions );
+			if ( ! is_array( $trustbio_item ) || ! isset( $trustbio_item['@type'] ) ) {
+				continue;
+			}
+
+			// @type may be a list: "@type": [ "Article", "NewsArticle" ].
+			$trustbio_types = (array) $trustbio_item['@type'];
+
+			if ( ! $trustbio_article_done && array_intersect( $trustbio_types, $trustbio_article_types ) ) {
+				$trustbio_item         = array_merge( $trustbio_item, $trustbio_article );
+				$trustbio_article_done = true;
+			}
+
+			if ( ! $trustbio_webpage_done && array_intersect( $trustbio_types, $trustbio_page_types ) ) {
+				$trustbio_item         = array_merge( $trustbio_item, $trustbio_webpage );
+				$trustbio_webpage_done = true;
+			}
+
+			if ( $trustbio_article_done && $trustbio_webpage_done ) {
 				break;
 			}
 		}
@@ -659,7 +724,8 @@ class TrustBio_Review_Date {
 	}
 
 	/**
-	 * Get schema additions for dateReviewed and reviewedBy.
+	 * Article-domain review additions for a post: reviewedBy, and nothing
+	 * else. See get_webpage_additions() for the date.
 	 *
 	 * @param int $trustbio_post_id Post ID.
 	 * @return array Schema properties to merge.
@@ -674,9 +740,17 @@ class TrustBio_Review_Date {
 			return array();
 		}
 
-		$trustbio_additions = array(
-			'dateReviewed' => $trustbio_date,
-		);
+		/*
+		 * dateReviewed is gone from here, and was never a schema.org
+		 * property: nothing that validates against the vocabulary ever read
+		 * it, so the review date it carried was dropped on the floor. The
+		 * real property is lastReviewed, whose domain is WebPage and not
+		 * Article, so it cannot be renamed in place -- it is returned by
+		 * get_webpage_additions() and printed on a WebPage node.
+		 *
+		 * reviewedBy stays. Its domain is CreativeWork, which an Article is.
+		 */
+		$trustbio_additions = array();
 
 		$trustbio_reviewer_id = (int) get_post_meta( $trustbio_post_id, self::META_REVIEWER, true );
 		if ( $trustbio_reviewer_id ) {
@@ -704,6 +778,36 @@ class TrustBio_Review_Date {
 		}
 
 		return $trustbio_additions;
+	}
+
+	/**
+	 * The stored last-reviewed date for a post, or '' when there is none.
+	 *
+	 * @param int $trustbio_post_id Post ID.
+	 * @return string Date as stored, or ''.
+	 */
+	public function get_review_date( int $trustbio_post_id ): string {
+		if ( ! get_option( 'trustbio_enable_schema', 1 ) ) {
+			return '';
+		}
+
+		return (string) get_post_meta( $trustbio_post_id, self::META_DATE, true );
+	}
+
+	/**
+	 * WebPage-domain review additions for a post.
+	 *
+	 * Just lastReviewed today. It lives apart from get_schema_additions()
+	 * because the two belong on different nodes, and a caller that merges
+	 * both into one node publishes an invalid claim.
+	 *
+	 * @param int $trustbio_post_id Post ID.
+	 * @return array<string,string> Schema properties for a WebPage node.
+	 */
+	public function get_webpage_additions( int $trustbio_post_id ): array {
+		$trustbio_date = $this->get_review_date( $trustbio_post_id );
+
+		return '' === $trustbio_date ? array() : array( 'lastReviewed' => $trustbio_date );
 	}
 
 	// =========================================================

@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-11-12 16:22+0000\n"
+"POT-Creation-Date: 2026-11-12 21:01+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: TrustBio makepot\n"
@@ -483,7 +483,7 @@ msgstr ""
 msgid "Field deactivated."
 msgstr ""
 
-#: admin/class-author-fields.php:149 admin/class-credentials.php:166
+#: admin/class-author-fields.php:149 admin/class-credentials.php:268
 msgid "Order saved."
 msgstr ""
 
@@ -531,104 +531,104 @@ msgstr ""
 
 #: admin/class-authors-list.php:156 admin/class-authors-list.php:202
 #: admin/class-post-sidebar.php:459 admin/class-quick-edit.php:215
-#: admin/class-review-dashboard-widget.php:269 admin/class-review-date.php:211
+#: admin/class-review-dashboard-widget.php:269 admin/class-review-date.php:215
 #: admin/class-settings.php:649 admin/class-settings.php:754
 msgid "Permission denied."
 msgstr ""
 
-#: admin/class-credentials.php:50
+#: admin/class-credentials.php:108
 msgid "Author ID is required."
 msgstr ""
 
-#: admin/class-credentials.php:75
+#: admin/class-credentials.php:133
 msgid "Credential name is required."
 msgstr ""
 
-#: admin/class-credentials.php:103
+#: admin/class-credentials.php:167
 msgid "Credential updated."
 msgstr ""
 
-#: admin/class-credentials.php:111
+#: admin/class-credentials.php:175
 msgid "Failed to save credential."
 msgstr ""
 
-#: admin/class-credentials.php:114
+#: admin/class-credentials.php:180
 msgid "Credential added."
 msgstr ""
 
-#: admin/class-credentials.php:129
+#: admin/class-credentials.php:195
 msgid "Invalid credential ID."
 msgstr ""
 
-#: admin/class-credentials.php:135
+#: admin/class-credentials.php:216
 msgid "Credential deleted."
 msgstr ""
 
-#: admin/class-credentials.php:286
+#: admin/class-credentials.php:388
 msgid "Verify credential"
 msgstr ""
 
-#: admin/class-credentials.php:457
+#: admin/class-credentials.php:559
 msgid "Medical Doctor"
 msgstr ""
 
-#: admin/class-credentials.php:464
+#: admin/class-credentials.php:566
 msgid "Doctor of Osteopathic Medicine"
 msgstr ""
 
-#: admin/class-credentials.php:471
+#: admin/class-credentials.php:573
 msgid "Registered Nurse"
 msgstr ""
 
-#: admin/class-credentials.php:478
+#: admin/class-credentials.php:580
 msgid "Doctor of Philosophy"
 msgstr ""
 
-#: admin/class-credentials.php:486
+#: admin/class-credentials.php:588
 msgid "Juris Doctor (Attorney)"
 msgstr ""
 
-#: admin/class-credentials.php:493
+#: admin/class-credentials.php:595
 msgid "Esquire (Licensed Attorney)"
 msgstr ""
 
-#: admin/class-credentials.php:501
+#: admin/class-credentials.php:603
 msgid "Certified Public Accountant"
 msgstr ""
 
-#: admin/class-credentials.php:508
+#: admin/class-credentials.php:610
 msgid "Certified Financial Planner"
 msgstr ""
 
-#: admin/class-credentials.php:516
+#: admin/class-credentials.php:618
 msgid "Licensed Clinical Social Worker"
 msgstr ""
 
-#: admin/class-credentials.php:523
+#: admin/class-credentials.php:625
 msgid "Licensed Marriage and Family Therapist"
 msgstr ""
 
-#: admin/class-credentials.php:530
+#: admin/class-credentials.php:632
 msgid "Licensed Professional Clinical Counselor"
 msgstr ""
 
-#: admin/class-credentials.php:538
+#: admin/class-credentials.php:640
 msgid "Master of Science"
 msgstr ""
 
-#: admin/class-credentials.php:545
+#: admin/class-credentials.php:647
 msgid "Master of Business Administration"
 msgstr ""
 
-#: admin/class-credentials.php:553
+#: admin/class-credentials.php:655
 msgid "National Provider Identifier (US healthcare)"
 msgstr ""
 
-#: admin/class-credentials.php:561
+#: admin/class-credentials.php:663
 msgid "Verified Expert"
 msgstr ""
 
-#: admin/class-credentials.php:568
+#: admin/class-credentials.php:670
 msgid "Custom credential — label auto-set from credential name"
 msgstr ""
 
@@ -1023,8 +1023,8 @@ msgstr ""
 msgid "Review bar duplicated."
 msgstr ""
 
-#: admin/class-review-bar.php:512 admin/class-review-date.php:349
-#: admin/class-review-date.php:739 admin/views/review-date-metabox.php:76
+#: admin/class-review-bar.php:512 admin/class-review-date.php:353
+#: admin/class-review-date.php:843 admin/views/review-date-metabox.php:76
 #: public/class-review-renderer.php:28 public/class-review-renderer.php:42
 msgid "Medically reviewed by"
 msgstr ""
@@ -1086,44 +1086,44 @@ msgstr[1] ""
 msgid "Mark reviewed"
 msgstr ""
 
-#: admin/class-review-date.php:144
+#: admin/class-review-date.php:148
 msgid "TrustBio — Content Review Date"
 msgstr ""
 
-#: admin/class-review-date.php:215
+#: admin/class-review-date.php:219
 msgid "Review date saved."
 msgstr ""
 
-#: admin/class-review-date.php:267
+#: admin/class-review-date.php:271
 msgid "Last Reviewed"
 msgstr ""
 
-#: admin/class-review-date.php:286
+#: admin/class-review-date.php:290
 msgid "— Never"
 msgstr ""
 
-#: admin/class-review-date.php:351
+#: admin/class-review-date.php:355
 msgid "Use site default"
 msgstr ""
 
-#: admin/class-review-date.php:352 admin/views/review-date-metabox.php:60
+#: admin/class-review-date.php:356 admin/views/review-date-metabox.php:60
 msgid "In author box only"
 msgstr ""
 
-#: admin/class-review-date.php:353 admin/class-settings.php:307
+#: admin/class-review-date.php:357 admin/class-settings.php:307
 #: admin/views/review-date-metabox.php:61
 msgid "Separate review bar"
 msgstr ""
 
-#: admin/class-review-date.php:354
+#: admin/class-review-date.php:358
 msgid "Both (in box + bar)"
 msgstr ""
 
-#: admin/class-review-date.php:355 admin/views/review-date-metabox.php:63
+#: admin/class-review-date.php:359 admin/views/review-date-metabox.php:63
 msgid "Hidden on this post"
 msgstr ""
 
-#: admin/class-review-date.php:538
+#: admin/class-review-date.php:542
 msgid "Last reviewed"
 msgstr ""
 
@@ -3828,7 +3828,7 @@ msgstr ""
 msgid "Deactivate and reactivate the plugin. If the problem continues, your database user may not have permission to create tables — ask your host."
 msgstr ""
 
-#: includes/helpers.php:547
+#: includes/helpers.php:700
 msgid "You do not have permission to perform this action."
 msgstr ""
 
@@ -3871,7 +3871,7 @@ msgstr ""
 msgid "article"
 msgstr ""
 
-#: public/class-public.php:365 public/templates/author-archive.php:136
+#: public/class-public.php:365 public/templates/author-archive.php:126
 msgid "articles"
 msgstr ""
 

@@ -37,6 +37,64 @@ class TrustBio_Credentials {
 	// AJAX: Save credential
 	// =========================================================
 
+	/**
+	 * Read one credential row as an array, or null when there is none.
+	 *
+	 * Public because the trustbio_credential_* actions hand rows around in
+	 * exactly this shape, and a listener comparing one against the table
+	 * should not have to write its own query to do it.
+	 *
+	 * @since 1.0.1
+	 *
+	 * @param int $trustbio_id Credential row ID.
+	 * @return array<string,mixed>|null
+	 */
+	public static function get_credential( int $trustbio_id ): ?array {
+		if ( $trustbio_id <= 0 ) {
+			return null;
+		}
+
+		global $wpdb;
+		$trustbio_table = $wpdb->prefix . 'trustbio_author_credentials';
+
+		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
+		$trustbio_row = $wpdb->get_row(
+			$wpdb->prepare( "SELECT * FROM `{$trustbio_table}` WHERE id = %d", $trustbio_id ),
+			ARRAY_A
+		);
+
+		return is_array( $trustbio_row ) ? $trustbio_row : null;
+	}
+
+	/**
+	 * Announce a credential write, with the row as it now stands.
+	 *
+	 * @param int                      $trustbio_id     Credential row ID.
+	 * @param array<string,mixed>|null $trustbio_before The row before, null on a create.
+	 * @return void
+	 */
+	private static function fire_saved( int $trustbio_id, ?array $trustbio_before ): void {
+		$trustbio_after = self::get_credential( $trustbio_id );
+
+		if ( null === $trustbio_after ) {
+			return;
+		}
+
+		/**
+		 * Fires after a credential has been created or updated.
+		 *
+		 * Both states are passed because a listener that only learns a row
+		 * changed has to go and find out how, and by then the old values are
+		 * gone. $trustbio_before is null on a create.
+		 *
+		 * @since 1.0.1
+		 * @param int                      $credential_id The row ID.
+		 * @param array<string,mixed>      $after         The row as it now stands.
+		 * @param array<string,mixed>|null $before        The row as it was, or null.
+		 */
+		do_action( 'trustbio_credential_saved', $trustbio_id, $trustbio_after, $trustbio_before );
+	}
+
 	public function ajax_save(): void {
 		check_ajax_referer( 'trustbio_save_credential', 'nonce' );
 		trustbio_verify_ajax_request( 'trustbio_save_credential' );
@@ -92,6 +150,10 @@ class TrustBio_Credentials {
 		}
 
 		if ( $trustbio_id > 0 ) {
+			// Read first: once the UPDATE has run the old values are gone, and
+			// an audit trail that cannot say what a value used to be is not one.
+			$trustbio_before = self::get_credential( $trustbio_id );
+
 			// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
 			$wpdb->update(
 				$this->trustbio_table,
@@ -100,6 +162,8 @@ class TrustBio_Credentials {
 				null,
 				array( '%d' )
 			);
+
+			self::fire_saved( $trustbio_id, $trustbio_before );
 			wp_send_json_success( array( 'message' => __( 'Credential updated.', 'trustbio' ), 'id' => $trustbio_id ) );
 		}
 
@@ -110,6 +174,8 @@ class TrustBio_Credentials {
 		if ( ! $trustbio_new_id ) {
 			wp_send_json_error( array( 'message' => __( 'Failed to save credential.', 'trustbio' ) ) );
 		}
+
+		self::fire_saved( $trustbio_new_id, null );
 
 		wp_send_json_success( array( 'message' => __( 'Credential added.', 'trustbio' ), 'id' => $trustbio_new_id ) );
 	}
@@ -129,8 +195,23 @@ class TrustBio_Credentials {
 			wp_send_json_error( array( 'message' => __( 'Invalid credential ID.', 'trustbio' ) ) );
 		}
 
+		// The whole row, while it still exists. A deletion no one can
+		// describe afterwards is the one case where an audit log is useless.
+		$trustbio_before = self::get_credential( $trustbio_id );
+
 		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
 		$wpdb->delete( $this->trustbio_table, array( 'id' => $trustbio_id ), array( '%d' ) );
+
+		if ( null !== $trustbio_before ) {
+			/**
+			 * Fires after a credential row has been deleted.
+			 *
+			 * @since 1.0.1
+			 * @param int                 $credential_id The row ID, now gone.
+			 * @param array<string,mixed> $before        The row as it was.
+			 */
+			do_action( 'trustbio_credential_deleted', $trustbio_id, $trustbio_before );
+		}
 
 		wp_send_json_success( array( 'message' => __( 'Credential deleted.', 'trustbio' ) ) );
 	}
@@ -149,6 +230,17 @@ class TrustBio_Credentials {
 			? array_map( 'absint', wp_unslash( $_POST['order'] ) )
 			: array();
 
+		// Where each of these sat before the loop moves it. The new position
+		// is the array index, so a listener can work out what moved from
+		// this alone and does not need a second read.
+		$trustbio_positions = array();
+		foreach ( $trustbio_order as $trustbio_cred_id ) {
+			$trustbio_row = self::get_credential( (int) $trustbio_cred_id );
+			if ( null !== $trustbio_row ) {
+				$trustbio_positions[ (int) $trustbio_row['id'] ] = (int) $trustbio_row['sort_order'];
+			}
+		}
+
 		foreach ( $trustbio_order as $trustbio_pos => $trustbio_cred_id ) {
 			if ( ! $trustbio_cred_id ) {
 				continue;
@@ -162,6 +254,16 @@ class TrustBio_Credentials {
 				array( '%d' )
 			);
 		}
+
+		/**
+		 * Fires after credentials have been re-ordered.
+		 *
+		 * @since 1.0.1
+		 * @param int[]          $order     Credential IDs in their new order;
+		 *                                  the index is the new sort_order.
+		 * @param array<int,int> $positions Credential ID => sort_order before.
+		 */
+		do_action( 'trustbio_credentials_reordered', $trustbio_order, $trustbio_positions );
 
 		wp_send_json_success( array( 'message' => __( 'Order saved.', 'trustbio' ) ) );
 	}

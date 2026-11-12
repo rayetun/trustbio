@@ -3,7 +3,7 @@
  * Plugin Name:       TrustBio — Author Credentials, Medical Reviewer Bylines & Author Box
  * Plugin URI:        https://wordpress.org/plugins/trustbio/
  * Description:       Show who wrote and who reviewed every post. Verified author credentials with expiry dates, reviewer bylines, last-review bars, co-authors, guest authors and automatic hasCredential / reviewedBy schema.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Requires at least: 6.2
  * Requires PHP:      7.4
  * Author:            Md Rayhan Uddin
@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Plugin version.
-define( 'TRUSTBIO_VERSION', '1.0.0' );
+define( 'TRUSTBIO_VERSION', '1.0.1' );
 
 // Plugin root file path.
 define( 'TRUSTBIO_PLUGIN_FILE', __FILE__ );

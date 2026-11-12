@@ -54,6 +54,17 @@
  *   trustbio_schema_data          ( array $data )               Alter schema before output.
  *   trustbio_box_output           ( string $html )              Alter the finished box HTML.
  *   trustbio_review_label         ( string $label )             Alter the default review label.
+ *   trustbio_webpage_schema       ( array $node, int $post )    The WebPage node that carries
+ *                                 lastReviewed. Return an empty array to drop it, which
+ *                                 an add-on emitting a WebPage of its own should do.
+ *   trustbio_profile_url_patterns ( array $patterns )           Slug => sprintf pattern, used to
+ *                                 turn a bare handle into a profile URL.
+
+ * A note on profile values: never publish one straight from the database.
+ * A field holds whatever the author typed, so trustbio_profile_url( $slug,
+ * $value ) is what turns it into a URL -- and returns '' when it cannot,
+ * which means skip it. esc_url() does not reject a bare ORCID iD; it
+ * returns http://0000-0002-1825-0097.
  *
  * Actions:
  *   trustbio_register_admin_pages ( string $parent_slug )       Add submenu pages.
@@ -63,6 +74,22 @@
  *   trustbio_dashboard_panels     ()                            Render extra Overview panels.
  *   trustbio_before_box           ( object $author )            Before each author box.
  *   trustbio_after_box            ( object $author )            After each author box.
+ *   trustbio_archive_after_hero   ( object $author )            On an author archive, between the
+ *                                 hero and the post list. Print, do not return.
+ *   trustbio_credential_saved     ( int $id, array $after,      A credential was written.
+ *                                   ?array $before )            $before is null on a create.
+ *   trustbio_credential_deleted   ( int $id, array $before )    The row as it was, just after
+ *                                 it was deleted.
+ *   trustbio_credentials_reordered( int[] $order, array $was )  New order; the index of an
+ *                                 id is its new sort_order. $was is id => sort_order before.
+
+ * The three credential actions fire inside the AJAX handlers, after this
+ * plugin has verified the nonce and the capability and after the write has
+ * happened -- so a listener does not repeat those checks, and an action that
+ * does not fire means nothing was written. Both states are passed because a
+ * listener told only that a row changed would have to go and look, and by
+ * then the old values are gone. TrustBio_Credentials::get_credential( $id )
+ * reads a row in the same shape.
  *
  * Rendering a settings panel:
  *   A panel rendered on trustbio_settings_panels must use this plugin's own

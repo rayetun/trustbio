@@ -40,6 +40,7 @@ class TrustBio_Schema {
 		}
 
 		$this->output_full_schema( $trustbio_post_id );
+		$this->print_webpage_node( $trustbio_post_id );
 	}
 
 	/**
@@ -115,6 +116,67 @@ class TrustBio_Schema {
 	}
 
 	/**
+	 * Print the WebPage node that carries the last-reviewed date.
+	 *
+	 * lastReviewed has domain WebPage. This plugin's own output is a single
+	 * Article node, so there was nowhere valid to put the date -- which is how
+	 * it ended up on the Article as "dateReviewed", a property that does not
+	 * exist. A small WebPage node beside the Article is the honest shape: the
+	 * same URL, and an @id so a consumer can see the two describe one page.
+	 *
+	 * Not printed when an SEO plugin owns the page's schema. The Yoast and
+	 * Rank Math injectors put the date on the WebPage node those plugins
+	 * already emit, and a second one would be a duplicate.
+	 *
+	 * @param int $trustbio_post_id Post ID.
+	 */
+	private function print_webpage_node( int $trustbio_post_id ): void {
+		if ( ! class_exists( 'TrustBio_Review_Date' ) ) {
+			return;
+		}
+
+		$trustbio_review_date = new TrustBio_Review_Date();
+		$trustbio_additions   = $trustbio_review_date->get_webpage_additions( $trustbio_post_id );
+
+		if ( empty( $trustbio_additions ) ) {
+			return;
+		}
+
+		$trustbio_url = (string) get_permalink( $trustbio_post_id );
+
+		$trustbio_node = array_merge(
+			array(
+				'@context'         => 'https://schema.org',
+				'@type'            => 'WebPage',
+				'@id'              => $trustbio_url . '#webpage',
+				'url'              => $trustbio_url,
+				'name'             => (string) get_the_title( $trustbio_post_id ),
+				'mainEntityOfPage' => $trustbio_url,
+			),
+			$trustbio_additions
+		);
+
+		/**
+		 * Filters the WebPage node carrying the last-reviewed date.
+		 *
+		 * Return an empty array to suppress the node entirely. The Pro add-on's
+		 * medical schema does exactly that on the posts where it emits a
+		 * MedicalWebPage of its own, which already carries the date.
+		 *
+		 * @since 1.0.1
+		 * @param array<string,mixed> $node    The WebPage node.
+		 * @param int                 $post_id Post ID.
+		 */
+		$trustbio_node = (array) apply_filters( 'trustbio_webpage_schema', $trustbio_node, $trustbio_post_id );
+
+		if ( empty( $trustbio_node ) ) {
+			return;
+		}
+
+		$this->print_schema( $trustbio_node );
+	}
+
+	/**
 	 * Output only Person schema blocks (when Yoast/Rank Math handles Article).
 	 *
 	 * @param int $trustbio_post_id Post ID.
@@ -170,18 +232,31 @@ class TrustBio_Schema {
 		$trustbio_same_as_slugs = trustbio_get_same_as_field_slugs();
 		$trustbio_field_values  = trustbio_get_author_field_values( $trustbio_author->id );
 
+		/*
+		 * sameAs is a claim that two URLs are the same entity, so a value that
+		 * is not a URL must not go in it. esc_url_raw() does not enforce that:
+		 * given an ORCID iD written the way ORCID prints it,
+		 * 0000-0002-1825-0097, it returns http://0000-0002-1825-0097 and that
+		 * gets published. trustbio_profile_url() expands a handle where the
+		 * shape of the profile URL is known and returns '' where it is not.
+		 */
 		$trustbio_same_as = array();
 		foreach ( $trustbio_same_as_slugs as $trustbio_slug ) {
-			if ( ! empty( $trustbio_field_values[ $trustbio_slug ] ) ) {
-				$trustbio_same_as[] = esc_url_raw( $trustbio_field_values[ $trustbio_slug ] );
+			if ( empty( $trustbio_field_values[ $trustbio_slug ] ) ) {
+				continue;
 			}
+			$trustbio_same_as[] = trustbio_profile_url(
+				$trustbio_slug,
+				(string) $trustbio_field_values[ $trustbio_slug ]
+			);
 		}
 
-		// Additional sameAs from SEO tab.
+		// Additional sameAs from the SEO tab. Free text, so the same rule:
+		// anything that is not a URL is dropped rather than half-repaired.
 		$trustbio_extra_same_as = get_option( 'trustbio_author_sameas_' . $trustbio_author->id, '' );
 		if ( $trustbio_extra_same_as ) {
 			foreach ( array_filter( array_map( 'trim', explode( "\n", $trustbio_extra_same_as ) ) ) as $trustbio_url ) {
-				$trustbio_same_as[] = esc_url_raw( $trustbio_url );
+				$trustbio_same_as[] = trustbio_profile_url( '', (string) $trustbio_url );
 			}
 		}
 

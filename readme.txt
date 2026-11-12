@@ -5,7 +5,7 @@ Tags:              author credentials, medical reviewer, author box, co-authors,
 Requires at least: 6.2
 Tested up to:      7.1
 Requires PHP:      7.4
-Stable tag:        1.0.0
+Stable tag:        1.0.1
 License:           GPLv2 or later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -298,6 +298,13 @@ Yes. **Settings → Maintenance** exports all authors, categories, fields, boxes
 10. Gutenberg sidebar panel — author search, reviewer roles and per-post box layout
 
 == Changelog ==
+
+= 1.0.1 =
+* Fixed: author archive pages showed no social links at all. The query behind them filtered on a field type that no field has ever had, so it matched nothing.
+* Fixed: a profile value that is not a URL — an ORCID iD written the way ORCID prints it, a bare @handle — was published as a broken link in the author box and as a broken sameAs in structured data. Handles are now expanded to the right profile URL, and a value that cannot become one is left out instead of guessed at.
+* Fixed: the last-reviewed date was emitted as "dateReviewed", which is not a schema.org property, so nothing reading the structured data could see it. It is now lastReviewed on a WebPage node, where schema.org defines it.
+* The author box and the author archive now draw from one social icon set, so TikTok, Pinterest and Medium have their own icons in both.
+* For add-ons: a new trustbio_archive_after_hero action on author archive pages, and trustbio_credential_saved, trustbio_credential_deleted and trustbio_credentials_reordered actions on credential writes.
 
 = 1.0.0 =
 * Initial public release.
