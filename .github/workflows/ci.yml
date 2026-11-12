@@ -1,0 +1,48 @@
+name: CI
+
+# Read-only checks. Nothing here touches WordPress.org.
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  php-lint:
+    name: PHP syntax (7.4, the declared minimum)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          # Requires PHP: 7.4 in the plugin header. Linting on a newer
+          # version would accept syntax that the oldest supported install
+          # cannot parse, which is a fatal error on activation, not a notice.
+          php-version: '7.4'
+          coverage: none
+
+      - name: Lint every PHP file
+        run: |
+          fail=0
+          while IFS= read -r -d '' file; do
+            php -l "$file" > /dev/null || fail=1
+          done < <(find . -name '*.php' -not -path './.git/*' -print0)
+          exit $fail
+
+  plugin-check:
+    name: WordPress Plugin Check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Run Plugin Check
+        uses: WordPress/plugin-check-action@v1
+        with:
+          # Listing assets, not plugin code: they are not shipped in the zip.
+          exclude-directories: '.wordpress-org'

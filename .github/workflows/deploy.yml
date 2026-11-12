@@ -1,0 +1,40 @@
+name: Deploy to WordPress.org
+
+# Fires only when a release is PUBLISHED.
+#
+# Creating, editing or deleting a DRAFT release does not fire this, so a
+# release can be prepared, read over and corrected without anything reaching
+# WordPress.org. Publishing is the single irreversible step: SVN has no undo,
+# and a version number cannot be reused once trunk has seen it.
+on:
+  release:
+    types: [published]
+
+# The default GITHUB_TOKEN is read-only; the zip upload step needs to write.
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    name: Build and deploy to WP.org SVN
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Deploy to WordPress.org
+        id: deploy
+        uses: 10up/action-wordpress-plugin-deploy@stable
+        with:
+          generate-zip: true
+        env:
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+          SLUG: trustbio
+          # Everything in .distignore is excluded from trunk and the tag.
+          ASSETS_DIR: .wordpress-org
+
+      - name: Attach the built zip to the release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: ${{ steps.deploy.outputs.zip-path }}

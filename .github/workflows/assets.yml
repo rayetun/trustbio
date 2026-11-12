@@ -1,0 +1,43 @@
+name: Update readme and assets
+
+# Pushes readme.txt and the listing assets (banner, icon, screenshots) to SVN
+# without cutting a release — for a typo, a "Tested up to" bump, or a new
+# screenshot between versions.
+#
+# Manual only, for now, and deliberately so. The automatic trigger below would
+# have fired on the very first push of this repository, writing to
+# WordPress.org as a side effect of putting the code on GitHub. There is also
+# nothing for assets to belong to until a release exists in trunk. Uncomment
+# it once 1.0.0 is live and this becomes the convenience it is meant to be.
+on:
+  workflow_dispatch: {}
+  # push:
+  #   branches: [main]
+  #   paths:
+  #     - 'readme.txt'
+  #     - '.wordpress-org/**'
+
+permissions:
+  contents: read
+
+jobs:
+  assets:
+    name: Update readme and assets
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Update WordPress.org readme and assets
+        uses: 10up/action-wordpress-plugin-asset-update@stable
+        env:
+          SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
+          SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
+          SLUG: trustbio
+          ASSETS_DIR: .wordpress-org
+          # Update readme.txt and the listing assets only, never plugin code.
+          # Without this the action rsyncs the whole repository into trunk and
+          # aborts with "Other files have been modified", because main is
+          # always ahead of the last released trunk. Code ships through
+          # deploy.yml on a published release.
+          IGNORE_OTHER_FILES: true
