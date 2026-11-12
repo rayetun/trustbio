@@ -1,0 +1,138 @@
+/* =========================================================
+   TrustBio Gutenberg Sidebar Panel Styles
+   Loaded via enqueue_block_editor_assets
+   ========================================================= */
+
+/* Panel sections */
+.tb-sb-section { padding: 14px 16px; border-bottom: 1px solid #f0f0f0; }
+.tb-sb-section:first-child { padding-top: 16px; }
+
+/* Author rows — explicit flex to override WP editor resets */
+.components-panel .tb-sb-author-row,
+.tb-sb-author-row {
+	display: flex !important;
+	flex-direction: row !important;
+	align-items: center !important;
+	gap: 8px;
+	padding: 8px 10px;
+	background: #f8f9fa;
+	border: 1px solid #e9ecef;
+	border-radius: 6px;
+	margin-bottom: 6px;
+	box-sizing: border-box;
+}
+
+.tb-sb-avatar {
+	border-radius: 50%;
+	flex-shrink: 0;
+	border: 2px solid #fff;
+	box-shadow: 0 1px 3px rgba(0,0,0,.15);
+	display: block;
+	width: 28px !important;
+	height: 28px !important;
+}
+
+.components-panel .tb-sb-author-info,
+.tb-sb-author-info {
+	flex: 1 !important;
+	min-width: 0;
+	display: flex !important;
+	flex-direction: column !important;
+	gap: 3px;
+}
+
+.tb-sb-author-name {
+	font-weight: 600;
+	font-size: 12px;
+	color: #1e1e1e;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	display: block;
+}
+
+.tb-sb-cat-select select {
+	width: 100%;
+	font-size: 11px;
+	border: 1px solid #ddd;
+	border-radius: 4px;
+	padding: 2px 4px;
+}
+
+.tb-sb-remove {
+	background: none;
+	border: none;
+	cursor: pointer;
+	color: #cc1818 !important;
+	margin-left: auto;
+	flex-shrink: 0;
+	font-size: 14px;
+	line-height: 1;
+	padding: 2px 4px;
+	border-radius: 3px;
+}
+
+.tb-sb-remove:hover { background: #fef2f2; }
+
+/* Drag handle */
+.tb-sb-drag-handle {
+	cursor: grab;
+	color: #c0c0c0;
+	font-size: 16px;
+	line-height: 1;
+	flex-shrink: 0;
+	padding: 0 2px;
+}
+
+/* Search */
+.tb-sb-search-wrap { position: relative; }
+
+.tb-sb-results {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 100%;
+	background: #fff;
+	border: 1px solid #e5e7eb;
+	border-radius: 6px;
+	box-shadow: 0 4px 16px rgba(0,0,0,.12);
+	z-index: 99999;
+	max-height: 220px;
+	overflow-y: auto;
+}
+
+.components-panel .tb-sb-result,
+.tb-sb-result {
+	display: flex !important;
+	align-items: center !important;
+	gap: 8px;
+	padding: 9px 12px;
+	cursor: pointer;
+	font-size: 12px;
+	border-bottom: 1px solid #f9f9f9;
+}
+
+.tb-sb-result:last-child { border-bottom: none; }
+.tb-sb-result:hover { background: #f0f4ff; }
+.tb-sb-result-cat { font-size: 10px; color: #6b7280; display: block; margin-top: 1px; }
+
+/* Empty / misc */
+.tb-sb-empty { padding: 12px; text-align: center; color: #9ca3af; font-size: 12px; }
+.tb-sb-empty-msg { color: #9ca3af; font-size: 12px; margin: 0; font-style: italic; }
+.tb-sb-divider { border: none; border-top: 1px solid #f0f0f0; margin: 4px 0; }
+.tb-sb-saving { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #6b7280; padding: 8px 16px; }
+
+/* Notices */
+.tb-sb-notice { padding: 10px 16px; font-size: 12px; border-left: 3px solid; margin-bottom: 4px; }
+.tb-sb-notice--success { background: #ecfdf5; border-color: #10b981; color: #065f46; }
+.tb-sb-notice--error { background: #fef2f2; border-color: #ef4444; color: #991b1b; }
+
+/* Panel title accent */
+[aria-label="TrustBio Authors"] .components-panel__body-title button { color: #4f46e5; font-weight: 600; }
+.trustbio-plugin-sidebar-title { color: #4f46e5; font-weight: 700; font-size: 13px; }
+
+/* Select fields in sidebar */
+.tb-sb-section select,
+.tb-sb-section .components-select-control__input {
+	font-size: 12px;
+}

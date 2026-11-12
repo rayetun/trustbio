@@ -1,0 +1,400 @@
+/*
+ * TrustBio Author Box Preview Styles
+ * Used both in the admin box builder live preview
+ * and on the public frontend (via trustbio-public.css which imports these).
+ *
+ * @package TrustBio
+ */
+
+/* ============================================================
+   Author Box: Shared Base
+   ============================================================ */
+.trustbio-box {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+}
+
+.trustbio-box *,
+.trustbio-box *::before,
+.trustbio-box *::after {
+    box-sizing: border-box;
+}
+
+/* Category Label (Written By / Medically Reviewed By) */
+.trustbio-box__label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: #6b7280;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+}
+
+.trustbio-box__label::before {
+    content: '';
+    display: inline-block;
+    width: 18px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 2px;
+    opacity: 0.5;
+}
+
+/* Inner flex row: avatar + content */
+.trustbio-box__inner {
+    display: flex;
+    gap: 18px;
+    align-items: flex-start;
+}
+
+/* Avatar */
+.trustbio-box__avatar {
+    flex-shrink: 0;
+    position: relative;
+}
+
+.trustbio-box__avatar img {
+    display: block;
+    object-fit: cover;
+}
+
+.trustbio-box__avatar--circle img { border-radius: 50%; }
+.trustbio-box__avatar--rounded img { border-radius: 10px; }
+.trustbio-box__avatar--square img { border-radius: 0; }
+
+/* Content */
+.trustbio-box__content { flex: 1; min-width: 0; }
+
+.trustbio-box__name {
+    margin: 0 0 3px;
+    line-height: 1.3;
+}
+
+.trustbio-box__name a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.trustbio-box__name a:hover {
+    text-decoration: underline;
+}
+
+.trustbio-box__job-title {
+    font-size: 12px;
+    font-weight: 500;
+    color: #6b7280;
+    margin: 0 0 10px;
+}
+
+.trustbio-box__bio {
+    margin: 0 0 12px;
+    line-height: 1.65;
+}
+
+/* Social Icons Row */
+.trustbio-box__social {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.trustbio-box__social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    transition: transform 0.15s ease, opacity 0.15s ease;
+    text-decoration: none;
+    flex-shrink: 0;
+}
+
+.trustbio-box__social-link:hover {
+    transform: translateY(-2px);
+    opacity: 0.85;
+}
+
+.trustbio-box__social-link svg {
+    width: 16px;
+    height: 16px;
+    display: block;
+}
+
+/* Social icon styles */
+.trustbio-box__social--color .trustbio-box__social-link {
+    background: #f3f4f6;
+}
+
+.trustbio-box__social--monochrome .trustbio-box__social-link {
+    background: #374151;
+    color: #fff;
+}
+
+.trustbio-box__social--outline .trustbio-box__social-link {
+    background: transparent;
+    border: 1.5px solid #e5e7eb;
+    color: #6b7280;
+}
+
+/* ============================================================
+   Layout: Classic Stack (default)
+   ============================================================ */
+.trustbio-layout-classic {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 24px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06), 0 1px 2px rgba(0,0,0,.04);
+}
+
+/* ============================================================
+   Layout: Side by Side (two columns grid)
+   ============================================================ */
+.trustbio-layout-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+}
+
+.trustbio-layout-grid .trustbio-box {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+}
+
+/* ============================================================
+   Layout: Compact Card
+   ============================================================ */
+.trustbio-layout-compact {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 16px 20px;
+    box-shadow: 0 1px 3px rgba(0,0,0,.06);
+}
+
+.trustbio-layout-compact .trustbio-box__inner {
+    align-items: center;
+    gap: 14px;
+}
+
+.trustbio-layout-compact .trustbio-box__bio {
+    font-size: 13px;
+    margin-bottom: 10px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* ============================================================
+   Layout: Wide Banner
+   ============================================================ */
+.trustbio-layout-banner {
+    background: linear-gradient(135deg, #f8faff 0%, #ffffff 100%);
+    border: 1px solid #e0e7ff;
+    border-left: 4px solid #4f46e5;
+    border-radius: 0 10px 10px 0;
+    padding: 28px 32px;
+}
+
+.trustbio-layout-banner .trustbio-box__avatar img {
+    width: 72px !important;
+    height: 72px !important;
+}
+
+/* ============================================================
+   Layout: Minimal (no border, clean typography)
+   ============================================================ */
+.trustbio-layout-minimal {
+    padding: 20px 0;
+    border-top: 2px solid #e5e7eb;
+    background: transparent;
+}
+
+.trustbio-layout-minimal .trustbio-box__label {
+    font-size: 10px;
+    color: #9ca3af;
+}
+
+/* ============================================================
+   Layout: Dark Card
+   ============================================================ */
+.trustbio-layout-dark {
+    background: #1f2937;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 10px 25px rgba(0,0,0,.2);
+}
+
+.trustbio-layout-dark .trustbio-box__label { color: #6b7280; }
+
+.trustbio-layout-dark .trustbio-box__name { color: #f9fafb !important; }
+
+.trustbio-layout-dark .trustbio-box__job-title { color: #9ca3af; }
+
+.trustbio-layout-dark .trustbio-box__bio { color: #d1d5db !important; }
+
+.trustbio-layout-dark .trustbio-box__social--color .trustbio-box__social-link {
+    background: #374151;
+}
+
+.trustbio-layout-dark .trustbio-box__social--outline .trustbio-box__social-link {
+    border-color: #374151;
+    color: #9ca3af;
+}
+
+/* ============================================================
+   Admin: Live Preview Container
+   ============================================================ */
+.tb-box-preview-wrap {
+    background: #f3f4f6;
+    background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+    background-size: 20px 20px;
+    border-radius: 12px;
+    padding: 32px;
+    margin-bottom: 24px;
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.tb-box-preview-wrap::before {
+    content: 'Live Preview';
+    position: absolute;
+    top: 10px;
+    left: 14px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #9ca3af;
+}
+
+.tb-box-preview-inner {
+    width: 100%;
+    max-width: 640px;
+}
+
+/* Device-size toggle buttons above preview */
+.tb-preview-devices {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    position: absolute;
+    top: 8px;
+    right: 12px;
+}
+
+.tb-preview-device-btn {
+    width: 28px;
+    height: 28px;
+    background: transparent;
+    border: 1.5px solid #e5e7eb;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #9ca3af;
+    transition: all 0.15s ease;
+}
+
+.tb-preview-device-btn.is-active,
+.tb-preview-device-btn:hover {
+    background: #fff;
+    border-color: #4f46e5;
+    color: #4f46e5;
+}
+
+.tb-preview-device-btn svg { width: 14px; height: 14px; }
+
+/* Layout selector card grid */
+.tb-layout-grid-selector {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.tb-layout-card {
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 14px 12px;
+    cursor: pointer;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    text-align: center;
+    background: #fff;
+}
+
+.tb-layout-card:hover {
+    border-color: #a5b4fc;
+    box-shadow: 0 0 0 3px rgba(79,70,229,.08);
+}
+
+.tb-layout-card.is-active {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 3px rgba(79,70,229,.12);
+}
+
+.tb-layout-card__thumb {
+    height: 48px;
+    background: #f3f4f6;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    gap: 4px;
+    padding: 6px;
+}
+
+/* Mini layout thumbnail representations */
+.tb-layout-thumb-classic { flex-direction: row; }
+
+.tb-layout-thumb-classic .th-a { width: 16px; height: 16px; background: #cbd5e1; border-radius: 50%; flex-shrink: 0; }
+.tb-layout-thumb-classic .th-b { flex: 1; display: flex; flex-direction: column; gap: 3px; }
+.tb-layout-thumb-classic .th-b span { display: block; height: 3px; background: #cbd5e1; border-radius: 2px; }
+.tb-layout-thumb-classic .th-b span:first-child { width: 60%; background: #94a3b8; }
+
+.tb-layout-card__label {
+    font-size: 11px;
+    font-weight: 600;
+    color: #6b7280;
+}
+
+.tb-layout-card.is-active .tb-layout-card__label { color: #4f46e5; }
+
+/* ============================================================
+   Responsive: mobile
+   ============================================================ */
+@media (max-width: 600px) {
+    .trustbio-box__inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .trustbio-layout-banner {
+        padding: 20px;
+    }
+
+    .trustbio-layout-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .tb-layout-grid-selector {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

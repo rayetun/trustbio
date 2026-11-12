@@ -1,0 +1,14 @@
+# Normalise line endings to LF, in the repository and in the working tree.
+# Git for Windows ships core.autocrlf=true in its system config, so without
+# this a checkout here produces CRLF files; a later scripted edit then leaves
+# a file with both, which Plugin Check reports as Internal.LineEndings.Mixed.
+* text=auto eol=lf
+
+# Binary assets
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.webp binary
+*.woff2 binary
+*.zip  binary

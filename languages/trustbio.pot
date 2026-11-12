@@ -1,0 +1,3972 @@
+# Copyright (C) 2026 Md Rayhan Uddin
+# This file is distributed under the GPL v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: TrustBio\n"
+"Report-Msgid-Bugs-To: https://rayetun.com/\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-11-12 16:22+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: TrustBio makepot\n"
+"X-Domain: trustbio\n"
+
+#: admin/class-admin.php:31 admin/class-admin.php:32
+#: admin/partials/layout.php:53
+msgid "TrustBio"
+msgstr ""
+
+#: admin/class-admin.php:43
+msgid "Overview — TrustBio"
+msgstr ""
+
+#: admin/class-admin.php:44 admin/class-help-tabs.php:78
+#: admin/class-help-tabs.php:116 admin/class-help-tabs.php:159
+#: admin/class-help-tabs.php:164 admin/class-help-tabs.php:200
+#: admin/class-settings.php:56 admin/partials/layout.php:100
+#: admin/views/dashboard.php:143
+msgid "Overview"
+msgstr ""
+
+#: admin/class-admin.php:53
+msgid "Feature Modules — TrustBio"
+msgstr ""
+
+#: admin/class-admin.php:54 admin/partials/layout.php:101
+msgid "Features"
+msgstr ""
+
+#: admin/class-admin.php:63
+msgid "Author Categories — TrustBio"
+msgstr ""
+
+#: admin/class-admin.php:64 admin/views/author-category.php:46
+msgid "Author Categories"
+msgstr ""
+
+#: admin/class-admin.php:73
+msgid "Authors — TrustBio"
+msgstr ""
+
+#: admin/class-admin.php:74 admin/class-help-tabs.php:59
+#: admin/class-help-tabs.php:118 admin/class-quick-edit.php:39
+#: admin/partials/layout.php:103 admin/views/authors-list.php:44
+#: admin/views/dashboard.php:174
+msgid "Authors"
+msgstr ""
+
+#: admin/class-admin.php:85
+msgid "Credentials — TrustBio"
+msgstr ""
+
+#: admin/class-admin.php:86 admin/class-help-tabs.php:93
+#: admin/partials/layout.php:104 admin/views/author-profile.php:194
+#: admin/views/author-profile.php:235 admin/views/author-profile.php:289
+#: admin/views/authors-list.php:128 admin/views/authors-list.php:316
+msgid "Credentials"
+msgstr ""
+
+#: admin/class-admin.php:94
+msgid "Author Fields — TrustBio"
+msgstr ""
+
+#: admin/class-admin.php:95 admin/partials/layout.php:105
+#: admin/views/author-fields.php:51 admin/views/author-profile.php:331
+msgid "Author Fields"
+msgstr ""
+
+#: admin/class-admin.php:104
+msgid "Author Profile — TrustBio"
+msgstr ""
+
+#: admin/class-admin.php:105
+msgid "Author Profile"
+msgstr ""
+
+#: admin/class-admin.php:114
+msgid "Author Boxes — TrustBio"
+msgstr ""
+
+#: admin/class-admin.php:115 admin/class-help-tabs.php:60
+#: admin/class-help-tabs.php:166 admin/class-settings.php:58
+#: admin/class-settings.php:157 admin/partials/layout.php:106
+#: admin/views/author-box.php:495 admin/views/dashboard.php:194
+msgid "Author Boxes"
+msgstr ""
+
+#: admin/class-admin.php:125
+msgid "Last Review Bars — TrustBio"
+msgstr ""
+
+#: admin/class-admin.php:126 admin/class-settings.php:589
+#: admin/views/dashboard.php:231 admin/views/review-bar.php:282
+msgid "Last Review Bars"
+msgstr ""
+
+#: admin/class-admin.php:158
+msgid "TrustBio Pro — TrustBio"
+msgstr ""
+
+#: admin/class-admin.php:159 admin/partials/layout.php:135
+#: admin/views/upgrade.php:178 admin/views/upgrade.php:210
+#: admin/views/upgrade.php:245
+msgid "TrustBio Pro"
+msgstr ""
+
+#: admin/class-admin.php:169
+msgid "Settings — TrustBio"
+msgstr ""
+
+#: admin/class-admin.php:170 admin/class-admin.php:663
+#: admin/class-help-tabs.php:61 admin/partials/layout.php:128
+#: admin/views/dashboard.php:158 admin/views/dashboard.php:606
+msgid "Settings"
+msgstr ""
+
+#: admin/class-admin.php:281
+msgid "Please enter a category name."
+msgstr ""
+
+#: admin/class-admin.php:282
+msgid "Please enter the author's name."
+msgstr ""
+
+#: admin/class-admin.php:283
+msgid "Please select a layout."
+msgstr ""
+
+#: admin/class-admin.php:284
+msgid "Category created:"
+msgstr ""
+
+#: admin/class-admin.php:285
+msgid "Author created:"
+msgstr ""
+
+#: admin/class-admin.php:286
+msgid "Author box created:"
+msgstr ""
+
+#: admin/class-admin.php:287 admin/class-admin.php:444
+#: admin/class-admin.php:608
+msgid "An error occurred. Please try again."
+msgstr ""
+
+#: admin/class-admin.php:288 admin/views/dashboard.php:619
+msgid "Skip this step"
+msgstr ""
+
+#: admin/class-admin.php:381
+msgid "Saved"
+msgstr ""
+
+#: admin/class-admin.php:441 admin/class-admin.php:530
+#: admin/class-admin.php:554 admin/class-review-dashboard-widget.php:59
+msgid "Saving…"
+msgstr ""
+
+#: admin/class-admin.php:442 admin/class-admin.php:531
+#: admin/class-admin.php:555
+msgid "Saved!"
+msgstr ""
+
+#: admin/class-admin.php:443 admin/views/review-bar.php:59
+#: admin/views/review-bar.php:257
+msgid "Save Bar"
+msgstr ""
+
+#: admin/class-admin.php:445
+msgid "Delete this review bar? This cannot be undone."
+msgstr ""
+
+#: admin/class-admin.php:466 admin/class-admin.php:489
+#: admin/views/author-profile.php:490 admin/views/credentials.php:111
+#: admin/views/credentials.php:191
+msgid "Add Credential"
+msgstr ""
+
+#: admin/class-admin.php:467 admin/class-admin.php:490
+msgid "Update Credential"
+msgstr ""
+
+#: admin/class-admin.php:532
+msgid "Save failed. Please retry."
+msgstr ""
+
+#: admin/class-admin.php:556 admin/class-settings.php:1110
+#: admin/views/features.php:176
+msgid "Save Changes"
+msgstr ""
+
+#: admin/class-admin.php:557
+msgid "Save failed."
+msgstr ""
+
+#: admin/class-admin.php:558
+msgid "Reloading page…"
+msgstr ""
+
+#: admin/class-admin.php:559 admin/views/author-fields.php:37
+#: admin/views/author-fields.php:208 admin/views/author-profile.php:185
+#: admin/views/authors-list.php:336 admin/views/features.php:207
+msgid "Active"
+msgstr ""
+
+#: admin/class-admin.php:560 admin/views/author-profile.php:185
+#: admin/views/authors-list.php:336 admin/views/features.php:207
+msgid "Inactive"
+msgstr ""
+
+#: admin/class-admin.php:561
+msgid "Unsaved changes — press Save Changes."
+msgstr ""
+
+#: admin/class-admin.php:605
+msgid "Are you sure you want to delete this? This cannot be undone."
+msgstr ""
+
+#: admin/class-admin.php:606
+msgid "Saving..."
+msgstr ""
+
+#: admin/class-admin.php:607
+msgid "Saved successfully!"
+msgstr ""
+
+#: admin/class-admin.php:609 admin/class-post-sidebar.php:438
+#: public/js/trustbio-author-block.js:221
+msgid "No authors found."
+msgstr ""
+
+#: admin/class-admin.php:635 admin/views/author-box.php:99
+#: admin/views/author-box.php:603 admin/views/dashboard.php:534
+msgid "Classic Byline"
+msgstr ""
+
+#: admin/class-admin.php:635
+msgid "Avatar · name · bio · socials. The most widely used author box style."
+msgstr ""
+
+#: admin/class-admin.php:636 admin/views/author-box.php:100
+#: admin/views/author-box.php:624 admin/views/dashboard.php:562
+msgid "Quote Card"
+msgstr ""
+
+#: admin/class-admin.php:636
+msgid "Bio displayed as a serif pull-quote with View archive CTA."
+msgstr ""
+
+#: admin/class-admin.php:637 admin/views/author-box.php:101
+#: admin/views/author-box.php:643 admin/views/dashboard.php:547
+#: admin/views/review-bar.php:96
+msgid "Minimal Inline"
+msgstr ""
+
+#: admin/class-admin.php:637
+msgid "Hairline rules, no background. Minimal editorial style."
+msgstr ""
+
+#: admin/class-admin.php:638 admin/views/author-box.php:102
+#: admin/views/author-box.php:661 admin/views/dashboard.php:576
+msgid "Card Simple"
+msgstr ""
+
+#: admin/class-admin.php:638
+msgid "Square avatar, vertical divider, short bio, Follow button."
+msgstr ""
+
+#: admin/class-admin.php:678
+msgid "Go Pro"
+msgstr ""
+
+#: admin/class-author-box.php:51
+msgid "Box title is required."
+msgstr ""
+
+#: admin/class-author-box.php:83
+msgid "Author box updated."
+msgstr ""
+
+#: admin/class-author-box.php:91 admin/class-author-box.php:289
+msgid "Failed to create author box."
+msgstr ""
+
+#: admin/class-author-box.php:94 admin/class-author-box.php:302
+msgid "Author box created."
+msgstr ""
+
+#: admin/class-author-box.php:109 admin/class-author-box.php:139
+#: admin/class-author-box.php:223
+msgid "Invalid box ID."
+msgstr ""
+
+#: admin/class-author-box.php:118
+msgid "The default author box cannot be deleted. Set another box as default first."
+msgstr ""
+
+#: admin/class-author-box.php:124
+msgid "Author box deleted."
+msgstr ""
+
+#: admin/class-author-box.php:153
+msgid "Default box updated."
+msgstr ""
+
+#: admin/class-author-box.php:232
+msgid "Box not found."
+msgstr ""
+
+#: admin/class-author-box.php:239
+msgid "(Copy)"
+msgstr ""
+
+#: admin/class-author-box.php:247
+msgid "Box duplicated."
+msgstr ""
+
+#: admin/class-author-box.php:262 admin/class-author-box.php:270
+msgid "Default Author Box"
+msgstr ""
+
+#: admin/class-author-box.php:779
+msgid "Dr. Sarah Johnson"
+msgstr ""
+
+#: admin/class-author-box.php:780
+msgid "Medical Reviewer, MD"
+msgstr ""
+
+#: admin/class-author-box.php:781
+msgid "Medically Reviewed By"
+msgstr ""
+
+#: admin/class-author-box.php:784
+msgid "Board-certified physician specialising in addiction medicine with over 15 years of clinical experience reviewing health content for accuracy and compliance."
+msgstr ""
+
+#: admin/class-author-box.php:785
+msgid "Board-certified physician specialising in addiction medicine."
+msgstr ""
+
+#: admin/class-author-box.php:803 public/templates/box-byline.php:88
+msgid "posts"
+msgstr ""
+
+#: admin/class-author-box.php:841
+msgid "Sarah"
+msgstr ""
+
+#: admin/class-author-box.php:844
+msgid "About the author"
+msgstr ""
+
+#: admin/class-author-box.php:848
+msgid "Read more"
+msgstr ""
+
+#: admin/class-author-box.php:868
+msgid "View all posts"
+msgstr ""
+
+#: admin/class-author-box.php:877 public/templates/box-byline.php:29
+#: public/templates/box-minimal-inline.php:30
+msgid "Written by"
+msgstr ""
+
+#: admin/class-author-box.php:893 public/templates/box-simple.php:74
+msgid "All posts &rarr;"
+msgstr ""
+
+#: admin/class-author-box.php:894 public/templates/box-simple.php:85
+msgid "Follow"
+msgstr ""
+
+#: admin/class-author-box.php:903
+msgid "Reported &amp; written by · 2 authors"
+msgstr ""
+
+#: admin/class-author-category.php:52
+msgid "Singular and Plural names are required."
+msgstr ""
+
+#: admin/class-author-category.php:71
+msgid "Failed to update category."
+msgstr ""
+
+#: admin/class-author-category.php:74
+msgid "Category updated successfully."
+msgstr ""
+
+#: admin/class-author-category.php:83
+msgid "Failed to create category."
+msgstr ""
+
+#: admin/class-author-category.php:86
+msgid "Category created successfully."
+msgstr ""
+
+#: admin/class-author-category.php:104 admin/class-author-category.php:133
+msgid "Invalid category ID."
+msgstr ""
+
+#: admin/class-author-category.php:109
+msgid "The default \"Author\" category cannot be deleted."
+msgstr ""
+
+#: admin/class-author-category.php:115
+msgid "Category deleted."
+msgstr ""
+
+#: admin/class-author-category.php:138
+msgid "Category not found."
+msgstr ""
+
+#: admin/class-author-category.php:153
+msgid "Category enabled."
+msgstr ""
+
+#: admin/class-author-category.php:153
+msgid "Category disabled."
+msgstr ""
+
+#: admin/class-author-expertise.php:23
+msgid "Insufficient permissions."
+msgstr ""
+
+#: admin/class-author-expertise.php:28 admin/class-author-profile.php:50
+#: admin/class-authors-list.php:103 admin/class-authors-list.php:128
+#: admin/class-authors-list.php:209
+msgid "Invalid author ID."
+msgstr ""
+
+#: admin/class-author-expertise.php:48
+msgid "Expertise topics saved."
+msgstr ""
+
+#: admin/class-author-fields.php:50
+msgid "Label is required."
+msgstr ""
+
+#: admin/class-author-fields.php:59
+msgid "Field updated."
+msgstr ""
+
+#: admin/class-author-fields.php:67
+msgid "Field created."
+msgstr ""
+
+#: admin/class-author-fields.php:81 admin/class-author-fields.php:108
+msgid "Invalid field ID."
+msgstr ""
+
+#: admin/class-author-fields.php:89
+msgid "Built-in fields cannot be deleted. You can disable them instead."
+msgstr ""
+
+#: admin/class-author-fields.php:94
+msgid "Field deleted."
+msgstr ""
+
+#: admin/class-author-fields.php:115
+msgid "Field not found."
+msgstr ""
+
+#: admin/class-author-fields.php:123
+msgid "Field activated."
+msgstr ""
+
+#: admin/class-author-fields.php:123
+msgid "Field deactivated."
+msgstr ""
+
+#: admin/class-author-fields.php:149 admin/class-credentials.php:166
+msgid "Order saved."
+msgstr ""
+
+#: admin/class-author-profile.php:59 admin/class-authors-list.php:136
+#: admin/class-authors-list.php:214 public/class-author-block.php:209
+#: public/templates/author-archive.php:23
+msgid "Author not found."
+msgstr ""
+
+#: admin/class-author-profile.php:74 admin/class-authors-list.php:57
+msgid "Display name is required."
+msgstr ""
+
+#: admin/class-author-profile.php:128
+msgid "Author profile saved successfully."
+msgstr ""
+
+#: admin/class-author-profile.php:143
+msgid "No file uploaded."
+msgstr ""
+
+#: admin/class-authors-list.php:74
+msgid "Author updated successfully."
+msgstr ""
+
+#: admin/class-authors-list.php:85
+msgid "Failed to create author."
+msgstr ""
+
+#: admin/class-authors-list.php:89
+msgid "Author created successfully."
+msgstr ""
+
+#: admin/class-authors-list.php:114
+msgid "Author deleted."
+msgstr ""
+
+#: admin/class-authors-list.php:145
+msgid "Author activated."
+msgstr ""
+
+#: admin/class-authors-list.php:145
+msgid "Author deactivated."
+msgstr ""
+
+#: admin/class-authors-list.php:156 admin/class-authors-list.php:202
+#: admin/class-post-sidebar.php:459 admin/class-quick-edit.php:215
+#: admin/class-review-dashboard-widget.php:269 admin/class-review-date.php:211
+#: admin/class-settings.php:649 admin/class-settings.php:754
+msgid "Permission denied."
+msgstr ""
+
+#: admin/class-credentials.php:50
+msgid "Author ID is required."
+msgstr ""
+
+#: admin/class-credentials.php:75
+msgid "Credential name is required."
+msgstr ""
+
+#: admin/class-credentials.php:103
+msgid "Credential updated."
+msgstr ""
+
+#: admin/class-credentials.php:111
+msgid "Failed to save credential."
+msgstr ""
+
+#: admin/class-credentials.php:114
+msgid "Credential added."
+msgstr ""
+
+#: admin/class-credentials.php:129
+msgid "Invalid credential ID."
+msgstr ""
+
+#: admin/class-credentials.php:135
+msgid "Credential deleted."
+msgstr ""
+
+#: admin/class-credentials.php:286
+msgid "Verify credential"
+msgstr ""
+
+#: admin/class-credentials.php:457
+msgid "Medical Doctor"
+msgstr ""
+
+#: admin/class-credentials.php:464
+msgid "Doctor of Osteopathic Medicine"
+msgstr ""
+
+#: admin/class-credentials.php:471
+msgid "Registered Nurse"
+msgstr ""
+
+#: admin/class-credentials.php:478
+msgid "Doctor of Philosophy"
+msgstr ""
+
+#: admin/class-credentials.php:486
+msgid "Juris Doctor (Attorney)"
+msgstr ""
+
+#: admin/class-credentials.php:493
+msgid "Esquire (Licensed Attorney)"
+msgstr ""
+
+#: admin/class-credentials.php:501
+msgid "Certified Public Accountant"
+msgstr ""
+
+#: admin/class-credentials.php:508
+msgid "Certified Financial Planner"
+msgstr ""
+
+#: admin/class-credentials.php:516
+msgid "Licensed Clinical Social Worker"
+msgstr ""
+
+#: admin/class-credentials.php:523
+msgid "Licensed Marriage and Family Therapist"
+msgstr ""
+
+#: admin/class-credentials.php:530
+msgid "Licensed Professional Clinical Counselor"
+msgstr ""
+
+#: admin/class-credentials.php:538
+msgid "Master of Science"
+msgstr ""
+
+#: admin/class-credentials.php:545
+msgid "Master of Business Administration"
+msgstr ""
+
+#: admin/class-credentials.php:553
+msgid "National Provider Identifier (US healthcare)"
+msgstr ""
+
+#: admin/class-credentials.php:561
+msgid "Verified Expert"
+msgstr ""
+
+#: admin/class-credentials.php:568
+msgid "Custom credential — label auto-set from credential name"
+msgstr ""
+
+#: admin/class-help-tabs.php:57
+msgid "TrustBio Quick Links"
+msgstr ""
+
+#: admin/class-help-tabs.php:58
+msgid "Dashboard"
+msgstr ""
+
+#: admin/class-help-tabs.php:80 admin/class-settings.php:150
+msgid "TrustBio Overview"
+msgstr ""
+
+#: admin/class-help-tabs.php:81
+msgid "This dashboard shows your site's E-E-A-T health at a glance. The Setup Checklist on the right guides you through initial configuration. All stat cards update in real time from your live data."
+msgstr ""
+
+#: admin/class-help-tabs.php:82
+msgid "Green numbers mean you're doing well. Red numbers flag issues that need attention. Click any \"View all →\" link to go to the full report for that metric."
+msgstr ""
+
+#: admin/class-help-tabs.php:87
+msgid "E-E-A-T Signals"
+msgstr ""
+
+#: admin/class-help-tabs.php:89
+msgid "What Are E-E-A-T Signals?"
+msgstr ""
+
+#: admin/class-help-tabs.php:90
+msgid "E-E-A-T stands for Experience, Expertise, Authoritativeness and Trustworthiness — the framework Google uses to evaluate content quality. TrustBio puts four of those signals on every post:"
+msgstr ""
+
+#: admin/class-help-tabs.php:92
+msgid "Author assigned"
+msgstr ""
+
+#: admin/class-help-tabs.php:92
+msgid "A TrustBio author profile is linked to the post and output as Person schema."
+msgstr ""
+
+#: admin/class-help-tabs.php:93
+msgid "The author has at least one active, non-expired credential, output as hasCredential."
+msgstr ""
+
+#: admin/class-help-tabs.php:94
+msgid "Review date"
+msgstr ""
+
+#: admin/class-help-tabs.php:94
+msgid "A last-reviewed date set in the editor, shown on the review bar."
+msgstr ""
+
+#: admin/class-help-tabs.php:95
+msgid "Reviewer"
+msgstr ""
+
+#: admin/class-help-tabs.php:95
+msgid "A separate reviewer, distinct from the author, output as reviewedBy."
+msgstr ""
+
+#: admin/class-help-tabs.php:97
+msgid "Aim for all four on anything in a Your Money or Your Life topic — health, legal, or financial content."
+msgstr ""
+
+#: admin/class-help-tabs.php:119
+msgid "Authors are the people credited on your posts. TrustBio creates a dedicated profile for each author that powers the author box, structured data schema, and E-E-A-T trust signals."
+msgstr ""
+
+#: admin/class-help-tabs.php:120
+msgid "Click \"Add Author\" to create a new profile. Click any author name to edit their details. The Completeness score shows how much of their profile is filled in."
+msgstr ""
+
+#: admin/class-help-tabs.php:125
+msgid "Author Types"
+msgstr ""
+
+#: admin/class-help-tabs.php:127
+msgid "Registered vs Guest Authors"
+msgstr ""
+
+#: admin/class-help-tabs.php:128
+msgid "Registered authors"
+msgstr ""
+
+#: admin/class-help-tabs.php:128
+msgid "are linked to a WordPress user account by email. Their profile is tied to a real login — great for your own editorial team."
+msgstr ""
+
+#: admin/class-help-tabs.php:129
+msgid "Guest authors"
+msgstr ""
+
+#: admin/class-help-tabs.php:129
+msgid "are standalone profiles with no WordPress login required — ideal for external contributors, quoted medical experts, or reviewers who don't have site access."
+msgstr ""
+
+#: admin/class-help-tabs.php:130
+msgid "Both types generate identical schema markup and contribute equally to E-E-A-T signals."
+msgstr ""
+
+#: admin/class-help-tabs.php:135
+msgid "Completeness Score"
+msgstr ""
+
+#: admin/class-help-tabs.php:137
+msgid "Profile Completeness"
+msgstr ""
+
+#: admin/class-help-tabs.php:138
+msgid "The Completeness score measures how many profile fields are filled in: photo, bio, job title, credentials, social links, and expertise categories."
+msgstr ""
+
+#: admin/class-help-tabs.php:139
+msgid "A higher score means richer schema output and a more credible author box. Aim for 80%+ on all authors who write YMYL content (health, finance, legal, safety)."
+msgstr ""
+
+#: admin/class-help-tabs.php:140
+msgid "The Status column shows whether an author is Active (appears on posts) or Inactive (hidden from all public views)."
+msgstr ""
+
+#: admin/class-help-tabs.php:161
+msgid "TrustBio Settings"
+msgstr ""
+
+#: admin/class-help-tabs.php:162
+msgid "Settings are organised into tabs on the left. Changes are saved with the \"Save Settings\" button that appears at the bottom of the page when you make a change."
+msgstr ""
+
+#: admin/class-help-tabs.php:164
+msgid "Live counts and the status of every feature module."
+msgstr ""
+
+#: admin/class-help-tabs.php:165 admin/class-settings.php:57
+#: admin/views/author-profile.php:223
+msgid "General"
+msgstr ""
+
+#: admin/class-help-tabs.php:165
+msgid "Post types, roles, archive pages, contribution count."
+msgstr ""
+
+#: admin/class-help-tabs.php:166
+msgid "Default layout, position, auto-insert behaviour."
+msgstr ""
+
+#: admin/class-help-tabs.php:167 admin/class-settings.php:59
+#: admin/class-settings.php:158 admin/partials/layout.php:107
+#: admin/views/dashboard.php:205
+msgid "Review Bars"
+msgstr ""
+
+#: admin/class-help-tabs.php:167
+msgid "Review bar display mode, position, stale threshold."
+msgstr ""
+
+#: admin/class-help-tabs.php:168 admin/class-settings.php:60
+#: admin/views/author-box.php:90
+msgid "Advanced"
+msgstr ""
+
+#: admin/class-help-tabs.php:168
+msgid "Schema output, REST API, debug mode."
+msgstr ""
+
+#: admin/class-help-tabs.php:169 admin/class-settings.php:61
+#: admin/class-settings.php:377 admin/views/dashboard.php:154
+msgid "Shortcodes"
+msgstr ""
+
+#: admin/class-help-tabs.php:169
+msgid "Every TrustBio shortcode with its attributes."
+msgstr ""
+
+#: admin/class-help-tabs.php:170 admin/class-settings.php:62
+#: admin/class-settings.php:478
+msgid "Maintenance"
+msgstr ""
+
+#: admin/class-help-tabs.php:170
+msgid "Cache, export/import, uninstall options."
+msgstr ""
+
+#: admin/class-help-tabs.php:176 admin/class-help-tabs.php:178
+msgid "Schema & JSON-LD"
+msgstr ""
+
+#: admin/class-help-tabs.php:179
+msgid "TrustBio outputs JSON-LD structured data in your page &lt;head&gt; to tell Google about your authors, their credentials, and the review status of each post."
+msgstr ""
+
+#: admin/class-help-tabs.php:180
+msgid "If you use Yoast SEO or Rank Math, enable Schema Compatibility Mode (Advanced tab) to avoid duplicate author nodes. TrustBio will merge its data into the existing schema graph rather than outputting a separate block."
+msgstr ""
+
+#: admin/class-help-tabs.php:181
+msgid "Test your schema output using Google's Rich Results Test at search.google.com/test/rich-results."
+msgstr ""
+
+#: admin/class-help-tabs.php:202
+msgid "Author Credentials"
+msgstr ""
+
+#: admin/class-help-tabs.php:203
+msgid "Credentials are verified qualifications linked to an author — degrees, board certifications, professional licenses, and memberships. Each credential can have an expiry date."
+msgstr ""
+
+#: admin/class-help-tabs.php:204
+msgid "Only active (non-expired) credentials count toward an author's E-E-A-T trust score. Expired credentials are automatically excluded."
+msgstr ""
+
+#: admin/class-help-tabs.php:205
+msgid "Select an author from the dropdown on the left to view or add their credentials."
+msgstr ""
+
+#: admin/class-help-tabs.php:210
+msgid "Schema Impact"
+msgstr ""
+
+#: admin/class-help-tabs.php:212
+msgid "How Credentials Affect Schema"
+msgstr ""
+
+#: admin/class-help-tabs.php:213
+msgid "Credentials marked \"Show in Schema\" are included in the author's JSON-LD output as hasCredential properties. Google can use these to assess author expertise for YMYL content."
+msgstr ""
+
+#: admin/class-help-tabs.php:214
+msgid "Best practices:"
+msgstr ""
+
+#: admin/class-help-tabs.php:216
+msgid "Use the official credential abbreviation (e.g. \"MD\", \"RD\", \"CFP\") not the full spelled-out name."
+msgstr ""
+
+#: admin/class-help-tabs.php:217
+msgid "Include the issuing organisation — this adds credibility to the schema data."
+msgstr ""
+
+#: admin/class-help-tabs.php:218
+msgid "Add a verification URL if the credential is publicly verifiable online."
+msgstr ""
+
+#: admin/class-help-tabs.php:219
+msgid "Only use \"Show in Schema\" for formal professional qualifications, not online course certificates."
+msgstr ""
+
+#: admin/class-post-sidebar.php:29 admin/class-post-sidebar.php:445
+msgid "TrustBio Authors"
+msgstr ""
+
+#: admin/class-post-sidebar.php:143
+msgid "TrustBio author assignments."
+msgstr ""
+
+#: admin/class-post-sidebar.php:157
+msgid "Hide TrustBio author box on this post."
+msgstr ""
+
+#: admin/class-post-sidebar.php:171
+msgid "TrustBio author box layout override."
+msgstr ""
+
+#: admin/class-post-sidebar.php:185
+msgid "TrustBio sidebar box layout override."
+msgstr ""
+
+#: admin/class-post-sidebar.php:199
+msgid "TrustBio review bar template override."
+msgstr ""
+
+#: admin/class-post-sidebar.php:437 admin/views/authors-list.php:218
+#: admin/views/post-sidebar/classic-metabox.php:75
+msgid "Search authors…"
+msgstr ""
+
+#: admin/class-post-sidebar.php:439
+msgid "Written By"
+msgstr ""
+
+#: admin/class-post-sidebar.php:440
+#: admin/views/post-sidebar/classic-metabox.php:98
+msgid "Hide author box on this post"
+msgstr ""
+
+#: admin/class-post-sidebar.php:441 admin/class-quick-edit.php:103
+msgid "Author Box Layout"
+msgstr ""
+
+#: admin/class-post-sidebar.php:442 admin/class-quick-edit.php:105
+msgid "— Default Layout —"
+msgstr ""
+
+#: admin/class-post-sidebar.php:443
+#: admin/views/post-sidebar/classic-metabox.php:54
+msgid "Drag to reorder"
+msgstr ""
+
+#: admin/class-post-sidebar.php:444 admin/views/authors-list.php:157
+msgid "Remove"
+msgstr ""
+
+#: admin/class-post-sidebar.php:446
+msgid "Saved."
+msgstr ""
+
+#: admin/class-post-sidebar.php:471
+msgid "Invalid post ID."
+msgstr ""
+
+#: admin/class-post-sidebar.php:499
+msgid "Authors saved."
+msgstr ""
+
+#: admin/class-quick-edit.php:92 admin/class-quick-edit.php:144
+msgid "TrustBio Author"
+msgstr ""
+
+#: admin/class-quick-edit.php:95
+msgid "Search and add author…"
+msgstr ""
+
+#: admin/class-quick-edit.php:115
+msgid "Hide author box"
+msgstr ""
+
+#: admin/class-quick-edit.php:147
+msgid "Add author to selected posts…"
+msgstr ""
+
+#: admin/class-quick-edit.php:153
+msgid "Authors will be added to all selected posts."
+msgstr ""
+
+#: admin/class-quick-edit.php:226
+msgid "No authors to add."
+msgstr ""
+
+#. translators: %d: number of posts updated
+#: admin/class-quick-edit.php:259
+msgid "Authors added to %d post(s)."
+msgstr ""
+
+#: admin/class-review-bar.php:49
+msgid "Bar title is required."
+msgstr ""
+
+#: admin/class-review-bar.php:79
+msgid "Review bar updated."
+msgstr ""
+
+#: admin/class-review-bar.php:87
+msgid "Failed to create review bar."
+msgstr ""
+
+#: admin/class-review-bar.php:90
+msgid "Review bar created."
+msgstr ""
+
+#: admin/class-review-bar.php:105 admin/class-review-bar.php:143
+#: admin/class-review-bar.php:222
+msgid "Invalid bar ID."
+msgstr ""
+
+#: admin/class-review-bar.php:114 admin/class-review-bar.php:231
+msgid "Review bar not found."
+msgstr ""
+
+#: admin/class-review-bar.php:118
+msgid "The default review bar cannot be deleted. Set another bar as default first."
+msgstr ""
+
+#: admin/class-review-bar.php:128
+msgid "Review bar deleted."
+msgstr ""
+
+#: admin/class-review-bar.php:156
+msgid "Default review bar updated."
+msgstr ""
+
+#: admin/class-review-bar.php:238
+msgid " (Copy)"
+msgstr ""
+
+#: admin/class-review-bar.php:248
+msgid "Failed to duplicate review bar."
+msgstr ""
+
+#: admin/class-review-bar.php:251
+msgid "Review bar duplicated."
+msgstr ""
+
+#: admin/class-review-bar.php:512 admin/class-review-date.php:349
+#: admin/class-review-date.php:739 admin/views/review-date-metabox.php:76
+#: public/class-review-renderer.php:28 public/class-review-renderer.php:42
+msgid "Medically reviewed by"
+msgstr ""
+
+#: admin/class-review-dashboard-widget.php:60
+msgid "✓ Done"
+msgstr ""
+
+#: admin/class-review-dashboard-widget.php:61
+#: admin/class-review-dashboard-widget.php:185
+#: admin/class-review-dashboard-widget.php:239
+msgid "Up to date"
+msgstr ""
+
+#: admin/class-review-dashboard-widget.php:81
+msgid "TrustBio — Content Review Status"
+msgstr ""
+
+#: admin/class-review-dashboard-widget.php:109
+msgid "Number of posts to show:"
+msgstr ""
+
+#: admin/class-review-dashboard-widget.php:158
+msgid "All content is up to date."
+msgstr ""
+
+#: admin/class-review-dashboard-widget.php:169
+#: admin/class-review-dashboard-widget.php:170
+#: admin/class-review-dashboard-widget.php:251
+msgid "Never reviewed"
+msgstr ""
+
+#: admin/class-review-dashboard-widget.php:179
+#: admin/class-review-dashboard-widget.php:247
+msgid "Very overdue"
+msgstr ""
+
+#: admin/class-review-dashboard-widget.php:182
+#: admin/class-review-dashboard-widget.php:243
+msgid "Overdue"
+msgstr ""
+
+#: admin/class-review-dashboard-widget.php:189
+msgid "Today"
+msgstr ""
+
+#: admin/class-review-dashboard-widget.php:191
+msgid "1 day ago"
+msgstr ""
+
+#. translators: %d: number of days
+#: admin/class-review-dashboard-widget.php:194
+msgid "%d day ago"
+msgid_plural "%d days ago"
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/class-review-dashboard-widget.php:225
+msgid "Mark reviewed"
+msgstr ""
+
+#: admin/class-review-date.php:144
+msgid "TrustBio — Content Review Date"
+msgstr ""
+
+#: admin/class-review-date.php:215
+msgid "Review date saved."
+msgstr ""
+
+#: admin/class-review-date.php:267
+msgid "Last Reviewed"
+msgstr ""
+
+#: admin/class-review-date.php:286
+msgid "— Never"
+msgstr ""
+
+#: admin/class-review-date.php:351
+msgid "Use site default"
+msgstr ""
+
+#: admin/class-review-date.php:352 admin/views/review-date-metabox.php:60
+msgid "In author box only"
+msgstr ""
+
+#: admin/class-review-date.php:353 admin/class-settings.php:307
+#: admin/views/review-date-metabox.php:61
+msgid "Separate review bar"
+msgstr ""
+
+#: admin/class-review-date.php:354
+msgid "Both (in box + bar)"
+msgstr ""
+
+#: admin/class-review-date.php:355 admin/views/review-date-metabox.php:63
+msgid "Hidden on this post"
+msgstr ""
+
+#: admin/class-review-date.php:538
+msgid "Last reviewed"
+msgstr ""
+
+#: admin/class-settings.php:40
+msgid "You do not have permission to access TrustBio settings."
+msgstr ""
+
+#: admin/class-settings.php:151
+msgid "A summary of your E-E-A-T setup and enabled feature modules."
+msgstr ""
+
+#: admin/class-settings.php:156
+msgid "Active Authors"
+msgstr ""
+
+#: admin/class-settings.php:159
+msgid "Posts w/ Author"
+msgstr ""
+
+#: admin/class-settings.php:174
+msgid "Feature Status"
+msgstr ""
+
+#: admin/class-settings.php:198
+msgid "General Settings"
+msgstr ""
+
+#: admin/class-settings.php:199
+msgid "Post types, user roles, contribution display, and author archive URLs."
+msgstr ""
+
+#: admin/class-settings.php:202
+msgid "Post Types & Roles"
+msgstr ""
+
+#: admin/class-settings.php:206
+msgid "Show Author Box on"
+msgstr ""
+
+#: admin/class-settings.php:206
+msgid "Author boxes are auto-inserted on these post types."
+msgstr ""
+
+#: admin/class-settings.php:208
+msgid "Allowed Editor Roles"
+msgstr ""
+
+#: admin/class-settings.php:208
+msgid "Roles that can assign authors to posts."
+msgstr ""
+
+#: admin/class-settings.php:210
+msgid "Allow Guest Without Email"
+msgstr ""
+
+#: admin/class-settings.php:210
+msgid "Permit creating guest authors without an email address."
+msgstr ""
+
+#: admin/class-settings.php:212
+msgid "Show \"Powered by TrustBio\""
+msgstr ""
+
+#: admin/class-settings.php:212
+msgid "Display a small attribution link in the author box footer."
+msgstr ""
+
+#: admin/class-settings.php:216
+msgid "Contribution Count"
+msgstr ""
+
+#: admin/class-settings.php:220
+msgid "Show Contribution Count"
+msgstr ""
+
+#: admin/class-settings.php:220
+msgid "Display how many posts this author has contributed."
+msgstr ""
+
+#: admin/class-settings.php:222
+msgid "Contribution Noun (plural)"
+msgstr ""
+
+#: admin/class-settings.php:222
+msgid "e.g. \"articles\", \"posts\", \"recipes\""
+msgstr ""
+
+#: admin/class-settings.php:224
+msgid "Minimum to Display"
+msgstr ""
+
+#: admin/class-settings.php:224
+msgid "Only show the count once it reaches this number."
+msgstr ""
+
+#: admin/class-settings.php:228
+msgid "Author Archive & Profiles"
+msgstr ""
+
+#: admin/class-settings.php:232
+msgid "Author URL Base"
+msgstr ""
+
+#: admin/class-settings.php:232
+msgid "URL segment used for author profile pages."
+msgstr ""
+
+#: admin/class-settings.php:234
+msgid "Archive for Registered Authors"
+msgstr ""
+
+#: admin/class-settings.php:234
+msgid "Enable public profile pages for WP-linked authors."
+msgstr ""
+
+#: admin/class-settings.php:236
+msgid "Archive for Guest Authors"
+msgstr ""
+
+#: admin/class-settings.php:236
+msgid "Enable public profile pages for guest (non-WP) authors."
+msgstr ""
+
+#: admin/class-settings.php:238
+msgid "Enable Paginated Archives"
+msgstr ""
+
+#: admin/class-settings.php:238
+msgid "Show a paginated list of posts on each author profile page."
+msgstr ""
+
+#: admin/class-settings.php:240
+msgid "Posts Per Page"
+msgstr ""
+
+#: admin/class-settings.php:240
+msgid "How many posts to display per page in author archives."
+msgstr ""
+
+#: admin/class-settings.php:242
+msgid "Archive Hero Background"
+msgstr ""
+
+#: admin/class-settings.php:242
+msgid "Background colour for the author archive hero section."
+msgstr ""
+
+#: admin/class-settings.php:244
+msgid "Archive Accent Colour"
+msgstr ""
+
+#: admin/class-settings.php:244
+msgid "Accent colour for links and highlights in the archive."
+msgstr ""
+
+#: admin/class-settings.php:246
+msgid "Gravatar Fallback"
+msgstr ""
+
+#: admin/class-settings.php:246
+msgid "Default image when no Gravatar is found."
+msgstr ""
+
+#: admin/class-settings.php:248
+msgid "Mystery Person"
+msgstr ""
+
+#: admin/class-settings.php:249
+msgid "Identicon (geometric)"
+msgstr ""
+
+#: admin/class-settings.php:250
+msgid "MonsterID"
+msgstr ""
+
+#: admin/class-settings.php:251
+msgid "Wavatar"
+msgstr ""
+
+#: admin/class-settings.php:252
+msgid "Retro (8-bit)"
+msgstr ""
+
+#: admin/class-settings.php:253
+msgid "Blank"
+msgstr ""
+
+#: admin/class-settings.php:267
+msgid "Author Box Settings"
+msgstr ""
+
+#: admin/class-settings.php:268
+msgid "Control how and where author boxes are displayed on your posts."
+msgstr ""
+
+#: admin/class-settings.php:273
+msgid "Auto-Insert Position"
+msgstr ""
+
+#: admin/class-settings.php:273
+msgid "Where the author box is inserted relative to post content."
+msgstr ""
+
+#: admin/class-settings.php:275 admin/class-settings.php:322
+msgid "After content"
+msgstr ""
+
+#: admin/class-settings.php:276 admin/class-settings.php:321
+msgid "Before content"
+msgstr ""
+
+#: admin/class-settings.php:277
+msgid "Before and after"
+msgstr ""
+
+#: admin/class-settings.php:278
+msgid "Manual only (shortcode / block)"
+msgstr ""
+
+#: admin/class-settings.php:282
+msgid "Auto-Insert on Posts"
+msgstr ""
+
+#: admin/class-settings.php:282
+msgid "Automatically append the author box to all posts."
+msgstr ""
+
+#: admin/class-settings.php:284
+msgid "Auto-Insert on Pages"
+msgstr ""
+
+#: admin/class-settings.php:284
+msgid "Automatically append the author box to all pages."
+msgstr ""
+
+#: admin/class-settings.php:286
+msgid "Exclude Post IDs"
+msgstr ""
+
+#: admin/class-settings.php:286
+msgid "Comma-separated IDs where the author box should not appear."
+msgstr ""
+
+#: admin/class-settings.php:298
+msgid "Last Review Bar Settings"
+msgstr ""
+
+#: admin/class-settings.php:299
+msgid "Configure how last-reviewed dates are displayed and tracked."
+msgstr ""
+
+#: admin/class-settings.php:304
+msgid "Review Date Display"
+msgstr ""
+
+#: admin/class-settings.php:304
+msgid "Where the review date appears on posts."
+msgstr ""
+
+#: admin/class-settings.php:306
+msgid "Inline in author box"
+msgstr ""
+
+#: admin/class-settings.php:308
+msgid "Both inline and bar"
+msgstr ""
+
+#: admin/class-settings.php:309
+msgid "Hidden (meta only)"
+msgstr ""
+
+#: admin/class-settings.php:313
+msgid "Default Review Label"
+msgstr ""
+
+#: admin/class-settings.php:313
+msgid "e.g. \"Medically reviewed by\" or \"Fact-checked by\""
+msgstr ""
+
+#: admin/class-settings.php:315
+msgid "Stale After (months)"
+msgstr ""
+
+#: admin/class-settings.php:315
+msgid "Content without a review in this many months is flagged as stale."
+msgstr ""
+
+#: admin/class-settings.php:317
+msgid "Show Column in Posts List"
+msgstr ""
+
+#: admin/class-settings.php:317
+msgid "Add a \"Last Reviewed\" column to the WP posts list table."
+msgstr ""
+
+#: admin/class-settings.php:319
+msgid "Review Bar Position"
+msgstr ""
+
+#: admin/class-settings.php:319
+msgid "Where the review bar appears within post content."
+msgstr ""
+
+#: admin/class-settings.php:326
+msgid "Attach Bar to Author Box"
+msgstr ""
+
+#: admin/class-settings.php:326
+msgid "Render the review bar immediately adjacent to the author box."
+msgstr ""
+
+#: admin/class-settings.php:338
+msgid "Advanced Settings"
+msgstr ""
+
+#: admin/class-settings.php:339
+msgid "Schema output, REST API, AI Readiness modules, and developer options."
+msgstr ""
+
+#: admin/class-settings.php:342
+msgid "Schema / JSON-LD"
+msgstr ""
+
+#: admin/class-settings.php:346
+msgid "Enable Schema Output"
+msgstr ""
+
+#: admin/class-settings.php:346
+msgid "Inject Author/Person JSON-LD structured data into the &lt;head&gt;."
+msgstr ""
+
+#: admin/class-settings.php:348
+msgid "Schema Compatibility Mode"
+msgstr ""
+
+#: admin/class-settings.php:348
+msgid "Broader markup compatible with other schema plugins."
+msgstr ""
+
+#: admin/class-settings.php:350
+msgid "Enable REST API"
+msgstr ""
+
+#: admin/class-settings.php:350
+msgid "Expose TrustBio author data via the WP REST API."
+msgstr ""
+
+#: admin/class-settings.php:352
+msgid "Debug Mode"
+msgstr ""
+
+#: admin/class-settings.php:352
+msgid "Output extra diagnostic information (visible to admins only)."
+msgstr ""
+
+#: admin/class-settings.php:378
+msgid "Copy and paste any shortcode into a post, page, or widget to embed TrustBio elements."
+msgstr ""
+
+#: admin/class-settings.php:384 admin/views/dashboard.php:455
+msgid "Author Box"
+msgstr ""
+
+#: admin/class-settings.php:388
+msgid "Outputs the author box for the current post. Place anywhere inside post content."
+msgstr ""
+
+#: admin/class-settings.php:390
+msgid "Show a specific author by their TrustBio author ID."
+msgstr ""
+
+#: admin/class-settings.php:391
+msgid "Show a specific author by their URL slug."
+msgstr ""
+
+#: admin/class-settings.php:392
+msgid "Use a specific author box by its title."
+msgstr ""
+
+#: admin/class-settings.php:393
+msgid "Only show authors in a specific author category."
+msgstr ""
+
+#: admin/class-settings.php:399
+msgid "Last Review Bar"
+msgstr ""
+
+#: admin/class-settings.php:403
+msgid "Inserts the last-reviewed bar. Useful when auto-insert is disabled."
+msgstr ""
+
+#: admin/class-settings.php:405
+msgid "Show the review data for a different post."
+msgstr ""
+
+#: admin/class-settings.php:406
+msgid "Render as inline text instead of a bar."
+msgstr ""
+
+#: admin/class-settings.php:407
+msgid "Override the review label for this instance."
+msgstr ""
+
+#: admin/class-settings.php:446
+msgid "Copy"
+msgstr ""
+
+#: admin/class-settings.php:452
+msgid "Attribute"
+msgstr ""
+
+#: admin/class-settings.php:453
+msgid "Description"
+msgstr ""
+
+#: admin/class-settings.php:479
+msgid "Cache management, data export / import, and uninstall options."
+msgstr ""
+
+#: admin/class-settings.php:484
+msgid "Flush Rewrite Rules"
+msgstr ""
+
+#: admin/class-settings.php:485
+msgid "Regenerate URL rules after changing the author URL base."
+msgstr ""
+
+#: admin/class-settings.php:486
+msgid "Flush Rewrites"
+msgstr ""
+
+#: admin/class-settings.php:490 admin/class-settings.php:492
+msgid "Clear Cache"
+msgstr ""
+
+#: admin/class-settings.php:491
+msgid "Delete all TrustBio transients and cached data."
+msgstr ""
+
+#: admin/class-settings.php:496
+msgid "Export Data"
+msgstr ""
+
+#: admin/class-settings.php:497
+msgid "Download all authors, boxes, and review bars as a JSON file."
+msgstr ""
+
+#: admin/class-settings.php:498
+msgid "Export"
+msgstr ""
+
+#: admin/class-settings.php:503
+msgid "Import Data"
+msgstr ""
+
+#: admin/class-settings.php:507
+msgid "Import JSON"
+msgstr ""
+
+#: admin/class-settings.php:508
+msgid "Paste a TrustBio export file. Existing records are updated; nothing is deleted."
+msgstr ""
+
+#: admin/class-settings.php:513
+msgid "Import"
+msgstr ""
+
+#: admin/class-settings.php:520
+msgid "Danger Zone"
+msgstr ""
+
+#: admin/class-settings.php:523
+msgid "Delete All Data on Uninstall"
+msgstr ""
+
+#: admin/class-settings.php:523
+msgid "Permanently remove all TrustBio data when the plugin is deleted. This cannot be undone."
+msgstr ""
+
+#: admin/class-settings.php:589
+msgid "Show last-reviewed dates on posts."
+msgstr ""
+
+#: admin/class-settings.php:589
+msgid "Expert review dates with bar layouts and stale tracking."
+msgstr ""
+
+#: admin/class-settings.php:590
+msgid "Schema Output"
+msgstr ""
+
+#: admin/class-settings.php:590
+msgid "JSON-LD author & FAQ schema in head."
+msgstr ""
+
+#: admin/class-settings.php:590
+msgid "Structured data Google uses for E-E-A-T evaluation."
+msgstr ""
+
+#: admin/class-settings.php:744
+msgid "Settings saved successfully."
+msgstr ""
+
+#: admin/class-settings.php:764
+msgid "Feature settings saved. Reload the page to see menu changes."
+msgstr ""
+
+#: admin/class-settings.php:782
+msgid "Rewrite rules flushed. Author URLs are now active."
+msgstr ""
+
+#: admin/class-settings.php:803
+msgid "Cache cleared successfully."
+msgstr ""
+
+#: admin/class-settings.php:842
+msgid "No data provided."
+msgstr ""
+
+#: admin/class-settings.php:849
+msgid "Invalid import file. Please use a file exported from TrustBio."
+msgstr ""
+
+#. translators: %1$d: total, %2$d: authors, %3$d: boxes, %4$d: review bars
+#: admin/class-settings.php:906
+msgid "Import complete. %1$d items: %2$d authors, %3$d boxes, %4$d review bars."
+msgstr ""
+
+#: admin/partials/layout.php:57
+msgid "Support"
+msgstr ""
+
+#: admin/partials/layout.php:102 admin/views/dashboard.php:184
+msgid "Categories"
+msgstr ""
+
+#: admin/views/author-box.php:45 admin/views/dashboard.php:323
+msgid "New Author Box"
+msgstr ""
+
+#: admin/views/author-box.php:45
+msgid "Edit Author Box"
+msgstr ""
+
+#: admin/views/author-box.php:54
+msgid "← All Boxes"
+msgstr ""
+
+#: admin/views/author-box.php:58 admin/views/author-box.php:468
+msgid "Save Box"
+msgstr ""
+
+#: admin/views/author-box.php:77
+msgid "Box Name"
+msgstr ""
+
+#: admin/views/author-box.php:78
+msgid "e.g. Classic Stack"
+msgstr ""
+
+#: admin/views/author-box.php:86 public/js/trustbio-author-block.js:265
+msgid "Layout"
+msgstr ""
+
+#: admin/views/author-box.php:87
+msgid "Style"
+msgstr ""
+
+#: admin/views/author-box.php:88
+msgid "Typography"
+msgstr ""
+
+#: admin/views/author-box.php:89
+msgid "Social Icons"
+msgstr ""
+
+#: admin/views/author-box.php:95 admin/views/review-bar.php:87
+msgid "Select a Layout"
+msgstr ""
+
+#: admin/views/author-box.php:99 admin/views/author-box.php:604
+#: admin/views/dashboard.php:535
+msgid "Avatar · name · bio · socials"
+msgstr ""
+
+#: admin/views/author-box.php:100
+msgid "Bio as serif pull-quote"
+msgstr ""
+
+#: admin/views/author-box.php:101
+msgid "Hairline rules · no background"
+msgstr ""
+
+#: admin/views/author-box.php:102
+msgid "Square avatar · divider · follow"
+msgstr ""
+
+#: admin/views/author-box.php:133
+msgid "Box Background & Border"
+msgstr ""
+
+#: admin/views/author-box.php:137
+msgid "Background Color"
+msgstr ""
+
+#: admin/views/author-box.php:144
+msgid "Border Color"
+msgstr ""
+
+#: admin/views/author-box.php:154
+msgid "Border Width (px)"
+msgstr ""
+
+#: admin/views/author-box.php:158
+msgid "Border Radius (px)"
+msgstr ""
+
+#: admin/views/author-box.php:162
+msgid "Padding (px)"
+msgstr ""
+
+#: admin/views/author-box.php:168
+msgid "Border Style"
+msgstr ""
+
+#: admin/views/author-box.php:170
+msgid "None"
+msgstr ""
+
+#: admin/views/author-box.php:170
+msgid "Solid"
+msgstr ""
+
+#: admin/views/author-box.php:170
+msgid "Dashed"
+msgstr ""
+
+#: admin/views/author-box.php:170
+msgid "Dotted"
+msgstr ""
+
+#: admin/views/author-box.php:177
+msgid "Border Width per Side (px)"
+msgstr ""
+
+#: admin/views/author-box.php:180
+msgid "Top"
+msgstr ""
+
+#: admin/views/author-box.php:184
+msgid "Right"
+msgstr ""
+
+#: admin/views/author-box.php:188
+msgid "Bottom"
+msgstr ""
+
+#: admin/views/author-box.php:192
+msgid "Left"
+msgstr ""
+
+#: admin/views/author-box.php:196
+msgid "Set only one side for accent-border layouts (e.g. left:4 for Banner style)."
+msgstr ""
+
+#: admin/views/author-box.php:205
+msgid "Show box shadow"
+msgstr ""
+
+#: admin/views/author-box.php:210
+msgid "Button"
+msgstr ""
+
+#: admin/views/author-box.php:213
+msgid "Button Background"
+msgstr ""
+
+#: admin/views/author-box.php:220
+msgid "Button Text Color"
+msgstr ""
+
+#: admin/views/author-box.php:227
+msgid "Applies to Follow, View all posts, and CTA buttons."
+msgstr ""
+
+#: admin/views/author-box.php:230
+msgid "Avatar"
+msgstr ""
+
+#: admin/views/author-box.php:234
+msgid "Avatar Size (px)"
+msgstr ""
+
+#: admin/views/author-box.php:239
+msgid "Avatar Shape"
+msgstr ""
+
+#: admin/views/author-box.php:241
+msgid "Circle"
+msgstr ""
+
+#: admin/views/author-box.php:241
+msgid "Rounded"
+msgstr ""
+
+#: admin/views/author-box.php:241
+msgid "Square"
+msgstr ""
+
+#: admin/views/author-box.php:256
+msgid "Font Style"
+msgstr ""
+
+#: admin/views/author-box.php:259
+msgid "Heading Font"
+msgstr ""
+
+#: admin/views/author-box.php:261
+msgid "Classic Serif (default)"
+msgstr ""
+
+#: admin/views/author-box.php:262
+msgid "Modern Sans"
+msgstr ""
+
+#: admin/views/author-box.php:263
+msgid "Humanist"
+msgstr ""
+
+#: admin/views/author-box.php:264
+msgid "Elegant Serif"
+msgstr ""
+
+#: admin/views/author-box.php:265 admin/views/author-box.php:274
+msgid "Inherit from Theme"
+msgstr ""
+
+#: admin/views/author-box.php:267
+msgid "Used for author name across all layouts."
+msgstr ""
+
+#: admin/views/author-box.php:270
+msgid "Label Font"
+msgstr ""
+
+#: admin/views/author-box.php:272
+msgid "Monospace (default)"
+msgstr ""
+
+#: admin/views/author-box.php:273
+msgid "Same as Heading"
+msgstr ""
+
+#: admin/views/author-box.php:276
+msgid "Used for role labels and kicker text."
+msgstr ""
+
+#: admin/views/author-box.php:281 admin/views/dashboard.php:500
+msgid "Author Name"
+msgstr ""
+
+#: admin/views/author-box.php:284 admin/views/author-box.php:307
+#: admin/views/author-box.php:322 admin/views/author-box.php:343
+msgid "Color"
+msgstr ""
+
+#: admin/views/author-box.php:291 admin/views/author-box.php:314
+#: admin/views/author-box.php:329 admin/views/author-box.php:350
+msgid "Font Size (px)"
+msgstr ""
+
+#: admin/views/author-box.php:295 admin/views/author-box.php:354
+msgid "Weight"
+msgstr ""
+
+#: admin/views/author-box.php:304 admin/views/author-profile.php:284
+#: admin/views/authors-list.php:110 admin/views/authors-list.php:314
+#: admin/views/dashboard.php:504
+msgid "Job Title"
+msgstr ""
+
+#: admin/views/author-box.php:319
+msgid "Bio / Description"
+msgstr ""
+
+#: admin/views/author-box.php:335
+msgid "Bio Character Limit"
+msgstr ""
+
+#: admin/views/author-box.php:337
+msgid "Truncate bio to this many characters in the author box. Set to 0 for no limit."
+msgstr ""
+
+#: admin/views/author-box.php:340
+msgid "Category Label"
+msgstr ""
+
+#: admin/views/author-box.php:369
+msgid "Icon Size (px)"
+msgstr ""
+
+#: admin/views/author-box.php:374
+msgid "Icon Color"
+msgstr ""
+
+#: admin/views/author-box.php:379
+msgid "Applies to Filled Color and Outline styles."
+msgstr ""
+
+#: admin/views/author-box.php:384
+msgid "Icon Style"
+msgstr ""
+
+#: admin/views/author-box.php:388
+msgid "Filled Color"
+msgstr ""
+
+#: admin/views/author-box.php:389
+msgid "Monochrome"
+msgstr ""
+
+#: admin/views/author-box.php:390
+msgid "Outline"
+msgstr ""
+
+#: admin/views/author-box.php:409 admin/views/review-date-metabox.php:25
+msgid "Review Date"
+msgstr ""
+
+#: admin/views/author-box.php:417
+msgid "Show Last Reviewed Date"
+msgstr ""
+
+#: admin/views/author-box.php:419
+msgid "Displays the review date set via the Review Date meta box, when the post's reviewer matches this author."
+msgstr ""
+
+#: admin/views/author-box.php:424
+msgid "Additional CSS Class(es)"
+msgstr ""
+
+#: admin/views/author-box.php:426
+msgid "Space-separated CSS classes added to the author box wrapper. Style them in Appearance → Customize → Additional CSS."
+msgstr ""
+
+#: admin/views/author-box.php:429
+msgid "How to add custom styles"
+msgstr ""
+
+#: admin/views/author-box.php:430
+msgid "Go to Appearance → Customize → Additional CSS and target your author box:"
+msgstr ""
+
+#: admin/views/author-box.php:441 admin/views/review-bar.php:229
+msgid "Live Preview"
+msgstr ""
+
+#: admin/views/author-box.php:454 admin/views/review-bar.php:243
+msgid "Loading preview…"
+msgstr ""
+
+#: admin/views/author-box.php:496
+msgid "Design and manage author box layouts for your site."
+msgstr ""
+
+#: admin/views/author-box.php:502
+msgid "Add New Box"
+msgstr ""
+
+#: admin/views/author-box.php:517
+msgid "Design your first author box"
+msgstr ""
+
+#: admin/views/author-box.php:518
+msgid "Choose from 9 professional layouts. Every setting is fully customizable — colors, fonts, social icons, and more."
+msgstr ""
+
+#: admin/views/author-box.php:520
+msgid "9 unique layouts"
+msgstr ""
+
+#: admin/views/author-box.php:521
+msgid "Live preview builder"
+msgstr ""
+
+#: admin/views/author-box.php:522
+msgid "Auto-insert on posts"
+msgstr ""
+
+#: admin/views/author-box.php:524
+msgid "+ Create First Author Box"
+msgstr ""
+
+#: admin/views/author-box.php:533 admin/views/review-bar.php:320
+msgid "★ Default"
+msgstr ""
+
+#: admin/views/author-box.php:544 admin/views/author-category.php:213
+#: admin/views/author-fields.php:197 admin/views/credentials.php:295
+#: admin/views/review-bar.php:331
+msgid "Edit"
+msgstr ""
+
+#: admin/views/author-box.php:552 admin/views/review-bar.php:339
+msgid "Set as Default"
+msgstr ""
+
+#: admin/views/author-box.php:554 admin/views/review-bar.php:341
+msgid "Duplicate"
+msgstr ""
+
+#: admin/views/author-box.php:556 admin/views/author-category.php:219
+#: admin/views/author-fields.php:200 admin/views/author-profile.php:515
+#: admin/views/authors-list.php:277 admin/views/credentials.php:299
+#: admin/views/review-bar.php:343
+msgid "Delete"
+msgstr ""
+
+#: admin/views/author-box.php:579
+msgid "Choose a Layout"
+msgstr ""
+
+#: admin/views/author-box.php:580
+msgid "Pick a design — every setting is fully customizable after."
+msgstr ""
+
+#: admin/views/author-box.php:583 admin/views/dashboard.php:463
+msgid "Close"
+msgstr ""
+
+#: admin/views/author-box.php:625
+msgid "Bio as serif pull-quote + CTA"
+msgstr ""
+
+#: admin/views/author-box.php:644
+msgid "Hairline rules, no background"
+msgstr ""
+
+#: admin/views/author-box.php:662
+msgid "Square avatar · divider · Follow button"
+msgstr ""
+
+#: admin/views/author-category.php:30
+msgid "author — standard post author"
+msgstr ""
+
+#: admin/views/author-category.php:31
+msgid "reviewedBy — medical / clinical reviewer"
+msgstr ""
+
+#: admin/views/author-category.php:32
+msgid "contributor — contributor or co-author"
+msgstr ""
+
+#: admin/views/author-category.php:33
+msgid "editor — editor or managing editor"
+msgstr ""
+
+#: admin/views/author-category.php:47
+msgid "Define roles like Writer, Medical Reviewer, Clinical Reviewer and more."
+msgstr ""
+
+#: admin/views/author-category.php:53
+msgid "← Back to List"
+msgstr ""
+
+#: admin/views/author-category.php:67
+msgid "Edit Category"
+msgstr ""
+
+#: admin/views/author-category.php:67
+msgid "Add New Category"
+msgstr ""
+
+#: admin/views/author-category.php:74
+msgid "Singular Name"
+msgstr ""
+
+#: admin/views/author-category.php:75 admin/views/dashboard.php:480
+msgid "e.g. Medical Reviewer"
+msgstr ""
+
+#: admin/views/author-category.php:76
+msgid "Used when there is a single author in this category."
+msgstr ""
+
+#: admin/views/author-category.php:80
+msgid "Plural Name"
+msgstr ""
+
+#: admin/views/author-category.php:81
+msgid "e.g. Medical Reviewers"
+msgstr ""
+
+#: admin/views/author-category.php:85 admin/views/author-category.php:200
+#: admin/views/dashboard.php:483
+msgid "Display Label"
+msgstr ""
+
+#: admin/views/author-category.php:86
+msgid "e.g. Medically Reviewed By"
+msgstr ""
+
+#: admin/views/author-category.php:87
+msgid "Text shown above the author box on the frontend. Leave blank to use the Singular Name."
+msgstr ""
+
+#: admin/views/author-category.php:91
+msgid "Schema Property"
+msgstr ""
+
+#: admin/views/author-category.php:97
+msgid "Controls how this category appears in JSON-LD schema output."
+msgstr ""
+
+#: admin/views/author-category.php:101
+msgid "Contribution Verb"
+msgstr ""
+
+#: admin/views/author-category.php:102
+msgid "e.g. Written, Reviewed, Edited"
+msgstr ""
+
+#: admin/views/author-category.php:103
+msgid "Past-tense verb shown in the contribution count badge. e.g. \"Written 47 articles\" or \"Reviewed 12 articles\"."
+msgstr ""
+
+#: admin/views/author-category.php:107
+msgid "Contribution Noun"
+msgstr ""
+
+#: admin/views/author-category.php:108
+msgid "e.g. article"
+msgstr ""
+
+#: admin/views/author-category.php:109
+msgid "Singular noun for the count badge. Plural is set in Settings → General. e.g. \"article\" → \"Written 47 articles\"."
+msgstr ""
+
+#: admin/views/author-category.php:113
+msgid "Post Types"
+msgstr ""
+
+#: admin/views/author-category.php:121
+msgid "All post types"
+msgstr ""
+
+#: admin/views/author-category.php:134 admin/views/author-fields.php:97
+msgid "Sort Order"
+msgstr ""
+
+#: admin/views/author-category.php:139 admin/views/author-category.php:203
+#: admin/views/author-fields.php:184 admin/views/author-profile.php:183
+#: admin/views/authors-list.php:257
+msgid "Status"
+msgstr ""
+
+#: admin/views/author-category.php:145
+msgid "Enable this category"
+msgstr ""
+
+#: admin/views/author-category.php:153
+msgid "Update Category"
+msgstr ""
+
+#: admin/views/author-category.php:153
+msgid "Add Category"
+msgstr ""
+
+#: admin/views/author-category.php:156 admin/views/authors-list.php:189
+msgid "Cancel"
+msgstr ""
+
+#: admin/views/author-category.php:158 admin/views/author-fields.php:133
+#: admin/views/author-profile.php:491 admin/views/credentials.php:192
+msgid "Clear"
+msgstr ""
+
+#: admin/views/author-category.php:175
+msgid "Search categories…"
+msgstr ""
+
+#. translators: %d: number of author categories
+#: admin/views/author-category.php:182
+msgid "%d category"
+msgid_plural "%d categories"
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/views/author-category.php:189
+msgid "No categories yet"
+msgstr ""
+
+#: admin/views/author-category.php:190
+msgid "Add your first author category using the form on the left."
+msgstr ""
+
+#: admin/views/author-category.php:198
+msgid "Name"
+msgstr ""
+
+#: admin/views/author-category.php:199
+msgid "Plural"
+msgstr ""
+
+#: admin/views/author-category.php:201 admin/views/credentials.php:259
+msgid "Schema"
+msgstr ""
+
+#: admin/views/author-category.php:202 admin/views/author-fields.php:77
+#: admin/views/author-fields.php:180 admin/views/author-profile.php:167
+msgid "Slug"
+msgstr ""
+
+#: admin/views/author-category.php:215
+msgid "Disable"
+msgstr ""
+
+#: admin/views/author-category.php:215 admin/views/dashboard.php:378
+msgid "Enable"
+msgstr ""
+
+#: admin/views/author-category.php:228
+msgid "Enabled"
+msgstr ""
+
+#: admin/views/author-category.php:228 admin/views/author-fields.php:38
+#: admin/views/author-fields.php:208
+msgid "Disabled"
+msgstr ""
+
+#: admin/views/author-fields.php:36
+msgid "All"
+msgstr ""
+
+#: admin/views/author-fields.php:39 admin/views/author-fields.php:182
+msgid "Social"
+msgstr ""
+
+#: admin/views/author-fields.php:40
+msgid "Text Fields"
+msgstr ""
+
+#: admin/views/author-fields.php:52
+msgid "Manage social profiles and custom fields shown in author boxes."
+msgstr ""
+
+#: admin/views/author-fields.php:65
+msgid "Edit Field"
+msgstr ""
+
+#: admin/views/author-fields.php:65
+msgid "Add New Field"
+msgstr ""
+
+#: admin/views/author-fields.php:72 admin/views/author-fields.php:179
+msgid "Label"
+msgstr ""
+
+#: admin/views/author-fields.php:73
+msgid "e.g. LinkedIn"
+msgstr ""
+
+#: admin/views/author-fields.php:78
+msgid "auto-generated"
+msgstr ""
+
+#: admin/views/author-fields.php:79
+msgid "Auto-generated from the label. Cannot be changed after creation."
+msgstr ""
+
+#: admin/views/author-fields.php:83
+msgid "Field Type"
+msgstr ""
+
+#: admin/views/author-fields.php:85
+msgid "Link (URL)"
+msgstr ""
+
+#: admin/views/author-fields.php:86
+msgid "Text"
+msgstr ""
+
+#: admin/views/author-fields.php:87
+msgid "Textarea"
+msgstr ""
+
+#: admin/views/author-fields.php:92
+msgid "Placeholder"
+msgstr ""
+
+#: admin/views/author-fields.php:93
+msgid "e.g. https://linkedin.com/in/yourprofile"
+msgstr ""
+
+#: admin/views/author-fields.php:102
+msgid "Options"
+msgstr ""
+
+#: admin/views/author-fields.php:109
+msgid "Show as social icon in author box"
+msgstr ""
+
+#: admin/views/author-fields.php:116
+msgid "Required field"
+msgstr ""
+
+#: admin/views/author-fields.php:123
+msgid "Active (visible in author profiles)"
+msgstr ""
+
+#: admin/views/author-fields.php:131
+msgid "Update Field"
+msgstr ""
+
+#: admin/views/author-fields.php:131
+msgid "Add Field"
+msgstr ""
+
+#: admin/views/author-fields.php:141
+msgid "Built-in Fields"
+msgstr ""
+
+#: admin/views/author-fields.php:142
+msgid "Built-in fields can be enabled or disabled but not deleted. Custom fields you add can be fully managed."
+msgstr ""
+
+#: admin/views/author-fields.php:161
+msgid "Drag rows to change display order"
+msgstr ""
+
+#. translators: %d: number of author fields
+#: admin/views/author-fields.php:166
+msgid "%d field"
+msgid_plural "%d fields"
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/views/author-fields.php:172
+msgid "No fields found"
+msgstr ""
+
+#: admin/views/author-fields.php:181 admin/views/author-profile.php:171
+#: admin/views/authors-list.php:252
+msgid "Type"
+msgstr ""
+
+#: admin/views/author-fields.php:183 admin/views/author-fields.php:207
+msgid "Required"
+msgstr ""
+
+#: admin/views/author-fields.php:195
+msgid "built-in"
+msgstr ""
+
+#: admin/views/author-fields.php:198 admin/views/authors-list.php:276
+msgid "Deactivate"
+msgstr ""
+
+#: admin/views/author-fields.php:198 admin/views/authors-list.php:276
+msgid "Activate"
+msgstr ""
+
+#: admin/views/author-fields.php:206 admin/views/credentials.php:319
+msgid "Yes"
+msgstr ""
+
+#: admin/views/author-fields.php:206 admin/views/credentials.php:319
+msgid "No"
+msgstr ""
+
+#: admin/views/author-fields.php:207
+msgid "Optional"
+msgstr ""
+
+#. translators: %s: author display name
+#: admin/views/author-profile.php:85
+msgid "Edit Profile: %s"
+msgstr ""
+
+#: admin/views/author-profile.php:96 admin/views/authors-list.php:32
+#: admin/views/authors-list.php:71
+msgid "Registered User"
+msgstr ""
+
+#: admin/views/author-profile.php:96 admin/views/authors-list.php:33
+msgid "Guest Author"
+msgstr ""
+
+#: admin/views/author-profile.php:103
+msgid "← All Authors"
+msgstr ""
+
+#: admin/views/author-profile.php:107 admin/views/author-profile.php:580
+msgid "Save Profile"
+msgstr ""
+
+#: admin/views/author-profile.php:149 admin/views/authors-list.php:156
+msgid "Upload Photo"
+msgstr ""
+
+#: admin/views/author-profile.php:152
+msgid "Remove Photo"
+msgstr ""
+
+#: admin/views/author-profile.php:154
+msgid "Falls back to Gravatar if no photo is uploaded."
+msgstr ""
+
+#: admin/views/author-profile.php:164
+msgid "Author Info"
+msgstr ""
+
+#: admin/views/author-profile.php:172 admin/views/authors-list.php:285
+msgid "Registered"
+msgstr ""
+
+#: admin/views/author-profile.php:172 admin/views/authors-list.php:285
+msgid "Guest"
+msgstr ""
+
+#: admin/views/author-profile.php:178 admin/views/authors-list.php:253
+#: admin/views/dashboard.php:445
+msgid "Category"
+msgstr ""
+
+#: admin/views/author-profile.php:206
+msgid "Added"
+msgstr ""
+
+#: admin/views/author-profile.php:227
+msgid "Social Profiles"
+msgstr ""
+
+#: admin/views/author-profile.php:231
+msgid "SEO & Schema"
+msgstr ""
+
+#: admin/views/author-profile.php:245 admin/views/authors-list.php:317
+msgid "Expertise"
+msgstr ""
+
+#: admin/views/author-profile.php:255 admin/views/authors-list.php:99
+msgid "Display Name"
+msgstr ""
+
+#: admin/views/author-profile.php:260 admin/views/authors-list.php:133
+msgid "Default Author Category"
+msgstr ""
+
+#: admin/views/author-profile.php:262 public/class-author-block.php:145
+msgid "— None —"
+msgstr ""
+
+#: admin/views/author-profile.php:269
+msgid "Default category used when this author is added to a new post."
+msgstr ""
+
+#: admin/views/author-profile.php:273 admin/views/authors-list.php:105
+#: admin/views/authors-list.php:251 admin/views/dashboard.php:508
+msgid "Email"
+msgstr ""
+
+#: admin/views/author-profile.php:275
+msgid "Used for Gravatar if no custom photo is uploaded."
+msgstr ""
+
+#: admin/views/author-profile.php:279 admin/views/authors-list.php:123
+msgid "Website"
+msgstr ""
+
+#: admin/views/author-profile.php:285 admin/views/authors-list.php:111
+msgid "e.g. MD, Addiction Medicine"
+msgstr ""
+
+#: admin/views/author-profile.php:290 admin/views/authors-list.php:129
+msgid "e.g. MD, PhD, LCSW"
+msgstr ""
+
+#: admin/views/author-profile.php:296
+msgid "Biographical Info"
+msgstr ""
+
+#: admin/views/author-profile.php:297
+msgid "Write a short biography about this author…"
+msgstr ""
+
+#: admin/views/author-profile.php:298
+msgid "HTML is allowed. Shown below the author name in the author box."
+msgstr ""
+
+#: admin/views/author-profile.php:303
+msgid "Additional Fields"
+msgstr ""
+
+#: admin/views/author-profile.php:325
+msgid "No social fields active"
+msgstr ""
+
+#. translators: %s: link to Author Fields page
+#: admin/views/author-profile.php:330
+msgid "Go to %s to activate social profile fields."
+msgstr ""
+
+#: admin/views/author-profile.php:339
+msgid "Social profile URLs marked with ★ are used as sameAs authority signals in JSON-LD schema output."
+msgstr ""
+
+#: admin/views/author-profile.php:351
+msgid "Used in schema sameAs"
+msgstr ""
+
+#: admin/views/author-profile.php:379
+msgid "How E-E-A-T Schema Works"
+msgstr ""
+
+#: admin/views/author-profile.php:380
+msgid "TrustBio auto-generates JSON-LD structured data for this author on every post they are assigned to. Social profile URLs from the Social Profiles tab are automatically added to the sameAs array. The fields below give you additional control."
+msgstr ""
+
+#: admin/views/author-profile.php:385
+msgid "Schema jobTitle Override"
+msgstr ""
+
+#: admin/views/author-profile.php:387
+msgid "Override the job title used in JSON-LD schema only. Leave blank to use the Job Title from the General tab."
+msgstr ""
+
+#: admin/views/author-profile.php:391
+msgid "Additional sameAs URLs"
+msgstr ""
+
+#: admin/views/author-profile.php:393
+msgid "One URL per line. Added to the schema sameAs array alongside social profile URLs. Use for Wikipedia, Google Knowledge Panel, academic profiles, etc."
+msgstr ""
+
+#: admin/views/author-profile.php:399
+msgid "Schema Preview (read-only)"
+msgstr ""
+
+#: admin/views/author-profile.php:422
+msgid "Test with Google Rich Results ↗"
+msgstr ""
+
+#: admin/views/author-profile.php:441
+msgid "ADD CREDENTIAL"
+msgstr ""
+
+#: admin/views/author-profile.php:446 admin/views/credentials.php:119
+msgid "Badge Type"
+msgstr ""
+
+#: admin/views/author-profile.php:453 admin/views/credentials.php:129
+msgid "Preview:"
+msgstr ""
+
+#: admin/views/author-profile.php:458 admin/views/credentials.php:135
+msgid "Credential Name"
+msgstr ""
+
+#: admin/views/author-profile.php:459 admin/views/credentials.php:136
+msgid "e.g. Board Certified in Addiction Medicine"
+msgstr ""
+
+#: admin/views/author-profile.php:462 admin/views/credentials.php:256
+msgid "Issuing Body"
+msgstr ""
+
+#: admin/views/author-profile.php:463 admin/views/credentials.php:142
+msgid "e.g. American Board of Addiction Medicine"
+msgstr ""
+
+#: admin/views/author-profile.php:466 admin/views/credentials.php:164
+msgid "Verification URL"
+msgstr ""
+
+#: admin/views/author-profile.php:471 admin/views/credentials.php:153
+msgid "Issue Date"
+msgstr ""
+
+#: admin/views/author-profile.php:475 admin/views/credentials.php:157
+msgid "Expiry Date"
+msgstr ""
+
+#: admin/views/author-profile.php:482
+msgid "Show badge"
+msgstr ""
+
+#: admin/views/author-profile.php:486
+msgid "Include in schema"
+msgstr ""
+
+#: admin/views/author-profile.php:498
+msgid "EXISTING CREDENTIALS"
+msgstr ""
+
+#: admin/views/author-profile.php:501
+msgid "No credentials added yet. Use the form to add the first one."
+msgstr ""
+
+#: admin/views/author-profile.php:513 admin/views/credentials.php:306
+msgid "Expired"
+msgstr ""
+
+#: admin/views/author-profile.php:534
+msgid "Select the topic areas this author specialises in. Checked categories appear as knowsAbout in JSON-LD schema, signalling E-E-A-T expertise to search engines and AI engines."
+msgstr ""
+
+#: admin/views/author-profile.php:538
+msgid "No categories found. Create some WordPress categories first."
+msgstr ""
+
+#: admin/views/author-profile.php:559
+msgid "Save Expertise Topics"
+msgstr ""
+
+#: admin/views/author-profile.php:577
+msgid "View Profile ↗"
+msgstr ""
+
+#: admin/views/authors-list.php:31
+msgid "All Authors"
+msgstr ""
+
+#: admin/views/authors-list.php:45
+msgid "Manage registered and guest author profiles."
+msgstr ""
+
+#: admin/views/authors-list.php:51
+msgid "Add Author"
+msgstr ""
+
+#: admin/views/authors-list.php:63 admin/views/dashboard.php:318
+msgid "Add New Author"
+msgstr ""
+
+#: admin/views/authors-list.php:64
+msgid "✕ Close"
+msgstr ""
+
+#: admin/views/authors-list.php:72
+msgid "Guest Author With Email"
+msgstr ""
+
+#: admin/views/authors-list.php:74
+msgid "Guest Author Without Email"
+msgstr ""
+
+#: admin/views/authors-list.php:88
+msgid "Select WordPress User"
+msgstr ""
+
+#: admin/views/authors-list.php:88
+msgid "Links this author profile to an existing WordPress user account. Their login email is used to fetch a Gravatar automatically."
+msgstr ""
+
+#: admin/views/authors-list.php:91
+msgid "Search WordPress users…"
+msgstr ""
+
+#: admin/views/authors-list.php:99
+msgid "The name shown publicly in author boxes and schema markup. Use the author's full professional name for best E-E-A-T impact."
+msgstr ""
+
+#: admin/views/authors-list.php:100
+msgid "e.g. Dr. John Smith"
+msgstr ""
+
+#: admin/views/authors-list.php:101
+msgid "This is all you need to save an author. Everything else can be filled in later."
+msgstr ""
+
+#: admin/views/authors-list.php:105
+msgid "Used to fetch a Gravatar profile photo. Not displayed publicly unless you add an email field to your author box layout."
+msgstr ""
+
+#: admin/views/authors-list.php:106 admin/views/dashboard.php:509
+msgid "author@example.com"
+msgstr ""
+
+#: admin/views/authors-list.php:110
+msgid "Shown in the author box and included in JSON-LD schema as jobTitle. Be specific — e.g. Registered Dietitian rather than Writer — for stronger E-E-A-T signals."
+msgstr ""
+
+#: admin/views/authors-list.php:115 admin/views/authors-list.php:313
+msgid "Bio"
+msgstr ""
+
+#: admin/views/authors-list.php:115
+msgid "A short biography displayed in the author box. Focus on professional background and expertise relevant to your content topics. 50–150 words is ideal."
+msgstr ""
+
+#: admin/views/authors-list.php:116
+msgid "Author biography…"
+msgstr ""
+
+#: admin/views/authors-list.php:120
+msgid "More details (optional)"
+msgstr ""
+
+#: admin/views/authors-list.php:123
+msgid "The author's personal or professional website URL. Included in schema markup and can be shown as a link in the author box."
+msgstr ""
+
+#: admin/views/authors-list.php:128
+msgid "Free-text credentials shown in the author box (e.g. MD, FACP). For verified credentials with expiry dates and schema support, use the Credentials screen after saving."
+msgstr ""
+
+#: admin/views/authors-list.php:133
+msgid "Defines the author's role: Writer, Reviewer, Expert, etc. Controls the verb in the contribution count badge and which fields appear in the author box."
+msgstr ""
+
+#: admin/views/authors-list.php:135
+msgid "— Select Category —"
+msgstr ""
+
+#: admin/views/authors-list.php:148
+msgid "Author Photo"
+msgstr ""
+
+#: admin/views/authors-list.php:148
+msgid "Upload a professional headshot. If blank, TrustBio falls back to Gravatar, then to the default avatar set in Settings → Author Profiles."
+msgstr ""
+
+#: admin/views/authors-list.php:161
+msgid "Upload a custom photo. Falls back to Gravatar if not set."
+msgstr ""
+
+#: admin/views/authors-list.php:166
+msgid "Social & custom fields (optional)"
+msgstr ""
+
+#: admin/views/authors-list.php:188
+msgid "Save Author"
+msgstr ""
+
+#. translators: %d: number of authors
+#: admin/views/authors-list.php:225
+msgid "%d author"
+msgid_plural "%d authors"
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/views/authors-list.php:235 admin/views/credentials.php:80
+#: admin/views/dashboard.php:364
+msgid "Add your first author"
+msgstr ""
+
+#: admin/views/authors-list.php:236
+msgid "Build trust and boost E-E-A-T by adding expert authors with credentials, photos, and social profiles."
+msgstr ""
+
+#: admin/views/authors-list.php:238
+msgid "Structured schema data"
+msgstr ""
+
+#: admin/views/authors-list.php:239
+msgid "Author archive pages"
+msgstr ""
+
+#: admin/views/authors-list.php:240
+msgid "Guest & registered authors"
+msgstr ""
+
+#: admin/views/authors-list.php:242
+msgid "+ Add First Author"
+msgstr ""
+
+#: admin/views/authors-list.php:250 admin/views/dashboard.php:450
+#: public/js/trustbio-author-block.js:146
+#: public/js/trustbio-author-block.js:248
+msgid "Author"
+msgstr ""
+
+#: admin/views/authors-list.php:254
+msgid "Author URL"
+msgstr ""
+
+#: admin/views/authors-list.php:255
+msgid "Posts"
+msgstr ""
+
+#: admin/views/authors-list.php:256
+msgid "Completeness"
+msgstr ""
+
+#: admin/views/authors-list.php:275
+msgid "Edit Profile"
+msgstr ""
+
+#: admin/views/authors-list.php:312
+msgid "Photo"
+msgstr ""
+
+#: admin/views/authors-list.php:315
+msgid "Social Link"
+msgstr ""
+
+#. translators: %s: comma-separated list of missing profile signals
+#: admin/views/authors-list.php:324
+msgid "Missing: %s"
+msgstr ""
+
+#. translators: %s: comma-separated list of missing profile signals
+#: admin/views/authors-list.php:325
+msgid "Profile complete"
+msgstr ""
+
+#: admin/views/credentials.php:43
+msgid "Credential Manager"
+msgstr ""
+
+#. translators: %s: author display name
+#: admin/views/credentials.php:49
+msgid "Managing credentials for %s"
+msgstr ""
+
+#: admin/views/credentials.php:54
+msgid "Manage professional credentials and verification badges for your authors."
+msgstr ""
+
+#: admin/views/credentials.php:62
+msgid "← Back to Profile"
+msgstr ""
+
+#: admin/views/credentials.php:78
+msgid "No authors yet"
+msgstr ""
+
+#: admin/views/credentials.php:79
+msgid "Credentials belong to an author, so add your first author and you can attach their qualifications here."
+msgstr ""
+
+#: admin/views/credentials.php:85
+msgid "Select an Author"
+msgstr ""
+
+#: admin/views/credentials.php:87
+msgid "Choose an author to manage their professional credentials."
+msgstr ""
+
+#: admin/views/credentials.php:91
+msgid "— Select Author —"
+msgstr ""
+
+#: admin/views/credentials.php:96
+msgid "Manage Credentials"
+msgstr ""
+
+#: admin/views/credentials.php:119
+msgid "Professional: formal qualifications and board certifications. Certification: course completions, certificates. Award: industry recognitions. Membership: professional body memberships."
+msgstr ""
+
+#: admin/views/credentials.php:135
+msgid "The formal name of the qualification — e.g. Registered Dietitian (RD), Certified Financial Planner (CFP). Use the official abbreviation where one exists."
+msgstr ""
+
+#: admin/views/credentials.php:137
+msgid "Full name of the credential. Shown in schema and on hover."
+msgstr ""
+
+#: admin/views/credentials.php:141
+msgid "Issuing Body / Organization"
+msgstr ""
+
+#: admin/views/credentials.php:141
+msgid "The organisation that awarded this credential — e.g. American Board of Internal Medicine. Included in schema output to add credibility."
+msgstr ""
+
+#: admin/views/credentials.php:146
+msgid "License / Certificate Number"
+msgstr ""
+
+#: admin/views/credentials.php:146
+msgid "Optional. The official license or certificate number. Not displayed publicly — stored for your records and schema output only."
+msgstr ""
+
+#: admin/views/credentials.php:147
+msgid "e.g. 12345 (optional, kept private)"
+msgstr ""
+
+#: admin/views/credentials.php:148
+msgid "Stored securely, never displayed publicly."
+msgstr ""
+
+#: admin/views/credentials.php:153
+msgid "When this credential was awarded. Included in schema as the startDate. Leave blank if the issue date is not known."
+msgstr ""
+
+#: admin/views/credentials.php:157
+msgid "Leave blank for credentials that do not expire (e.g. a university degree). Expired credentials are automatically excluded from E-E-A-T scores and schema output."
+msgstr ""
+
+#: admin/views/credentials.php:159
+msgid "Expired credentials are hidden from the frontend automatically."
+msgstr ""
+
+#: admin/views/credentials.php:164
+msgid "A public URL where this credential can be verified online — e.g. a state medical board lookup page. Included in schema as url on the credential."
+msgstr ""
+
+#: admin/views/credentials.php:166
+msgid "Link to a public verification page (license lookup, board certification portal, etc.). Badge becomes clickable."
+msgstr ""
+
+#: admin/views/credentials.php:170 admin/views/review-bar.php:160
+msgid "Display Options"
+msgstr ""
+
+#: admin/views/credentials.php:170
+msgid "Show Badge: display this credential as a visible badge in the author box. Show in Schema: include it in JSON-LD structured data. You can mix these independently."
+msgstr ""
+
+#: admin/views/credentials.php:177
+msgid "Show badge beside author name in author boxes"
+msgstr ""
+
+#: admin/views/credentials.php:184
+msgid "Include in JSON-LD schema (hasCredential)"
+msgstr ""
+
+#: admin/views/credentials.php:201
+msgid "How Credentials Work"
+msgstr ""
+
+#: admin/views/credentials.php:205
+msgid "Badges appear inline beside the author name in the box."
+msgstr ""
+
+#: admin/views/credentials.php:209
+msgid "Set a verification URL to make the badge clickable — links to the official license lookup page."
+msgstr ""
+
+#: admin/views/credentials.php:213
+msgid "Expired credentials are automatically hidden on the frontend."
+msgstr ""
+
+#: admin/views/credentials.php:217
+msgid "Schema credentials output as hasCredential in JSON-LD — a direct E-E-A-T signal for Google."
+msgstr ""
+
+#. translators: %s: author display name
+#: admin/views/credentials.php:232
+msgid "Credentials for %s"
+msgstr ""
+
+#: admin/views/credentials.php:237
+msgid "%d credential"
+msgid_plural "%d credentials"
+msgstr[0] ""
+msgstr[1] ""
+
+#: admin/views/credentials.php:245
+msgid "No credentials yet"
+msgstr ""
+
+#: admin/views/credentials.php:246
+msgid "Add professional credentials using the form. They will appear as badges beside the author name."
+msgstr ""
+
+#: admin/views/credentials.php:254 admin/views/credentials.php:258
+msgid "Badge"
+msgstr ""
+
+#: admin/views/credentials.php:255
+msgid "Credential"
+msgstr ""
+
+#: admin/views/credentials.php:257
+msgid "Expiry"
+msgstr ""
+
+#: admin/views/credentials.php:281
+msgid "Verify ↗"
+msgstr ""
+
+#: admin/views/credentials.php:309
+msgid "No expiry"
+msgstr ""
+
+#: admin/views/credentials.php:314
+msgid "Shown"
+msgstr ""
+
+#: admin/views/credentials.php:314
+msgid "Hidden"
+msgstr ""
+
+#: admin/views/credentials.php:330
+msgid "Drag rows to change badge display order."
+msgstr ""
+
+#: admin/views/dashboard.php:144
+msgid "Your TrustBio E-E-A-T command centre"
+msgstr ""
+
+#: admin/views/dashboard.php:150
+msgid "Setup Guide"
+msgstr ""
+
+#: admin/views/dashboard.php:221
+msgid "Content Health"
+msgstr ""
+
+#: admin/views/dashboard.php:224
+msgid "View all posts →"
+msgstr ""
+
+#: admin/views/dashboard.php:232
+msgid "Enable to track content review dates and monitor freshness across your posts."
+msgstr ""
+
+#: admin/views/dashboard.php:233
+msgid "Enable Module →"
+msgstr ""
+
+#: admin/views/dashboard.php:242
+msgid "posts reviewed"
+msgstr ""
+
+#: admin/views/dashboard.php:248
+msgid "reviewed"
+msgstr ""
+
+#: admin/views/dashboard.php:252
+msgid "overdue"
+msgstr ""
+
+#: admin/views/dashboard.php:257
+msgid "All up to date"
+msgstr ""
+
+#: admin/views/dashboard.php:262
+msgid "No published posts found. Content health tracking will appear once you publish posts."
+msgstr ""
+
+#: admin/views/dashboard.php:266
+msgid "Recently Reviewed"
+msgstr ""
+
+#: admin/views/dashboard.php:275
+msgid "ago"
+msgstr ""
+
+#: admin/views/dashboard.php:284
+msgid "by"
+msgstr ""
+
+#: admin/views/dashboard.php:294
+msgid "No reviewed posts yet. Open any post and set a review date."
+msgstr ""
+
+#: admin/views/dashboard.php:310
+msgid "Quick Actions"
+msgstr ""
+
+#: admin/views/dashboard.php:329 admin/views/review-bar.php:46
+msgid "New Review Bar"
+msgstr ""
+
+#: admin/views/dashboard.php:335
+msgid "Export / Import Data"
+msgstr ""
+
+#: admin/views/dashboard.php:347
+msgid "Setup Checklist"
+msgstr ""
+
+#: admin/views/dashboard.php:350
+msgid "Complete"
+msgstr ""
+
+#: admin/views/dashboard.php:358
+msgid "Create an author category"
+msgstr ""
+
+#: admin/views/dashboard.php:360 admin/views/dashboard.php:384
+msgid "Create"
+msgstr ""
+
+#: admin/views/dashboard.php:366
+msgid "Add"
+msgstr ""
+
+#: admin/views/dashboard.php:370
+msgid "Design an author box"
+msgstr ""
+
+#: admin/views/dashboard.php:372
+msgid "Design"
+msgstr ""
+
+#: admin/views/dashboard.php:376
+msgid "Schema output enabled"
+msgstr ""
+
+#: admin/views/dashboard.php:382
+msgid "Create a last-review bar"
+msgstr ""
+
+#: admin/views/dashboard.php:460
+msgid "Go Live"
+msgstr ""
+
+#: admin/views/dashboard.php:475
+msgid "Create an Author Category"
+msgstr ""
+
+#: admin/views/dashboard.php:476
+msgid "Categories define author roles — e.g. \"Medical Reviewer\", \"Expert Author\", or \"Editor\"."
+msgstr ""
+
+#: admin/views/dashboard.php:479
+msgid "Category Name"
+msgstr ""
+
+#: admin/views/dashboard.php:484
+msgid "e.g. Medically reviewed by"
+msgstr ""
+
+#: admin/views/dashboard.php:485
+msgid "Shown before the author's name on post pages."
+msgstr ""
+
+#: admin/views/dashboard.php:496
+msgid "Add Your First Author"
+msgstr ""
+
+#: admin/views/dashboard.php:497
+msgid "Add an expert author or reviewer. You can add more anytime from the Authors page."
+msgstr ""
+
+#: admin/views/dashboard.php:501
+msgid "e.g. Dr. Jane Smith"
+msgstr ""
+
+#: admin/views/dashboard.php:505
+msgid "e.g. MD, Internal Medicine"
+msgstr ""
+
+#: admin/views/dashboard.php:520
+msgid "Choose an Author Box Layout"
+msgstr ""
+
+#: admin/views/dashboard.php:521
+msgid "Pick a starting style — every color and setting can be customized after."
+msgstr ""
+
+#: admin/views/dashboard.php:548
+msgid "Clean editorial style"
+msgstr ""
+
+#: admin/views/dashboard.php:563
+msgid "Bio as a pull-quote"
+msgstr ""
+
+#: admin/views/dashboard.php:577
+msgid "Square avatar, divider"
+msgstr ""
+
+#: admin/views/dashboard.php:588
+msgid "Your E-E-A-T setup is ready!"
+msgstr ""
+
+#: admin/views/dashboard.php:589
+msgid "Here's what was created. You can edit anything from the TrustBio menu."
+msgstr ""
+
+#: admin/views/dashboard.php:598
+msgid "Manage Authors"
+msgstr ""
+
+#: admin/views/dashboard.php:602
+msgid "Customize Box"
+msgstr ""
+
+#: admin/views/dashboard.php:616
+msgid "Back"
+msgstr ""
+
+#: admin/views/dashboard.php:621
+msgid "Continue"
+msgstr ""
+
+#: admin/views/dashboard.php:626
+msgid "Done"
+msgstr ""
+
+#: admin/views/features.php:47
+msgid "Core Modules"
+msgstr ""
+
+#: admin/views/features.php:48
+msgid "The foundational features every TrustBio site should have."
+msgstr ""
+
+#: admin/views/features.php:62
+msgid "Add-on Modules"
+msgstr ""
+
+#: admin/views/features.php:63
+msgid "Modules provided by TrustBio Pro."
+msgstr ""
+
+#: admin/views/features.php:94
+msgid "Sidebar Author Boxes"
+msgstr ""
+
+#: admin/views/features.php:95
+msgid "Five sidebar layouts, a widget and the [trustbio_sidebar] shortcode."
+msgstr ""
+
+#: admin/views/features.php:99
+msgid "NPI Registry Verification"
+msgstr ""
+
+#: admin/views/features.php:100
+msgid "Checks a credential against the US provider registry instead of taking a typed URL on trust."
+msgstr ""
+
+#: admin/views/features.php:104
+msgid "Credential Audit"
+msgstr ""
+
+#: admin/views/features.php:105
+msgid "A dated, exportable record of every credential on the site and its status that day."
+msgstr ""
+
+#: admin/views/features.php:109
+msgid "Credential Change Log"
+msgstr ""
+
+#: admin/views/features.php:110
+msgid "Every change recorded with the old value, the new value and who made it."
+msgstr ""
+
+#: admin/views/features.php:114
+msgid "Credential Expiry Reminders"
+msgstr ""
+
+#: admin/views/features.php:115
+msgid "Email before a credential lapses, so it is renewed rather than quietly hidden."
+msgstr ""
+
+#: admin/views/features.php:119
+msgid "Reviewer Workflow"
+msgstr ""
+
+#: admin/views/features.php:120
+msgid "Ask a named reviewer to check a post by a date, chase it, and record the result."
+msgstr ""
+
+#: admin/views/features.php:124
+msgid "Content Review Scheduler"
+msgstr ""
+
+#: admin/views/features.php:125
+msgid "Every published post ranked by how overdue its expert review is."
+msgstr ""
+
+#: admin/views/features.php:129
+msgid "Front-end Profile Editing"
+msgstr ""
+
+#: admin/views/features.php:130
+msgid "Authors update their own profile from the front end, into a review queue."
+msgstr ""
+
+#: admin/views/features.php:134
+msgid "Medical Schema"
+msgstr ""
+
+#: admin/views/features.php:135
+msgid "Adds MedicalWebPage, Physician and related types for YMYL pages."
+msgstr ""
+
+#: admin/views/features.php:139
+msgid "ORCID Publications"
+msgstr ""
+
+#: admin/views/features.php:140
+msgid "Pulls an author&#8217;s publication list from the ORCID iD already on their profile."
+msgstr ""
+
+#: admin/views/features.php:144
+msgid "Disclosure Blocks"
+msgstr ""
+
+#: admin/views/features.php:145
+msgid "Reusable funding, conflict-of-interest and medical disclaimer statements."
+msgstr ""
+
+#: admin/views/features.php:149
+msgid "Team Directory"
+msgstr ""
+
+#: admin/views/features.php:150
+msgid "An &#8220;our team&#8221; page built from the profiles you already keep."
+msgstr ""
+
+#: admin/views/features.php:154
+msgid "Author Importers"
+msgstr ""
+
+#: admin/views/features.php:155
+msgid "Import from Co-Authors Plus, PublishPress Authors, Molongui or a CSV."
+msgstr ""
+
+#: admin/views/features.php:170
+msgid "Feature Modules"
+msgstr ""
+
+#: admin/views/features.php:171
+msgid "Enable only what you need — disabled modules remove their nav items and stop processing."
+msgstr ""
+
+#: admin/views/features.php:227
+msgid "Available in TrustBio Pro"
+msgstr ""
+
+#: admin/views/features.php:229
+msgid "A separate add-on, not part of this plugin. These are not switched off here — they are not installed."
+msgstr ""
+
+#: admin/views/features.php:230
+msgid "See what it adds"
+msgstr ""
+
+#: admin/views/features.php:244
+msgid "Pro"
+msgstr ""
+
+#: admin/views/features.php:245
+msgid "Learn more"
+msgstr ""
+
+#: admin/views/post-sidebar/classic-metabox.php:47
+msgid "No authors assigned. Search below to add."
+msgstr ""
+
+#: admin/views/post-sidebar/classic-metabox.php:59
+msgid "— Category —"
+msgstr ""
+
+#: admin/views/post-sidebar/classic-metabox.php:67
+msgid "Remove author"
+msgstr ""
+
+#: admin/views/post-sidebar/classic-metabox.php:83
+msgid "Regular Author Box"
+msgstr ""
+
+#: admin/views/post-sidebar/classic-metabox.php:85
+msgid "— Default —"
+msgstr ""
+
+#: admin/views/post-sidebar/classic-metabox.php:88
+msgid "default"
+msgstr ""
+
+#: admin/views/review-bar.php:46
+msgid "Edit Review Bar"
+msgstr ""
+
+#: admin/views/review-bar.php:55
+msgid "← All Review Bars"
+msgstr ""
+
+#: admin/views/review-bar.php:78
+msgid "Bar Name"
+msgstr ""
+
+#: admin/views/review-bar.php:79
+msgid "e.g. My Review Bar"
+msgstr ""
+
+#: admin/views/review-bar.php:92
+msgid "Classic Bar"
+msgstr ""
+
+#: admin/views/review-bar.php:93
+msgid "Checkmark icon + accent border. Healthline-style."
+msgstr ""
+
+#: admin/views/review-bar.php:97
+msgid "Plain text byline. Zero visual weight."
+msgstr ""
+
+#: admin/views/review-bar.php:129
+msgid "Appearance"
+msgstr ""
+
+#: admin/views/review-bar.php:132
+msgid "Accent Color"
+msgstr ""
+
+#: admin/views/review-bar.php:140
+msgid "Label Text"
+msgstr ""
+
+#: admin/views/review-bar.php:141
+msgid "Use site default label"
+msgstr ""
+
+#: admin/views/review-bar.php:150
+msgid "Show MD, PhD etc. after reviewer name."
+msgstr ""
+
+#: admin/views/review-bar.php:169
+msgid "Show Checkmark Icon"
+msgstr ""
+
+#: admin/views/review-bar.php:181
+msgid "Show Reviewer Avatar"
+msgstr ""
+
+#: admin/views/review-bar.php:188
+msgid "Badge Label Text"
+msgstr ""
+
+#: admin/views/review-bar.php:189
+msgid "e.g. REVIEWED"
+msgstr ""
+
+#: admin/views/review-bar.php:195
+msgid "Pill Style"
+msgstr ""
+
+#: admin/views/review-bar.php:197
+msgid "Filled (solid color)"
+msgstr ""
+
+#: admin/views/review-bar.php:198
+msgid "Outlined (border only)"
+msgstr ""
+
+#: admin/views/review-bar.php:205
+msgid "Corner Radius (px)"
+msgstr ""
+
+#: admin/views/review-bar.php:212
+msgid "Dark Background Color"
+msgstr ""
+
+#: admin/views/review-bar.php:234
+msgid "Refresh Preview"
+msgstr ""
+
+#: admin/views/review-bar.php:283
+msgid "Design expert review bar templates shown on your posts."
+msgstr ""
+
+#: admin/views/review-bar.php:289
+msgid "+ New Review Bar"
+msgstr ""
+
+#: admin/views/review-bar.php:304
+msgid "Show expert review status"
+msgstr ""
+
+#: admin/views/review-bar.php:305
+msgid "Add a \"Medically reviewed by\" or \"Fact-checked by\" bar to your posts. 6 trust-signal layouts to choose from."
+msgstr ""
+
+#: admin/views/review-bar.php:307
+msgid "6 unique layouts"
+msgstr ""
+
+#: admin/views/review-bar.php:308
+msgid "Reviewer photo & name"
+msgstr ""
+
+#: admin/views/review-bar.php:309
+msgid "Stale content alerts"
+msgstr ""
+
+#: admin/views/review-bar.php:311
+msgid "+ Create First Review Bar"
+msgstr ""
+
+#: admin/views/review-date-metabox.php:33
+msgid "Date this content was last expert-reviewed."
+msgstr ""
+
+#: admin/views/review-date-metabox.php:38
+msgid "Reviewed By"
+msgstr ""
+
+#: admin/views/review-date-metabox.php:41
+msgid "— Select reviewer —"
+msgstr ""
+
+#: admin/views/review-date-metabox.php:51
+msgid "Optional. The person who reviewed this content. All active TrustBio authors are listed."
+msgstr ""
+
+#: admin/views/review-date-metabox.php:56
+msgid "Display"
+msgstr ""
+
+#: admin/views/review-date-metabox.php:59
+msgid "— Use site default —"
+msgstr ""
+
+#: admin/views/review-date-metabox.php:62
+msgid "Both (box + bar)"
+msgstr ""
+
+#: admin/views/review-date-metabox.php:69
+msgid "Custom Label"
+msgstr ""
+
+#: admin/views/review-date-metabox.php:77
+msgid "Override the default label for this post only."
+msgstr ""
+
+#: admin/views/review-date-metabox.php:84
+msgid "Review Bar Template"
+msgstr ""
+
+#: admin/views/review-date-metabox.php:87
+msgid "— Site Default —"
+msgstr ""
+
+#: admin/views/review-date-metabox.php:94
+msgid "Override the review bar template for this post only."
+msgstr ""
+
+#: admin/views/upgrade.php:48
+msgid "Verification"
+msgstr ""
+
+#: admin/views/upgrade.php:52
+msgid "NPI Registry verification"
+msgstr ""
+
+#: admin/views/upgrade.php:53
+msgid "You can type a verification URL against a credential."
+msgstr ""
+
+#: admin/views/upgrade.php:54
+msgid "Checks the claim against the CMS National Provider Identifier registry and records what came back."
+msgstr ""
+
+#: admin/views/upgrade.php:57
+msgid "Credential change log"
+msgstr ""
+
+#: admin/views/upgrade.php:58
+msgid "Anyone with manage_options can edit a credential; no record is kept."
+msgstr ""
+
+#: admin/views/upgrade.php:59
+msgid "Every create, edit and delete is logged with who did it and when."
+msgstr ""
+
+#: admin/views/upgrade.php:62
+msgid "Credential audit"
+msgstr ""
+
+#: admin/views/upgrade.php:63
+msgid "The Credentials screen shows the current state."
+msgstr ""
+
+#: admin/views/upgrade.php:64
+msgid "A dated, exportable record of every credential on the site and its status on the day it was taken."
+msgstr ""
+
+#: admin/views/upgrade.php:67
+msgid "Expiry reminders"
+msgstr ""
+
+#: admin/views/upgrade.php:68
+msgid "A lapsed credential is hidden on the page and in the JSON-LD."
+msgstr ""
+
+#: admin/views/upgrade.php:69
+msgid "Email reminders before it lapses, so it is renewed rather than silently dropped."
+msgstr ""
+
+#: admin/views/upgrade.php:74
+msgid "Editorial workflow"
+msgstr ""
+
+#: admin/views/upgrade.php:78
+msgid "Reviewer workflow"
+msgstr ""
+
+#: admin/views/upgrade.php:79
+msgid "You can display \"medically reviewed by X on <date>\"."
+msgstr ""
+
+#: admin/views/upgrade.php:80
+msgid "Ask a named reviewer to check a post by a date, chase it when it slips, and record the result."
+msgstr ""
+
+#: admin/views/upgrade.php:83
+msgid "Content review scheduler"
+msgstr ""
+
+#: admin/views/upgrade.php:84
+msgid "The last review date is stored and shown."
+msgstr ""
+
+#: admin/views/upgrade.php:85
+msgid "Recurring review cycles across the whole library, so nothing quietly goes stale."
+msgstr ""
+
+#: admin/views/upgrade.php:88
+msgid "Front-end profile editing"
+msgstr ""
+
+#: admin/views/upgrade.php:89
+msgid "Profiles are edited in wp-admin by someone with manage_options."
+msgstr ""
+
+#: admin/views/upgrade.php:90
+msgid "Authors update their own bio, links and photo from the front end, without an admin account."
+msgstr ""
+
+#: admin/views/upgrade.php:93
+msgid "Author health and leaderboard"
+msgstr ""
+
+#: admin/views/upgrade.php:94
+msgid "Each author shows a completeness count."
+msgstr ""
+
+#: admin/views/upgrade.php:95
+msgid "A composite E-E-A-T score per author, ranked, with the gaps listed."
+msgstr ""
+
+#: admin/views/upgrade.php:100
+msgid "Structured data and publishing"
+msgstr ""
+
+#: admin/views/upgrade.php:104
+msgid "Deeper medical schema"
+msgstr ""
+
+#: admin/views/upgrade.php:105
+msgid "Emits an Article with author, reviewer and review date."
+msgstr ""
+
+#: admin/views/upgrade.php:106
+msgid "Adds Physician, MedicalWebPage and related types for YMYL sites."
+msgstr ""
+
+#: admin/views/upgrade.php:109
+msgid "ORCID publications"
+msgstr ""
+
+#: admin/views/upgrade.php:110
+msgid "An author's ORCID iD is stored and emitted in sameAs."
+msgstr ""
+
+#: admin/views/upgrade.php:111
+msgid "Pulls their publication list from ORCID and renders it on the profile."
+msgstr ""
+
+#: admin/views/upgrade.php:114
+msgid "Disclosure blocks"
+msgstr ""
+
+#: admin/views/upgrade.php:115
+msgid "Disclaimers are written by hand into each post."
+msgstr ""
+
+#: admin/views/upgrade.php:116
+msgid "Reusable funding, conflict-of-interest and medical disclaimer blocks."
+msgstr ""
+
+#: admin/views/upgrade.php:119
+msgid "Team directory"
+msgstr ""
+
+#: admin/views/upgrade.php:120
+msgid "Authors appear under posts, in boxes and on archives."
+msgstr ""
+
+#: admin/views/upgrade.php:121
+msgid "A single \"our team\" page listing everyone, grouped and filterable."
+msgstr ""
+
+#: admin/views/upgrade.php:126
+msgid "Placement and migration"
+msgstr ""
+
+#: admin/views/upgrade.php:130
+msgid "Sidebar author boxes"
+msgstr ""
+
+#: admin/views/upgrade.php:131
+msgid "Boxes render with the post content."
+msgstr ""
+
+#: admin/views/upgrade.php:132
+msgid "A widget and shortcode for sidebars, with their own builder."
+msgstr ""
+
+#: admin/views/upgrade.php:135
+msgid "Elementor integration"
+msgstr ""
+
+#: admin/views/upgrade.php:136
+msgid "Authors are assigned in the block editor and the classic editor."
+msgstr ""
+
+#: admin/views/upgrade.php:137
+msgid "A TrustBio section in Elementor's Document Settings panel."
+msgstr ""
+
+#: admin/views/upgrade.php:140
+msgid "Author importers"
+msgstr ""
+
+#: admin/views/upgrade.php:141
+msgid "Authors are added by hand."
+msgstr ""
+
+#: admin/views/upgrade.php:142
+msgid "One-click import from Co-Authors Plus, PublishPress Authors, Molongui and CSV."
+msgstr ""
+
+#: admin/views/upgrade.php:145
+msgid "Extra layouts"
+msgstr ""
+
+#: admin/views/upgrade.php:146
+msgid "Eight author box layouts and five review bar layouts."
+msgstr ""
+
+#: admin/views/upgrade.php:147
+msgid "Further layouts for both, in the same builders."
+msgstr ""
+
+#: admin/views/upgrade.php:155
+msgid "Does the free plugin stop working, or expire?"
+msgstr ""
+
+#: admin/views/upgrade.php:156
+msgid "No. Everything in TrustBio works forever, on any number of sites, with no account and no key. Nothing here is time-limited and nothing is switched off later. The features listed on this page are not in this plugin at all — they are in a separate add-on."
+msgstr ""
+
+#: admin/views/upgrade.php:159
+msgid "Is Pro a replacement for this plugin?"
+msgstr ""
+
+#: admin/views/upgrade.php:160
+msgid "No, it is an add-on. You keep TrustBio installed and updated from WordPress.org, and Pro installs alongside it. If you ever deactivate Pro, the free plugin and all your data carry on exactly as before."
+msgstr ""
+
+#: admin/views/upgrade.php:163
+msgid "What happens to my data if I upgrade, then cancel?"
+msgstr ""
+
+#: admin/views/upgrade.php:164
+msgid "Authors, credentials, categories, boxes and review bars all live in the free plugin's own tables, so they are unaffected. You lose the Pro screens, not your content."
+msgstr ""
+
+#: admin/views/upgrade.php:167
+msgid "Why is Pro not on WordPress.org?"
+msgstr ""
+
+#: admin/views/upgrade.php:168
+msgid "The directory hosts free plugins, and its guidelines do not allow a hosted plugin to carry locked or paid-only functionality. Keeping the paid code in a separate add-on is the arrangement the guidelines point to, and it is why this page describes Pro rather than showing you a disabled version of it."
+msgstr ""
+
+#: admin/views/upgrade.php:179
+msgid "A separate add-on for sites that need verification, review cycles and deeper structured data."
+msgstr ""
+
+#: admin/views/upgrade.php:184 admin/views/upgrade.php:249
+msgid "Get TrustBio Pro"
+msgstr ""
+
+#: admin/views/upgrade.php:194
+msgid "Everything TrustBio does is free and stays free. Nothing on this page is disabled inside this plugin waiting for a key — the features below ship in a separate add-on, and this screen is here to describe them so you can decide whether you need it."
+msgstr ""
+
+#: admin/views/upgrade.php:208
+msgid "Feature"
+msgstr ""
+
+#: admin/views/upgrade.php:209
+msgid "TrustBio (free)"
+msgstr ""
+
+#: admin/views/upgrade.php:229
+msgid "Questions"
+msgstr ""
+
+#: admin/views/upgrade.php:246
+msgid "Pro is a separate plugin, sold and licensed through Freemius. Plans, per-site pricing and checkout are on their page."
+msgstr ""
+
+#: includes/class-trustbio.php:264
+msgid "TrustBio could not create its database tables."
+msgstr ""
+
+#: includes/class-trustbio.php:265
+msgid "Deactivate and reactivate the plugin. If the problem continues, your database user may not have permission to create tables — ask your host."
+msgstr ""
+
+#: includes/helpers.php:547
+msgid "You do not have permission to perform this action."
+msgstr ""
+
+#. translators: %s: author display name
+#: public/class-author-archive.php:350
+msgid "Author profile for %s."
+msgstr ""
+
+#: public/class-author-block.php:43 public/class-author-block.php:185
+#: public/class-author-block.php:192 public/class-author-block.php:201
+#: public/class-author-block.php:208 public/js/trustbio-author-block.js:308
+msgid "TrustBio Author Box"
+msgstr ""
+
+#: public/class-author-block.php:44
+msgid "Display a TrustBio author profile box — fixed or current post's author."
+msgstr ""
+
+#: public/class-author-block.php:127 public/js/trustbio-author-block.js:40
+msgid "— Default layout —"
+msgstr ""
+
+#: public/class-author-block.php:186
+msgid "This block will show the current post's TrustBio author. Preview it on a published post."
+msgstr ""
+
+#: public/class-author-block.php:193
+msgid "No TrustBio author is assigned to this post."
+msgstr ""
+
+#: public/class-author-block.php:202
+msgid "Select an author in the block settings panel."
+msgstr ""
+
+#: public/class-public.php:361
+msgid "Written"
+msgstr ""
+
+#: public/class-public.php:364
+msgid "article"
+msgstr ""
+
+#: public/class-public.php:365 public/templates/author-archive.php:136
+msgid "articles"
+msgstr ""
+
+#: public/class-review-renderer.php:130
+#: public/templates/review/bar-classic.php:26
+msgid "on"
+msgstr ""
+
+#: public/js/trustbio-author-block.js:48
+msgid "— None (use Author Box above) —"
+msgstr ""
+
+#: public/js/trustbio-author-block.js:56
+msgid "Show post's author (changes per post)"
+msgstr ""
+
+#: public/js/trustbio-author-block.js:57
+msgid "Always show a specific author"
+msgstr ""
+
+#: public/js/trustbio-author-block.js:173
+msgid "Search authors"
+msgstr ""
+
+#: public/js/trustbio-author-block.js:176
+msgid "Type 2+ characters…"
+msgstr ""
+
+#: public/js/trustbio-author-block.js:242
+msgid "TrustBio Author Box — save the post to preview."
+msgstr ""
+
+#: public/js/trustbio-author-block.js:251
+msgid "Display mode"
+msgstr ""
+
+#: public/js/trustbio-author-block.js:268
+msgid "Author Box design"
+msgstr ""
+
+#: public/js/trustbio-author-block.js:278
+msgid "Or use a Sidebar Box"
+msgstr ""
+
+#: public/js/trustbio-author-block.js:288
+msgid "Show author bio"
+msgstr ""
+
+#: public/js/trustbio-author-block.js:294
+msgid "Show social links"
+msgstr ""
+
+#: public/js/trustbio-author-block.js:309
+msgid "Display a TrustBio author profile box."
+msgstr ""
+
+#: public/templates/author-archive.php:210
+msgid "Articles"
+msgstr ""
+
+#. translators: 1: verb e.g. "Written"  2: author name
+#: public/templates/author-archive.php:214
+msgid "%1$s by %2$s"
+msgstr ""
+
+#. translators: %d: estimated minutes to read
+#: public/templates/author-archive.php:274
+msgid "%d min read"
+msgid_plural "%d min read"
+msgstr[0] ""
+msgstr[1] ""
+
+#: public/templates/author-archive.php:293
+msgid "Older"
+msgstr ""
+
+#: public/templates/author-archive.php:294
+msgid "Newer"
+msgstr ""
+
+#: public/templates/author-archive.php:296
+msgid "Page"
+msgstr ""
+
+#: public/templates/author-archive.php:307
+msgid "No published posts yet."
+msgstr ""
+
+#. translators: 1: Required PHP version, 2: Current PHP version
+#: trustbio.php:58
+msgid "TrustBio requires PHP %1$s or higher. You are running PHP %2$s. Please upgrade PHP to activate TrustBio."
+msgstr ""
+
+#. translators: 1: Required WP version, 2: Current WP version
+#: trustbio.php:75
+msgid "TrustBio requires WordPress %1$s or higher. You are running WordPress %2$s. Please upgrade WordPress to activate TrustBio."
+msgstr ""
+

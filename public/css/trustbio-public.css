@@ -1,0 +1,1001 @@
+/*
+ * TrustBio Public Stylesheet — 9 Horizontal Author Box layouts.
+ *
+ * Structure: CSS classes for layout; inline styles only for user-chosen
+ * colours / sizes. Pseudo-elements and complex grids live here.
+ *
+ * @package TrustBio
+ */
+
+/* ============================================================
+   Shared base
+   ============================================================ */
+.trustbio-author-section {
+    margin: 40px 0 0;
+    clear: both;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.trustbio-box {
+    box-sizing: border-box;
+    position: relative;
+    --tb-font-heading: Georgia, Charter, 'Bitstream Charter', serif;
+    --tb-font-label:   ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+    --tb-btn-bg:       #15161a;
+    --tb-btn-color:    #ffffff;
+}
+
+.trustbio-box *,
+.trustbio-box *::before,
+.trustbio-box *::after {
+    box-sizing: border-box;
+}
+
+/* Stacked (multiple boxes one after another) */
+.trustbio-stack .trustbio-box + .trustbio-box { margin-top: 20px; }
+
+/* ============================================================
+   Shared sub-elements used across layouts
+   ============================================================ */
+.tb-kicker {
+    font-family: var(--tb-font-label);
+    font-size: var(--tb-label-size, 10px);
+    font-weight: var(--tb-label-weight, inherit);
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--tb-label-color, #8a877d);
+    margin-bottom: 6px;
+}
+
+.tb-name {
+    margin: 0 0 8px;
+    line-height: 1.15;
+}
+
+.tb-name a { color: inherit; text-decoration: none; }
+.tb-name a:hover { text-decoration: underline; }
+
+.tb-bio {
+    margin: 0 0 12px;
+    line-height: 1.6;
+}
+
+.tb-role {
+    font-family: var(--tb-font-label);
+    font-size: var(--tb-jobtitle-size, 10px);
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--tb-label-color, #8a877d);
+    margin-bottom: 6px;
+}
+
+.tb-socials {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.tb-social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    text-decoration: none;
+    flex-shrink: 0;
+    transition: transform .15s ease, opacity .15s ease;
+    background: var(--tb-icon-bg, #ece8e1);
+    border: var(--tb-icon-border, 0 solid transparent);
+    color: #15161a;
+    width: var(--tb-icon-chip, 30px);
+    height: var(--tb-icon-chip, 30px);
+}
+
+.tb-social-link:hover { transform: translateY(-2px); opacity: .82; }
+.tb-social-link svg { display: block; width: var(--tb-icon-size, 13px); height: var(--tb-icon-size, 13px); }
+
+/* ghost socials (minimal layout) */
+.tb-socials--ghost .tb-social-link {
+    background: transparent;
+    color: #6b6a66;
+    width: var(--tb-icon-chip, 26px);
+    height: var(--tb-icon-chip, 26px);
+}
+
+/* dark socials */
+.tb-socials--dark .tb-social-link {
+    background: rgba(255,255,255,.08);
+    color: #efece4;
+}
+
+/* ============================================================
+   01 — Classic Byline
+   ============================================================ */
+.trustbio-layout-byline {
+    background: #fff;
+    border: 1px solid #e6e0d0;
+    border-radius: 12px;
+    padding: 22px 24px;
+    box-shadow: var(--tb-shadow, 0 30px 60px -30px rgba(20,20,20,.18), 0 8px 20px -10px rgba(20,20,20,.08));
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 22px;
+    align-items: center;
+}
+
+.trustbio-layout-byline .tb-avatar {
+    width: var(--tb-avatar-size, 96px);
+    height: var(--tb-avatar-size, 96px);
+    border-radius: var(--tb-avatar-radius, 50%);
+    display: block;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.trustbio-layout-byline .tb-body { min-width: 0; }
+
+.trustbio-layout-byline .tb-name {
+    font-family: var(--tb-font-heading);
+    font-size: 28px;
+    line-height: 1;
+    letter-spacing: -.01em;
+}
+
+.trustbio-layout-byline .tb-bio { font-size: 14px; color: #36352f; max-width: 560px; }
+
+.trustbio-layout-byline .tb-side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+.trustbio-layout-byline .tb-meta {
+    font-family: var(--tb-font-label);
+    font-size: 11px;
+    letter-spacing: .12em;
+    color: #6b6a66;
+    text-transform: uppercase;
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.trustbio-layout-byline .tb-meta-dot {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #c0bbab;
+    flex-shrink: 0;
+}
+
+.trustbio-layout-byline .tb-meta b { color: #15161a; font-weight: 600; }
+
+/* ============================================================
+   02 — Magazine Split
+   ============================================================ */
+.trustbio-layout-magazine {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    min-height: 240px;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--tb-shadow, 0 30px 60px -30px rgba(20,20,20,.18), 0 8px 20px -10px rgba(20,20,20,.08));
+    background: #15161a;
+    color: #efece4;
+}
+
+.trustbio-layout-magazine .tb-portrait-col { position: relative; }
+
+.trustbio-layout-magazine .tb-portrait-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.trustbio-layout-magazine .tb-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    background: #fff;
+    color: #15161a;
+    font-family: var(--tb-font-label);
+    font-size: 10px;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    padding: 6px 10px;
+    border-radius: 999px;
+    z-index: 1;
+}
+
+.trustbio-layout-magazine .tb-right {
+    padding: 28px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.trustbio-layout-magazine .tb-role { color: #d9c08d; }
+
+.trustbio-layout-magazine .tb-name {
+    font-family: var(--tb-font-heading);
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 1;
+    letter-spacing: -.02em;
+    margin: 8px 0 14px;
+}
+
+.trustbio-layout-magazine .tb-bio {
+    font-size: 15px;
+    color: #c8c4ba;
+    max-width: 620px;
+}
+
+.trustbio-layout-magazine .tb-foot {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 18px;
+    border-top: 1px solid #2a2b31;
+    padding-top: 16px;
+}
+
+/* ============================================================
+   03 — Quote Card
+   ============================================================ */
+.trustbio-layout-quote {
+    background: #fbf8f1;
+    border: 1px solid #e6e0d0;
+    border-radius: 16px;
+    padding: 28px 32px;
+    display: grid;
+    grid-template-columns: 120px 1fr 200px;
+    gap: 28px;
+    align-items: center;
+    box-shadow: var(--tb-shadow, 0 30px 60px -30px rgba(20,20,20,.18), 0 8px 20px -10px rgba(20,20,20,.08));
+}
+
+.trustbio-layout-quote .tb-avatar {
+    width: var(--tb-avatar-size, 120px);
+    height: var(--tb-avatar-size, 120px);
+    border-radius: var(--tb-avatar-radius, 50%);
+    display: block;
+    object-fit: cover;
+}
+
+.trustbio-layout-quote .tb-body { position: relative; }
+
+.trustbio-layout-quote .tb-body::before {
+    content: "\201C";
+    position: absolute;
+    left: -8px;
+    top: -36px;
+    font-family: var(--tb-font-heading);
+    font-size: 96px;
+    line-height: 1;
+    color: #d6c9a8;
+    font-style: italic;
+    pointer-events: none;
+}
+
+.trustbio-layout-quote .tb-quote {
+    font-family: var(--tb-font-heading);
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.35;
+    color: #2c241c;
+    margin: 0 0 14px;
+}
+
+.trustbio-layout-quote .tb-byline {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.trustbio-layout-quote .tb-byline-name {
+    font-weight: 700;
+    font-size: 14px;
+    color: #15161a;
+    letter-spacing: .02em;
+}
+
+.trustbio-layout-quote .tb-byline-role {
+    font-family: var(--tb-font-label);
+    font-size: 10px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: #8a7e6f;
+}
+
+.trustbio-layout-quote .tb-byline-sep {
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: #c0bbab;
+    flex-shrink: 0;
+}
+
+.trustbio-layout-quote .tb-right {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-end;
+}
+
+.trustbio-layout-quote .tb-small {
+    font-family: var(--tb-font-label);
+    font-size: 10px;
+    letter-spacing: .14em;
+    color: #8a7e6f;
+    text-transform: uppercase;
+}
+
+.trustbio-layout-quote .tb-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--tb-btn-bg);
+    color: var(--tb-btn-color);
+    padding: 11px 16px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.trustbio-layout-quote .tb-cta:hover { opacity: .88; }
+
+/* ============================================================
+   04 — Studio Polaroid
+   ============================================================ */
+.trustbio-layout-polaroid {
+    background: #efe7d8;
+    border-radius: 12px;
+    padding: 28px;
+    position: relative;
+    display: grid;
+    grid-template-columns: 168px 1fr;
+    gap: 28px;
+    align-items: center;
+    border: 1px dashed #c8bda3;
+}
+
+/* masking tape */
+.trustbio-layout-polaroid::before {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 60px;
+    width: 90px;
+    height: 24px;
+    background: rgba(220,200,140,.6);
+    box-shadow: inset 0 0 0 1px rgba(180,160,100,.45);
+    transform: rotate(-3deg);
+    border-radius: 1px;
+}
+
+.trustbio-layout-polaroid .tb-polaroid-frame {
+    background: #fff;
+    padding: 10px 10px 28px;
+    transform: rotate(-3deg);
+    box-shadow: 0 14px 26px -12px rgba(20,20,20,.25);
+    border-radius: 2px;
+    width: 148px;
+}
+
+.trustbio-layout-polaroid .tb-polaroid-img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+}
+
+.trustbio-layout-polaroid .tb-polaroid-cap {
+    text-align: center;
+    padding-top: 8px;
+    font-family: var(--tb-font-heading);
+    font-style: italic;
+    font-size: 22px;
+    color: #2c241c;
+    line-height: 1;
+}
+
+.trustbio-layout-polaroid .tb-body { padding: 0 4px; }
+
+.trustbio-layout-polaroid .tb-label-pill {
+    display: inline-block;
+    font-family: var(--tb-font-label);
+    font-size: 10px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: #7a4a2c;
+    padding: 4px 10px;
+    border: 1px solid #b89a72;
+    border-radius: 999px;
+    margin-bottom: 12px;
+}
+
+.trustbio-layout-polaroid .tb-name {
+    font-family: var(--tb-font-heading);
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 1.05;
+    letter-spacing: -.01em;
+    margin: 0 0 10px;
+}
+
+.trustbio-layout-polaroid .tb-bio { font-size: 14.5px; color: #36352f; max-width: 540px; }
+
+.trustbio-layout-polaroid .tb-foot {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+}
+
+.trustbio-layout-polaroid .tb-more-link {
+    font-family: var(--tb-font-label);
+    font-size: 10px;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: #15161a;
+    border-bottom: 1px solid #15161a;
+    padding-bottom: 2px;
+    text-decoration: none;
+}
+
+.trustbio-layout-polaroid .tb-more-link:hover { opacity: .7; }
+
+/* ============================================================
+   05 — Night Edition
+   ============================================================ */
+.trustbio-layout-night {
+    background: linear-gradient(135deg, #1c1d22 0%, #14151a 100%);
+    color: #efece4;
+    border-radius: 16px;
+    padding: 32px;
+    --tb-btn-bg:    #d9c08d;
+    --tb-btn-color: #15161a;
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    gap: 36px;
+    box-shadow: var(--tb-shadow, 0 30px 60px -30px rgba(20,20,20,.55), 0 8px 20px -10px rgba(20,20,20,.25));
+    border: 1px solid #2a2b31;
+    position: relative;
+    overflow: hidden;
+}
+
+.trustbio-layout-night::before {
+    content: "";
+    position: absolute;
+    right: -80px;
+    top: -80px;
+    width: 240px;
+    height: 240px;
+    background: radial-gradient(circle, rgba(217,192,141,.16), transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.trustbio-layout-night .tb-top {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 18px;
+}
+
+.trustbio-layout-night .tb-avatar {
+    width: var(--tb-avatar-size, 72px);
+    height: var(--tb-avatar-size, 72px);
+    border-radius: var(--tb-avatar-radius, 50%);
+    display: block;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid #2a2b31;
+    box-shadow: 0 0 0 4px rgba(217,192,141,.12);
+}
+
+.trustbio-layout-night .tb-badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--tb-font-label);
+    font-size: 10px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: #d9c08d;
+    padding: 4px 10px;
+    border: 1px solid rgba(217,192,141,.4);
+    border-radius: 999px;
+    margin-bottom: 8px;
+}
+
+.trustbio-layout-night .tb-badge-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #d9c08d;
+    box-shadow: 0 0 8px #d9c08d;
+    flex-shrink: 0;
+}
+
+.trustbio-layout-night .tb-name {
+    font-family: var(--tb-font-heading);
+    font-size: 28px;
+    line-height: 1;
+    letter-spacing: -.01em;
+    color: #efece4;
+    margin: 0 0 6px;
+}
+
+.trustbio-layout-night .tb-role { color: #8a877d; margin-top: 2px; }
+
+.trustbio-layout-night .tb-bio {
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: #c8c4ba;
+    margin: 0;
+}
+
+.trustbio-layout-night .tb-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 16px;
+}
+
+.trustbio-layout-night .tb-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+.trustbio-layout-night .tb-follow {
+    background: var(--tb-btn-bg);
+    color: var(--tb-btn-color);
+    font-weight: 700;
+    font-size: 12px;
+    padding: 10px 16px;
+    border-radius: 999px;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.trustbio-layout-night .tb-follow:hover { opacity: .88; }
+
+/* ============================================================
+   06 — Minimal Inline
+   ============================================================ */
+.trustbio-layout-minimal-inline {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 4px;
+    border-top: 1px solid #d8d3c8;
+    border-bottom: 1px solid #d8d3c8;
+}
+
+.trustbio-layout-minimal-inline .tb-avatar {
+    width: var(--tb-avatar-size, 56px);
+    height: var(--tb-avatar-size, 56px);
+    border-radius: var(--tb-avatar-radius, 50%);
+    display: block;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.trustbio-layout-minimal-inline .tb-body { flex: 1; min-width: 0; }
+
+.trustbio-layout-minimal-inline .tb-name {
+    font-size: 16px;
+    font-weight: 700;
+    color: #15161a;
+    letter-spacing: -.005em;
+    margin: 0 0 4px;
+}
+
+.trustbio-layout-minimal-inline .tb-bio {
+    font-size: 13.5px;
+    line-height: 1.5;
+    color: #4a4944;
+    margin: 0;
+}
+
+/* ============================================================
+   07 — Card Simple
+   ============================================================ */
+.trustbio-layout-simple {
+    background: #fff;
+    border-radius: 10px;
+    padding: 24px 28px;
+    border: 1px solid #e6e0d0;
+    display: grid;
+    grid-template-columns: auto 1px 1fr auto;
+    gap: 24px;
+    align-items: center;
+}
+
+.trustbio-layout-simple .tb-left { display: flex; align-items: center; gap: 16px; }
+
+.trustbio-layout-simple .tb-avatar {
+    width: var(--tb-avatar-size, 64px);
+    height: var(--tb-avatar-size, 64px);
+    border-radius: var(--tb-avatar-radius, 14px);
+    display: block;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.trustbio-layout-simple .tb-name {
+    font-family: var(--tb-font-heading);
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1.1;
+    letter-spacing: -.01em;
+    margin: 4px 0 0;
+}
+
+.trustbio-layout-simple .tb-rule { background: #e6e0d0; align-self: stretch; }
+
+.trustbio-layout-simple .tb-body {
+    font-size: 14px;
+    line-height: 1.55;
+    color: #36352f;
+    margin: 0;
+}
+
+.trustbio-layout-simple .tb-body a {
+    color: #15161a;
+    border-bottom: 1px solid #15161a;
+    text-decoration: none;
+}
+
+.trustbio-layout-simple .tb-body a:hover { opacity: .7; }
+
+.trustbio-layout-simple .tb-right { display: flex; align-items: center; gap: 14px; }
+
+.trustbio-layout-simple .tb-follow-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--tb-btn-bg);
+    color: var(--tb-btn-color);
+    font-weight: 600;
+    font-size: 12px;
+    padding: 9px 14px;
+    border-radius: 6px;
+    letter-spacing: .04em;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.trustbio-layout-simple .tb-follow-btn:hover { opacity: .85; }
+
+/* ============================================================
+   08 — Two Authors · Split (light)
+   ============================================================ */
+.trustbio-layout-duo-light {
+    background: #fff;
+    border: 1px solid #e6e0d0;
+    border-radius: 14px;
+    padding: 24px 28px;
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr;
+    gap: 28px;
+    align-items: stretch;
+    box-shadow: var(--tb-shadow, 0 30px 60px -30px rgba(20,20,20,.18), 0 8px 20px -10px rgba(20,20,20,.08));
+}
+
+.trustbio-layout-duo-light .tb-divider { background: #e6e0d0; }
+
+.trustbio-layout-duo-light .tb-author-col {
+    display: grid;
+    grid-template-columns: 72px 1fr;
+    gap: 16px;
+    align-items: center;
+}
+
+.trustbio-layout-duo-light .tb-avatar {
+    width: var(--tb-avatar-size, 72px);
+    height: var(--tb-avatar-size, 72px);
+    border-radius: var(--tb-avatar-radius, 50%);
+    display: block;
+    object-fit: cover;
+}
+
+.trustbio-layout-duo-light .tb-name {
+    font-family: var(--tb-font-heading);
+    font-size: 22px;
+    line-height: 1;
+    letter-spacing: -.01em;
+    margin: 6px 0 8px;
+}
+
+.trustbio-layout-duo-light .tb-bio {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #4a4944;
+    margin: 0 0 8px;
+}
+
+.trustbio-layout-duo-light .tb-social-link {
+    background: #ece8e1;
+    width: 24px;
+    height: 24px;
+}
+
+.trustbio-layout-duo-light .tb-social-link svg { width: 11px; height: 11px; }
+
+/* single-author fallback */
+.trustbio-layout-duo-light.tb-single-author {
+    grid-template-columns: 1fr;
+}
+
+/* ============================================================
+   09 — Two Authors · Collab (dark)
+   ============================================================ */
+.trustbio-layout-duo-dark {
+    background: linear-gradient(135deg, #1c1d22 0%, #14151a 100%);
+    color: #efece4;
+    border-radius: 16px;
+    padding: 28px 32px;
+    border: 1px solid #2a2b31;
+    box-shadow: var(--tb-shadow, 0 30px 60px -30px rgba(20,20,20,.55), 0 8px 20px -10px rgba(20,20,20,.25));
+    position: relative;
+    overflow: hidden;
+}
+
+.trustbio-layout-duo-dark::before {
+    content: "";
+    position: absolute;
+    right: -80px;
+    top: -80px;
+    width: 220px;
+    height: 220px;
+    background: radial-gradient(circle, rgba(217,192,141,.14), transparent 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.trustbio-layout-duo-dark .tb-topline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--tb-font-label);
+    font-size: 10px;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: #8a877d;
+    margin-bottom: 18px;
+}
+
+.trustbio-layout-duo-dark .tb-topline-label {
+    color: #d9c08d;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.trustbio-layout-duo-dark .tb-topline-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #d9c08d;
+    box-shadow: 0 0 8px #d9c08d;
+    flex-shrink: 0;
+}
+
+.trustbio-layout-duo-dark .tb-inner {
+    display: grid;
+    grid-template-columns: 1fr 64px 1fr;
+    gap: 0;
+    align-items: center;
+}
+
+.trustbio-layout-duo-dark .tb-author-col {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+}
+
+.trustbio-layout-duo-dark .tb-avatar-wrap { position: relative; flex-shrink: 0; }
+
+.trustbio-layout-duo-dark .tb-avatar {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    display: block;
+    object-fit: cover;
+    border: 2px solid #2a2b31;
+    box-shadow: 0 0 0 4px rgba(217,192,141,.1);
+}
+
+.trustbio-layout-duo-dark .tb-author-num {
+    position: absolute;
+    left: -8px;
+    top: -8px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: #d9c08d;
+    color: #15161a;
+    font-family: var(--tb-font-label);
+    font-size: 10px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+}
+
+.trustbio-layout-duo-dark .tb-info { min-width: 0; }
+
+.trustbio-layout-duo-dark .tb-name {
+    font-family: var(--tb-font-heading);
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 1.1;
+    letter-spacing: -.01em;
+    margin: 4px 0 6px;
+    color: #efece4;
+}
+
+.trustbio-layout-duo-dark .tb-bio {
+    font-size: 13px;
+    line-height: 1.5;
+    color: #c8c4ba;
+    margin: 0 0 8px;
+}
+
+.trustbio-layout-duo-dark .tb-social-link {
+    background: rgba(255,255,255,.06);
+    color: #d9c08d;
+    width: 24px;
+    height: 24px;
+}
+
+.trustbio-layout-duo-dark .tb-social-link svg { width: 11px; height: 11px; }
+
+.trustbio-layout-duo-dark .tb-gutter {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.trustbio-layout-duo-dark .tb-gutter::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 10%;
+    bottom: 10%;
+    width: 1px;
+    background: #2a2b31;
+}
+
+.trustbio-layout-duo-dark .tb-ampersand {
+    position: relative;
+    z-index: 1;
+    font-family: var(--tb-font-heading);
+    font-style: italic;
+    font-size: 48px;
+    color: #d9c08d;
+    background: #14151a;
+    padding: 6px 0;
+    line-height: 1;
+}
+
+/* single-author fallback for duo-dark */
+.trustbio-layout-duo-dark.tb-single-author .tb-inner {
+    grid-template-columns: 1fr;
+}
+
+.trustbio-layout-duo-dark.tb-single-author .tb-gutter { display: none; }
+
+/* ============================================================
+   Powered-by
+   ============================================================ */
+.trustbio-powered-by {
+    text-align: right;
+    margin-top: 6px;
+    font-size: 11px;
+    color: #9ca3af;
+}
+
+.trustbio-powered-by a { color: #9ca3af; text-decoration: none; }
+.trustbio-powered-by a:hover { color: #6b7280; }
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 680px) {
+    .trustbio-layout-byline {
+        grid-template-columns: auto 1fr;
+        grid-template-rows: auto auto;
+    }
+    .trustbio-layout-byline .tb-side {
+        grid-column: 1 / -1;
+        align-items: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .trustbio-layout-magazine {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+    .trustbio-layout-magazine .tb-portrait-col { height: 200px; }
+
+    .trustbio-layout-quote {
+        grid-template-columns: 1fr;
+        text-align: left;
+    }
+    .trustbio-layout-quote .tb-right { align-items: flex-start; }
+    .trustbio-layout-quote .tb-body::before { display: none; }
+
+    .trustbio-layout-polaroid {
+        grid-template-columns: 1fr;
+    }
+    .trustbio-layout-polaroid .tb-polaroid-frame { margin: 0 auto 8px; }
+
+    .trustbio-layout-night { grid-template-columns: 1fr; }
+    .trustbio-layout-night .tb-right { justify-content: flex-start; }
+
+    .trustbio-layout-minimal-inline { flex-wrap: wrap; }
+
+    .trustbio-layout-simple {
+        grid-template-columns: 1fr;
+    }
+    .trustbio-layout-simple .tb-rule { display: none; }
+    .trustbio-layout-simple .tb-right { justify-content: flex-start; }
+
+    .trustbio-layout-duo-light {
+        grid-template-columns: 1fr;
+    }
+    .trustbio-layout-duo-light .tb-divider { display: none; }
+
+    .trustbio-layout-duo-dark .tb-inner {
+        grid-template-columns: 1fr;
+    }
+    .trustbio-layout-duo-dark .tb-gutter { display: none; }
+}
+
+/* ============================================================
+   Review date bar (Phase 12, carried over)
+   ============================================================ */
+.trustbio-review-bar {
+    --trustbio-review-color: #4f46e5;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    background: color-mix(in srgb, var(--trustbio-review-color) 8%, #fff);
+    border-left: 3px solid var(--trustbio-review-color);
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 20px;
+    font-size: 13px;
+    color: #374151;
+    line-height: 1.5;
+}
+.trustbio-review-bar__icon { display: flex; align-items: center; flex-shrink: 0; }
+.trustbio-review-bar__icon svg { width: 16px; height: 16px; color: var(--trustbio-review-color); }
+.trustbio-review-bar__text { flex: 1; }
+.trustbio-review-bar__name { color: var(--trustbio-review-color); font-weight: 600; text-decoration: none; }
+.trustbio-review-bar__name:hover { text-decoration: underline; }
+.trustbio-review-bar__credentials { color: #6b7280; font-style: italic; }
+.trustbio-review-bar__date { font-weight: 600; color: #111827; }

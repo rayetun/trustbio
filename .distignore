@@ -1,0 +1,39 @@
+# Files and folders that should NOT be deployed to the WordPress.org plugin SVN.
+# The deploy action excludes everything listed here from trunk/tags.
+
+# Version control & CI
+.git
+.github
+.gitignore
+.gitattributes
+.distignore
+
+# WordPress.org listing assets — these are pushed to SVN assets/ by the
+# asset-update workflow, not shipped inside the plugin itself.
+.wordpress-org
+
+# Local / OS / editor / AI-tooling cruft
+.DS_Store
+Thumbs.db
+.idea
+.vscode
+.claude
+*.log
+
+# Build & dependency tooling (not used at runtime)
+node_modules
+package.json
+package-lock.json
+composer.json
+composer.lock
+phpcs.xml
+phpcs.xml.dist
+.phpcs.xml.dist
+phpunit.xml
+phpunit.xml.dist
+tests
+bin
+tools
+
+# Distribution artifacts
+*.zip

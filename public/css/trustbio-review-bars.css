@@ -1,0 +1,191 @@
+/* ── TrustBio Review Bars ──────────────────────────────────── */
+.tbr-bar {
+    --tbr-color: #4f46e5;
+    box-sizing: border-box;
+    font-family: inherit;
+    line-height: 1.5;
+    clear: both;
+    margin: 12px 0;
+}
+.tbr-bar a { color: var(--tbr-color); text-decoration: none; }
+.tbr-bar a:hover { text-decoration: underline; }
+
+/* 1. Classic Bar */
+.tbr-classic {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    background: color-mix(in srgb, var(--tbr-color) 8%, #fff);
+    border-left: 3px solid var(--tbr-color);
+    border-radius: 0 6px 6px 0;
+    font-size: 13px;
+    color: #374151;
+}
+.tbr-classic .tbr-icon { flex-shrink: 0; display: flex; align-items: center; }
+.tbr-classic .tbr-icon svg { width: 15px; height: 15px; color: var(--tbr-color); }
+.tbr-classic .tbr-text { flex: 1; }
+.tbr-classic .tbr-name { color: var(--tbr-color); font-weight: 600; }
+.tbr-classic .tbr-creds { color: #6b7280; font-style: italic; margin-right: 2px; }
+.tbr-classic .tbr-date { font-weight: 600; color: #111827; }
+
+/* 2. Minimal Inline */
+.tbr-minimal {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    color: #6b7280;
+    margin: 6px 0;
+}
+.tbr-minimal .tbr-check { flex-shrink: 0; display: flex; align-items: center; }
+.tbr-minimal .tbr-check svg { width: 13px; height: 13px; color: var(--tbr-color); }
+.tbr-minimal .tbr-name { color: var(--tbr-color); font-weight: 500; }
+.tbr-minimal .tbr-creds { color: #6b7280; font-style: italic; margin-right: 2px; }
+.tbr-minimal .tbr-dot { margin: 0 2px; color: #d1d5db; }
+
+/* 3. Badge Strip */
+.tbr-badge-strip {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 14px;
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #374151;
+}
+.tbr-badge-strip .tbr-avatar-wrap {
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 2px solid var(--tbr-color);
+}
+.tbr-badge-strip .tbr-avatar-wrap .tbr-avatar {
+    display: block; width: 100%; height: 100% !important; object-fit: cover;
+}
+.tbr-badge-strip .tbr-av,
+.tbr-badge-strip .tbr-avatar {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border: 2px solid var(--tbr-color);
+}
+.tbr-badge-strip .tbr-av-placeholder {
+    width: 32px; height: 32px;
+    border-radius: 50%;
+    background: var(--tbr-color);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    color: #fff; font-size: 13px; font-weight: 700;
+}
+.tbr-badge-strip .tbr-badge {
+    flex-shrink: 0;
+    background: var(--tbr-color); color: #fff;
+    font-size: 10px; font-weight: 700;
+    letter-spacing: .08em; padding: 3px 9px;
+    border-radius: 20px; text-transform: uppercase;
+    white-space: nowrap;
+}
+.tbr-badge-strip .tbr-info { flex: 1; }
+.tbr-badge-strip .tbr-name { font-weight: 600; }
+.tbr-badge-strip .tbr-creds { color: #6b7280; }
+.tbr-badge-strip .tbr-sep { color: #d1d5db; margin: 0 4px; }
+.tbr-badge-strip .tbr-date { color: #6b7280; font-size: 12px; }
+
+/* 4. Pill Duo */
+.tbr-pill-duo {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin: 8px 0;
+    flex-wrap: wrap;
+}
+.tbr-pill-duo .tbr-pill {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 12px; padding: 4px 11px;
+    border-radius: 20px; line-height: 1.4; white-space: nowrap;
+}
+.tbr-pill-duo .tbr-pill--accent {
+    background: var(--tbr-color); color: #fff; font-weight: 600;
+}
+.tbr-pill-duo .tbr-pill--accent svg { width: 11px; height: 11px; }
+.tbr-pill-duo .tbr-pill--neutral {
+    background: #f3f4f6; color: #374151; border: 1px solid #e5e7eb;
+}
+.tbr-pill-duo .tbr-pill--neutral .tbr-name { color: var(--tbr-color); font-weight: 600; }
+.tbr-pill-duo .tbr-pill--neutral .tbr-dot { color: #9ca3af; margin: 0 2px; }
+.tbr-pill-duo.tbr-pill-outlined .tbr-pill--accent {
+    background: transparent; color: var(--tbr-color);
+    border: 1.5px solid var(--tbr-color);
+}
+
+/* 5. Authority Card */
+.tbr-authority-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 16px;
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 1px 3px rgba(0,0,0,.07);
+    font-size: 13px;
+}
+.tbr-authority-card .tbr-avatar-wrap {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+    flex-shrink: 0;
+    border: 2px solid var(--tbr-color);
+}
+.tbr-authority-card .tbr-avatar-wrap .tbr-avatar {
+    display: block; width: 100%; height: 100% !important; object-fit: cover;
+}
+.tbr-authority-card .tbr-av,
+.tbr-authority-card .tbr-avatar {
+    width: 48px; height: 48px;
+    border-radius: 50%; object-fit: cover;
+    flex-shrink: 0; border: 2px solid var(--tbr-color);
+}
+.tbr-authority-card .tbr-av-placeholder {
+    width: 48px; height: 48px;
+    border-radius: 50%;
+    background: var(--tbr-color);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; color: #fff; font-size: 16px; font-weight: 700;
+}
+.tbr-authority-card .tbr-body { flex: 1; min-width: 0; }
+.tbr-authority-card .tbr-label {
+    display: block; font-size: 10px; color: #9ca3af;
+    text-transform: uppercase; letter-spacing: .06em; margin-bottom: 2px;
+}
+.tbr-authority-card .tbr-name { font-weight: 700; color: var(--tbr-color) !important; }
+.tbr-authority-card .tbr-creds { color: #6b7280; font-size: 12px; margin-left: 4px; }
+.tbr-authority-card .tbr-date-col { text-align: right; flex-shrink: 0; }
+.tbr-authority-card .tbr-date-label {
+    display: block; font-size: 10px; color: #9ca3af;
+    text-transform: uppercase; letter-spacing: .06em; margin-bottom: 2px;
+}
+.tbr-authority-card .tbr-date-val,
+.tbr-authority-card .tbr-date { font-size: 12px; font-weight: 600; color: #374151; white-space: nowrap; }
+
+/* 6. Dark Shield */
+.tbr-dark-shield {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 16px;
+    background: #111827;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #e5e7eb;
+}
+.tbr-dark-shield .tbr-icon { flex-shrink: 0; display: flex; }
+.tbr-dark-shield .tbr-icon svg { width: 18px; height: 18px; color: var(--tbr-color); }
+.tbr-dark-shield .tbr-text { flex: 1; }
+.tbr-dark-shield .tbr-name { color: var(--tbr-color); font-weight: 600; }
+.tbr-dark-shield .tbr-creds { color: #9ca3af; font-style: italic; margin-left: 2px; margin-right: 2px; }
+.tbr-dark-shield .tbr-date { color: #d1d5db; font-weight: 600; }

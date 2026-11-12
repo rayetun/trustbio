@@ -1,0 +1,982 @@
+/* =============================================================================
+   TrustBio — Premium Settings Dashboard
+   CSS prefix:  trustbio-sp
+   Body class:  trustbio-settings-page
+   ============================================================================= */
+
+/* ── CSS Variables ────────────────────────────────────────────────────────────── */
+:root {
+	--mn-primary:    #4f46e5;
+	--mn-primary-h:  #4338ca;
+	--mn-sidebar-bg: #1e1b4b;
+	--mn-sidebar-w:  220px;
+	--mn-topbar-h:   56px;
+	--mn-bg:         #f1f5f9;
+	--mn-surface:    #ffffff;
+	--mn-border:     #e2e8f0;
+	--mn-text:       #1e293b;
+	--mn-muted:      #64748b;
+	--mn-success:    #10b981;
+	--mn-warning:    #f59e0b;
+	--mn-danger:     #ef4444;
+	--mn-radius:     10px;
+	--mn-shadow:     0 1px 3px 0 rgb(0 0 0 / .08), 0 1px 2px -1px rgb(0 0 0 / .06);
+	--mn-shadow-lg:  0 4px 16px 0 rgb(0 0 0 / .12);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   SHARED ADMIN LAYOUT — applies to every TrustBio admin page
+   Body class: .trustbio-admin-page
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+/* WP admin overrides */
+.trustbio-admin-page #wpbody-content { padding-top: 0 !important; padding-bottom: 0 !important; }
+.trustbio-admin-page .wrap > h1,
+.trustbio-admin-page #screen-meta,
+.trustbio-admin-page #screen-meta-links,
+.trustbio-admin-page .notice,
+.trustbio-admin-page .update-nag,
+.trustbio-admin-page .updated,
+.trustbio-admin-page .error { display: none !important; }
+
+/* Full-screen page shell — positioned next to the WP admin sidebar */
+.trustbio-ap-page {
+	position: fixed;
+	top: 0; left: 160px; right: 0; bottom: 0;
+	display: flex;
+	flex-direction: column;
+	background: var(--mn-bg);
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	color: var(--mn-text);
+	z-index: 1;
+}
+.admin-bar .trustbio-ap-page { top: 32px; }
+/* WP sidebar: folded (user collapsed) = 36px; auto-fold at 960px; hidden on mobile */
+body.folded .trustbio-ap-page { left: 36px; }
+@media screen and (max-width: 960px) { .trustbio-ap-page { left: 36px; } }
+@media screen and (max-width: 782px) {
+	.admin-bar .trustbio-ap-page { top: 46px; }
+	.trustbio-ap-page { left: 0; }
+}
+
+/* Topbar */
+.trustbio-ap-topbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: var(--mn-topbar-h);
+	padding: 0 24px;
+	background: var(--mn-sidebar-bg);
+	color: #fff;
+	flex-shrink: 0;
+}
+.trustbio-ap-topbar-brand   { display: flex; align-items: center; gap: 10px; }
+/* The mark is an <img> of the plugin's own icon. Full opacity and 24px:
+   it is indigo on a navy bar, so dimming it to .9 the way a white
+   currentColor glyph could afford pushed it into the background. */
+.trustbio-ap-topbar-logo    { display: flex; }
+.trustbio-ap-topbar-logo img { width: 24px; height: 24px; display: block; }
+.trustbio-ap-topbar-name    { font-size: 16px; font-weight: 700; letter-spacing: -.2px; }
+.trustbio-ap-topbar-version {
+	font-size: 11px; font-weight: 500;
+	background: rgba(255,255,255,.12);
+	padding: 2px 7px; border-radius: 20px;
+	color: rgba(255,255,255,.7);
+}
+.trustbio-ap-topbar-right { display: flex; align-items: center; gap: 10px; }
+.trustbio-ap-topbar-btn {
+	display: inline-flex; align-items: center; gap: 6px;
+	font-size: 12.5px; font-weight: 600;
+	color: rgba(255,255,255,.9); text-decoration: none;
+	border: 1.5px solid rgba(255,255,255,.25); border-radius: 6px;
+	padding: 5px 14px;
+	transition: background .15s, border-color .15s;
+}
+.trustbio-ap-topbar-btn:hover {
+	background: rgba(255,255,255,.12);
+	border-color: rgba(255,255,255,.45);
+	color: #fff;
+}
+
+/* Layout */
+.trustbio-ap-layout { display: flex; flex: 1; overflow: hidden; }
+
+/* Page-nav sidebar */
+.trustbio-ap-sidebar {
+	width: var(--mn-sidebar-w);
+	min-width: var(--mn-sidebar-w);
+	background: var(--mn-sidebar-bg);
+	padding: 12px 0;
+	display: flex;
+	flex-direction: column;
+	overflow-y: auto;
+	flex-shrink: 0;
+	border-right: 1px solid rgba(255,255,255,.05);
+}
+.trustbio-ap-nav-section {
+	padding: 14px 20px 4px;
+	font-size: 10px; font-weight: 700;
+	letter-spacing: .08em; text-transform: uppercase;
+	color: rgba(255,255,255,.28);
+}
+.trustbio-ap-nav-item {
+	display: flex; align-items: center; gap: 10px;
+	padding: 10px 20px; background: transparent;
+	color: rgba(255,255,255,.55); font-size: 13px; font-weight: 500;
+	text-decoration: none; cursor: pointer;
+	border-left: 3px solid transparent;
+	transition: color .15s, background .15s;
+	margin: 1px 0;
+	white-space: nowrap; overflow: hidden;
+}
+.trustbio-ap-nav-item:hover  { color: rgba(255,255,255,.85); background: rgba(255,255,255,.06); }
+.trustbio-ap-nav-item.is-active { color: #fff; background: rgba(255,255,255,.1); border-left-color: var(--mn-primary); }
+.trustbio-ap-nav-icon { opacity: .65; display: flex; flex-shrink: 0; }
+.trustbio-ap-nav-item.is-active .trustbio-ap-nav-icon { opacity: 1; }
+
+/* Shared content area */
+.trustbio-ap-content {
+	flex: 1;
+	overflow-y: auto;
+	min-width: 0;
+	background: var(--mn-bg);
+}
+
+/* Reset trustbio-admin-wrap when it appears inside the shared layout */
+.trustbio-ap-content .trustbio-admin-wrap {
+	background: transparent;
+	margin-top: 0;
+	max-width: none;
+}
+
+/* ── Settings page: tab nav ───────────────────────────────────────────────────
+   This strip was one row with overflow-x: auto. The core plugin registers 7
+   tabs and the add-on registers 8 more on trustbio_settings_tabs, so with Pro
+   active the row overflowed: the later tabs sat off the right edge behind a
+   scrollbar, reachable only by dragging and invisible until you did.
+
+   It wraps now. Nothing is hidden at any width, it needs no measuring script
+   or overflow menu, and the strip simply grows a row as more add-on tabs
+   register. The active marker is a filled pill rather than a bottom-border
+   underline, because an underline reads as "this is the tab row" and stops
+   saying that as soon as there are two rows of them.                         */
+.trustbio-sp-htab-nav {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 4px;
+	border-bottom: 1px solid var(--mn-border);
+	background: var(--mn-surface);
+	padding: 10px 24px;
+	flex-shrink: 0;
+}
+
+/* A full-width flex item, so it forces a wrap: the add-on's tabs always start
+   a row of their own. It carries the rule as a top border rather than being
+   one, because a divider sized to its content could be stranded mid-row by a
+   wrap. Below ~1300px the core tabs wrap too, and without this the four
+   resulting rows read as one undifferentiated block. */
+.trustbio-sp-nav-break {
+	flex-basis: 100%;
+	height: 0;
+	margin: 7px 0;
+	padding: 0;
+	border-top: 1px solid var(--mn-border);
+}
+
+.trustbio-sp-htab-nav .trustbio-sp-nav-item {
+	display: flex; align-items: center; gap: 8px;
+	width: auto; margin: 0;
+	padding: 8px 12px;
+	background: none; border: none; border-radius: 6px;
+	color: var(--mn-muted); font-size: 13px; font-weight: 500;
+	cursor: pointer; white-space: nowrap;
+	transition: color .15s, background-color .15s;
+}
+.trustbio-sp-htab-nav .trustbio-sp-nav-item:hover {
+	color: var(--mn-text);
+	background: var(--mn-bg);
+}
+/* Colour and the filled pill carry the active state on their own. Bumping the
+   weight as well changes the tab's width, which in a wrapping strip can push
+   a tab onto another row -- so the rows would reshuffle as you clicked along
+   them. */
+.trustbio-sp-htab-nav .trustbio-sp-nav-item.is-active {
+	color: var(--mn-primary);
+	background: rgb(79 70 229 / .10);
+}
+.trustbio-sp-htab-nav .trustbio-sp-nav-item:focus-visible {
+	outline: 2px solid var(--mn-primary);
+	outline-offset: 1px;
+}
+.trustbio-sp-htab-nav .trustbio-sp-nav-icon { opacity: .55; }
+/* The icon library is a mix of 16px and 20px glyphs, so the tab strip pins
+   them to one size instead of relying on each entry declaring the right one. */
+.trustbio-sp-htab-nav .trustbio-sp-nav-icon svg { width: 16px; height: 16px; display: block; }
+.trustbio-sp-htab-nav .trustbio-sp-nav-item.is-active .trustbio-sp-nav-icon { opacity: 1; }
+
+/* Settings panels area — provides the scroll + padding */
+/* 24px sides matches every other screen, and lines the panels up with the
+   tab nav above them, which already sits at 24px. */
+.trustbio-sp-panels { padding: 20px 24px 32px; }
+
+/* ── Features page ─────────────────────────────────────────────────────────── */
+/* The Features screen uses the shared page shell: .tb-page-header supplies
+   the top spacing and .tb-content-area the body spacing, exactly as every
+   other screen does. No wrapper padding here, or the header and the body
+   end up on different left edges. */
+.tbf-wrap { padding: 0; }
+
+.tbf-group { margin-bottom: 36px; }
+.tbf-group-header { margin-bottom: 16px; }
+.tbf-group-title {
+	font-size: 15px; font-weight: 700; color: var(--mn-text);
+	margin: 0 0 4px;
+}
+.tbf-group-desc { font-size: 13px; color: var(--mn-muted); margin: 0; }
+
+.tbf-card-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+	gap: 14px;
+}
+
+.tbf-card {
+	background: var(--mn-surface);
+	border: 1.5px solid var(--mn-border);
+	border-radius: var(--mn-radius);
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	transition: border-color .15s, box-shadow .15s;
+}
+.tbf-card.is-enabled {
+	border-color: rgba(79,70,229,.35);
+	box-shadow: 0 0 0 3px rgba(79,70,229,.07);
+}
+.tbf-card:hover { box-shadow: var(--mn-shadow-lg); }
+
+.tbf-card__icon {
+	width: 40px; height: 40px;
+	display: flex; align-items: center; justify-content: center;
+	border-radius: 10px;
+	background: var(--mn-bg);
+	color: var(--mn-muted);
+	flex-shrink: 0;
+}
+.tbf-card__icon svg { width: 20px; height: 20px; }
+.tbf-card__icon--on {
+	background: rgba(79,70,229,.12);
+	color: var(--mn-primary);
+}
+
+.tbf-card__body { flex: 1; }
+.tbf-card__name { font-size: 14px; font-weight: 600; color: var(--mn-text); margin-bottom: 5px; }
+.tbf-card__desc { font-size: 12.5px; color: var(--mn-muted); line-height: 1.5; }
+
+.tbf-card__footer {
+	display: flex; align-items: center; justify-content: space-between;
+	padding-top: 10px;
+	border-top: 1px solid var(--mn-border);
+}
+
+.tbf-card__badge {
+	display: inline-flex; align-items: center;
+	font-size: 11px; font-weight: 600; letter-spacing: .03em;
+	padding: 3px 9px; border-radius: 20px;
+}
+.tbf-card__badge--on  { background: #d1fae5; color: #065f46; }
+.tbf-card__badge--off { background: var(--mn-bg); color: var(--mn-muted); }
+
+/* Toggle switch */
+.tbf-toggle {
+	position: relative; display: inline-flex;
+	align-items: center; cursor: pointer; flex-shrink: 0;
+}
+.tbf-toggle__input { position: absolute; opacity: 0; width: 0; height: 0; }
+.tbf-toggle__track {
+	width: 40px; height: 22px;
+	background: #cbd5e1; border-radius: 11px;
+	position: relative; transition: background .2s;
+}
+.tbf-toggle__input:checked + .tbf-toggle__track { background: var(--mn-primary); }
+.tbf-toggle__thumb {
+	position: absolute; top: 3px; left: 3px;
+	width: 16px; height: 16px; border-radius: 50%;
+	background: #fff;
+	box-shadow: 0 1px 3px rgb(0 0 0 / .25);
+	transition: transform .2s;
+}
+.tbf-toggle__input:checked ~ .tbf-toggle__track .tbf-toggle__thumb { transform: translateX(18px); }
+
+/* Save status */
+.tbf-save-status {
+	font-size: 12.5px; font-weight: 500; color: var(--mn-success);
+	opacity: 0; transition: opacity .2s;
+}
+.tbf-save-status.is-visible  { opacity: 1; }
+.tbf-save-status.is-error    { color: var(--mn-danger); }
+
+/* Something is toggled but not stored yet. Amber rather than the success
+   green, because the message is "not done" rather than "done". */
+.tbf-save-status.is-dirty { color: var(--mn-warning); }
+.tbf-save-btn.is-dirty {
+	box-shadow: 0 0 0 3px rgb(245 158 11 / .28);
+}
+
+/* Responsive */
+@media (max-width: 860px) {
+	.trustbio-ap-sidebar { display: none; }
+	.trustbio-sp-htab-nav { padding: 10px 16px; }
+	.trustbio-sp-panels   { padding: 20px 16px; }
+	.tbf-wrap { padding: 16px; }
+	.tbf-card-grid { grid-template-columns: 1fr; }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════════
+   SETTINGS-SPECIFIC (settings tab content, stat cards, form controls, etc.)
+   ═══════════════════════════════════════════════════════════════════════════════ */
+
+/* ── WP admin overrides (legacy body class kept for back-compat) ──────────── */
+.trustbio-settings-page #wpbody-content { padding-top: 0 !important; }
+.trustbio-settings-page .wrap > h1,
+.trustbio-settings-page #screen-meta,
+.trustbio-settings-page #screen-meta-links,
+.trustbio-settings-page .notice,
+.trustbio-settings-page .update-nag,
+.trustbio-settings-page .updated,
+.trustbio-settings-page .error { display: none !important; }
+
+/* ── Page shell ───────────────────────────────────────────────────────────────── */
+.trustbio-sp-page {
+	display: flex;
+	flex-direction: column;
+	min-height: calc(100vh - var(--mn-topbar-h));
+	background: var(--mn-bg);
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	color: var(--mn-text);
+}
+
+/* ── Top bar ──────────────────────────────────────────────────────────────────── */
+.trustbio-sp-topbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: var(--mn-topbar-h);
+	padding: 0 24px;
+	background: var(--mn-sidebar-bg) !important;
+	background-color: #1e1b4b !important;
+	color: #fff !important;
+	flex-shrink: 0;
+}
+.trustbio-sp-topbar-brand { display: flex; align-items: center; gap: 10px; }
+.trustbio-sp-topbar-logo  { opacity: .9; display: flex; }
+.trustbio-sp-topbar-name  { font-size: 16px; font-weight: 700; letter-spacing: -.2px; }
+.trustbio-sp-topbar-version {
+	font-size: 11px; font-weight: 500;
+	background: rgba(255,255,255,.12);
+	padding: 2px 7px; border-radius: 20px;
+	color: rgba(255,255,255,.7);
+}
+.trustbio-sp-topbar-right { display: flex; align-items: center; gap: 10px; }
+.trustbio-sp-topbar-btn {
+	display: inline-flex; align-items: center; gap: 6px;
+	font-size: 12.5px; font-weight: 600;
+	color: rgba(255,255,255,.9); text-decoration: none;
+	border: 1.5px solid rgba(255,255,255,.25); border-radius: 6px;
+	padding: 5px 14px;
+	transition: background .15s, border-color .15s, color .15s;
+}
+.trustbio-sp-topbar-btn:hover {
+	background: rgba(255,255,255,.12);
+	border-color: rgba(255,255,255,.45);
+	color: #fff;
+}
+
+/* ── Layout ───────────────────────────────────────────────────────────────────── */
+.trustbio-sp-layout { display: flex; flex: 1; }
+
+/* ── Sidebar nav ──────────────────────────────────────────────────────────────── */
+.trustbio-sp-sidebar {
+	width: var(--mn-sidebar-w); min-width: var(--mn-sidebar-w);
+	background: var(--mn-sidebar-bg) !important;
+	background-color: #1e1b4b !important;
+	padding: 16px 0; display: flex; flex-direction: column;
+}
+/* These belong to the dark vertical sidebar above, which the Settings screen
+   no longer renders -- but unscoped they still matched the live tab strip's
+   buttons, which is why the rules above had to fight them with !important.
+   Scoped to their own container they stay available for that layout and stop
+   reaching the tab strip. */
+.trustbio-sp-sidebar .trustbio-sp-nav-item {
+	display: flex; align-items: center; gap: 10px;
+	padding: 11px 20px; background: transparent; border: none;
+	color: rgba(255,255,255,.55); font-size: 13.5px; font-weight: 500;
+	cursor: pointer; text-align: left; width: 100%;
+	transition: color .15s, background .15s;
+	border-left: 3px solid transparent; margin: 1px 0;
+}
+.trustbio-sp-sidebar .trustbio-sp-nav-item:hover { color: rgba(255,255,255,.85); background: rgba(255,255,255,.06); }
+.trustbio-sp-sidebar .trustbio-sp-nav-item.is-active { color: #fff; background: rgba(255,255,255,.1); border-left-color: var(--mn-primary); }
+.trustbio-sp-sidebar .trustbio-sp-nav-item.is-active .trustbio-sp-nav-icon { opacity: 1; }
+.trustbio-sp-sidebar .trustbio-sp-nav-icon { opacity: .6; }
+
+/* Shared by both navs: the icon must not shrink when the label is long. */
+.trustbio-sp-nav-icon { display: flex; flex-shrink: 0; }
+
+/* ── Content area ─────────────────────────────────────────────────────────────── */
+.trustbio-sp-content { flex: 1; overflow-y: auto; padding: 32px; min-width: 0; }
+
+/* ── Panel header ─────────────────────────────────────────────────────────────── */
+.trustbio-sp-panel-header { margin-bottom: 28px; }
+.trustbio-sp-panel-header h2 { margin: 0 0 6px; font-size: 22px; font-weight: 700; color: var(--mn-text); line-height: 1.3; }
+.trustbio-sp-panel-header p  { margin: 0; font-size: 14px; color: var(--mn-muted); }
+
+/* ── Section title ────────────────────────────────────────────────────────────── */
+.trustbio-sp-section-title {
+	font-size: 11.5px; font-weight: 700; text-transform: uppercase;
+	letter-spacing: .6px; color: var(--mn-muted); margin: 0 0 12px;
+}
+
+/* ── Stat cards ───────────────────────────────────────────────────────────────── */
+.trustbio-sp-stats-grid {
+	display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+	gap: 16px; margin-bottom: 36px;
+}
+.trustbio-sp-stat-card {
+	background: var(--mn-surface); border-radius: var(--mn-radius);
+	box-shadow: var(--mn-shadow); padding: 20px;
+	display: flex; align-items: center; gap: 16px;
+}
+.trustbio-sp-stat-icon {
+	width: 44px; height: 44px; border-radius: 10px;
+	display: flex; align-items: center; justify-content: center;
+	background: color-mix(in srgb, var(--card-color, #4f46e5) 12%, transparent);
+	color: var(--card-color, #4f46e5); flex-shrink: 0;
+}
+.trustbio-sp-stat-number {
+	font-size: 26px; font-weight: 800; line-height: 1;
+	color: var(--mn-text); letter-spacing: -1px;
+}
+.trustbio-sp-stat-label { font-size: 12px; color: var(--mn-muted); margin-top: 4px; font-weight: 500; }
+
+/* ── Feature status grid (Overview tab) ───────────────────────────────────────── */
+.trustbio-sp-feature-grid {
+	display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+	gap: 12px; margin-bottom: 8px;
+}
+.trustbio-sp-feature-card {
+	background: var(--mn-surface); border-radius: var(--mn-radius);
+	box-shadow: var(--mn-shadow); padding: 14px 16px;
+	display: flex; align-items: flex-start; gap: 12px;
+}
+.trustbio-sp-feature-status {
+	width: 28px; height: 28px; border-radius: 50%;
+	display: flex; align-items: center; justify-content: center;
+	flex-shrink: 0; margin-top: 1px;
+}
+.trustbio-sp-feature-card.is-active   .trustbio-sp-feature-status { background: #dcfce7; color: var(--mn-success); }
+.trustbio-sp-feature-card.is-inactive .trustbio-sp-feature-status { background: #fee2e2; color: var(--mn-danger); }
+.trustbio-sp-feature-name { font-size: 13.5px; font-weight: 600; color: var(--mn-text); }
+.trustbio-sp-feature-desc { font-size: 12px; color: var(--mn-muted); margin-top: 2px; line-height: 1.5; }
+
+/* ── Settings list ────────────────────────────────────────────────────────────── */
+.trustbio-sp-settings-list {
+	background: var(--mn-surface); border-radius: var(--mn-radius);
+	box-shadow: var(--mn-shadow); overflow: hidden;
+}
+.trustbio-sp-setting-row {
+	display: flex; align-items: center; justify-content: space-between;
+	gap: 24px; padding: 18px 22px; border-bottom: 1px solid var(--mn-border);
+}
+.trustbio-sp-setting-row:last-child { border-bottom: none; }
+.trustbio-sp-setting-row.is-top { align-items: flex-start; padding-top: 20px; }
+.trustbio-sp-setting-info { flex: 1; min-width: 0; }
+.trustbio-sp-setting-label { font-size: 14px; font-weight: 600; color: var(--mn-text); }
+.trustbio-sp-setting-desc  { font-size: 12.5px; color: var(--mn-muted); margin-top: 3px; line-height: 1.5; }
+.trustbio-sp-url-preview   { font-size: 12px; color: var(--mn-primary); margin-top: 6px; font-family: monospace; word-break: break-all; }
+
+/* A standing note among the rows: guidance that belongs with the settings but
+   is not one. Full width, since it has no control to sit opposite. */
+.trustbio-sp-setting-note { display: block; background: #f8fafc; }
+.trustbio-sp-setting-note p {
+	margin: 0;
+	font-size: 12.5px;
+	color: var(--mn-muted);
+	line-height: 1.55;
+	max-width: 90ch;
+}
+
+/* A row whose control is a link to another screen. */
+.trustbio-sp-row-btn {
+	flex-shrink: 0;
+	display: inline-flex; align-items: center;
+	height: 36px; padding: 0 14px;
+	border: 1.5px solid var(--mn-border); border-radius: 6px;
+	background: var(--mn-surface);
+	color: var(--mn-text); font-size: 13px; font-weight: 500;
+	text-decoration: none; white-space: nowrap;
+	transition: border-color .15s, color .15s;
+}
+.trustbio-sp-row-btn:hover,
+.trustbio-sp-row-btn:focus { border-color: var(--mn-primary); color: var(--mn-primary); }
+
+/* ── Toggle switch ────────────────────────────────────────────────────────────── */
+.trustbio-sp-toggle { flex-shrink: 0; cursor: pointer; display: inline-flex; }
+.trustbio-sp-toggle input { position: absolute; opacity: 0; width: 0; height: 0; }
+.trustbio-sp-toggle-track {
+	width: 44px; height: 24px; border-radius: 12px;
+	background: #cbd5e1; position: relative; transition: background .2s;
+}
+.trustbio-sp-toggle input:checked + .trustbio-sp-toggle-track { background: var(--mn-primary); }
+.trustbio-sp-toggle-thumb {
+	position: absolute; top: 3px; left: 3px;
+	width: 18px; height: 18px; border-radius: 50%;
+	background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,.2); transition: transform .2s;
+}
+.trustbio-sp-toggle input:checked + .trustbio-sp-toggle-track .trustbio-sp-toggle-thumb {
+	transform: translateX(20px);
+}
+
+/* ── Select ───────────────────────────────────────────────────────────────────── */
+.trustbio-sp-select {
+	padding: 8px 32px 8px 12px; font-size: 13px;
+	border: 1.5px solid var(--mn-border); border-radius: 7px;
+	background-color: var(--mn-surface); color: var(--mn-text);
+	cursor: pointer; appearance: none;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%2364748b' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+	background-repeat: no-repeat; background-position: right 10px center;
+	min-width: 200px; flex-shrink: 0; transition: border-color .15s;
+}
+.trustbio-sp-select:focus { outline: none; border-color: var(--mn-primary); }
+
+/* ── Number stepper ───────────────────────────────────────────────────────────── */
+.trustbio-sp-number-wrap { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.trustbio-sp-num-btn {
+	width: 32px; height: 32px; border-radius: 7px;
+	border: 1.5px solid var(--mn-border); background: var(--mn-surface);
+	color: var(--mn-text); font-size: 18px; line-height: 1;
+	cursor: pointer; display: flex; align-items: center; justify-content: center;
+	transition: background .15s, border-color .15s;
+}
+.trustbio-sp-num-btn:hover { background: var(--mn-bg); border-color: var(--mn-primary); }
+.trustbio-sp-number-input {
+	width: 70px; text-align: center; font-size: 14px; font-weight: 600;
+	padding: 6px; border: 1.5px solid var(--mn-border); border-radius: 7px;
+	color: var(--mn-text); -moz-appearance: textfield;
+}
+.trustbio-sp-number-input::-webkit-inner-spin-button,
+.trustbio-sp-number-input::-webkit-outer-spin-button { -webkit-appearance: none; }
+.trustbio-sp-number-input:focus { outline: none; border-color: var(--mn-primary); }
+
+/* ── Text input ───────────────────────────────────────────────────────────────── */
+.trustbio-sp-text-input {
+	padding: 8px 12px; font-size: 13px;
+	border: 1.5px solid var(--mn-border); border-radius: 7px;
+	background-color: var(--mn-surface); color: var(--mn-text);
+	min-width: 200px; flex-shrink: 0; transition: border-color .15s;
+	box-sizing: border-box;
+}
+.trustbio-sp-text-input:focus { outline: none; border-color: var(--mn-primary); }
+
+/* ── Color picker ─────────────────────────────────────────────────────────────── */
+.trustbio-sp-color-wrap { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.trustbio-sp-color-input {
+	width: 44px; height: 36px; padding: 2px 3px; border: 1.5px solid var(--mn-border);
+	border-radius: 7px; cursor: pointer; background: none;
+}
+.trustbio-sp-color-text { min-width: 90px !important; max-width: 100px; font-family: monospace; }
+
+/* ── Checkbox group ───────────────────────────────────────────────────────────── */
+.trustbio-sp-checkbox-group { display: flex; flex-wrap: wrap; gap: 8px; }
+.trustbio-sp-checkbox-item {
+	display: flex; align-items: center; gap: 6px;
+	font-size: 13px; color: var(--mn-text); cursor: pointer;
+	background: var(--mn-bg); border: 1.5px solid var(--mn-border);
+	border-radius: 6px; padding: 5px 12px;
+	transition: border-color .15s, background .15s;
+	user-select: none;
+}
+.trustbio-sp-checkbox-item input[type="checkbox"] { margin: 0; cursor: pointer; }
+.trustbio-sp-checkbox-item:has(input:checked) {
+	border-color: var(--mn-primary);
+	background: rgba(79, 70, 229, 0.06);
+}
+
+/* ── Save bar ─────────────────────────────────────────────────────────────────── */
+.trustbio-sp-save-bar { display: flex; align-items: center; gap: 14px; margin-top: 24px; }
+.trustbio-sp-save-btn {
+	padding: 10px 24px; background: var(--mn-primary); color: #fff;
+	font-size: 14px; font-weight: 600; border: none; border-radius: 8px;
+	cursor: pointer; transition: background .15s, transform .1s, box-shadow .15s;
+	box-shadow: 0 2px 8px rgba(79, 70, 229, .3);
+}
+.trustbio-sp-save-btn:hover   { background: var(--mn-primary-h); box-shadow: 0 4px 12px rgba(79, 70, 229, .4); }
+.trustbio-sp-save-btn:active  { transform: translateY(1px); }
+.trustbio-sp-save-btn:disabled{ opacity: .65; cursor: not-allowed; transform: none; }
+.trustbio-sp-save-btn.is-loading { background: var(--mn-muted); }
+.trustbio-sp-save-btn.is-success { background: var(--mn-success); box-shadow: 0 2px 8px rgba(16,185,129,.3); }
+.trustbio-sp-save-status { font-size: 13px; color: var(--mn-success); font-weight: 500; opacity: 0; transition: opacity .2s; }
+.trustbio-sp-save-status.is-visible { opacity: 1; }
+.trustbio-sp-save-status.is-error   { color: var(--mn-danger); }
+
+/* ── Feature module cards (Features tab) ──────────────────────────────────────── */
+.trustbio-sp-module-grid {
+	display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+	gap: 12px; margin-bottom: 28px;
+}
+.trustbio-sp-module-card {
+	background: var(--mn-surface); border-radius: var(--mn-radius);
+	box-shadow: var(--mn-shadow); padding: 18px 20px;
+	display: flex; align-items: center; gap: 14px;
+	border: 1.5px solid var(--mn-border);
+	transition: border-color .2s;
+}
+.trustbio-sp-module-card.is-enabled { border-color: #a7f3d0; }
+.trustbio-sp-module-icon {
+	width: 42px; height: 42px; border-radius: 10px;
+	background: rgba(79, 70, 229, 0.1);
+	display: flex; align-items: center; justify-content: center;
+	color: var(--mn-primary); flex-shrink: 0;
+}
+.trustbio-sp-module-body { flex: 1; min-width: 0; }
+.trustbio-sp-module-name { font-size: 14px; font-weight: 600; color: var(--mn-text); }
+.trustbio-sp-module-desc { font-size: 12px; color: var(--mn-muted); margin-top: 3px; line-height: 1.5; }
+.trustbio-sp-module-card .trustbio-sp-toggle { flex-shrink: 0; }
+
+/* ── Shortcodes panel ─────────────────────────────────────────────────────────── */
+.trustbio-sp-sc-group { margin-bottom: 32px; }
+.trustbio-sp-sc-card {
+	background: var(--mn-surface); border: 1.5px solid var(--mn-border);
+	border-radius: var(--mn-radius); padding: 18px 20px; margin-bottom: 12px;
+}
+.trustbio-sp-sc-tag-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+.trustbio-sp-sc-tag {
+	font-family: ui-monospace, "Cascadia Code", "Fira Mono", Consolas, monospace;
+	font-size: 13px; background: #eef2ff; color: #3730a3;
+	padding: 4px 10px; border-radius: 6px; letter-spacing: .02em;
+}
+.trustbio-sp-sc-copy {
+	padding: 4px 12px; background: var(--mn-bg); border: 1.5px solid var(--mn-border);
+	border-radius: 6px; font-size: 11.5px; font-weight: 600; color: var(--mn-muted);
+	cursor: pointer; transition: background .15s, color .15s;
+}
+.trustbio-sp-sc-copy:hover { background: var(--mn-primary); color: #fff; border-color: var(--mn-primary); }
+.trustbio-sp-sc-copy.copied { background: var(--mn-success); color: #fff; border-color: var(--mn-success); }
+.trustbio-sp-sc-desc { font-size: 13px; color: var(--mn-muted); margin: 0 0 12px; line-height: 1.6; }
+.trustbio-sp-sc-attrs {
+	width: 100%; border-collapse: collapse; font-size: 12.5px;
+	border: 1px solid var(--mn-border); border-radius: 6px; overflow: hidden;
+}
+.trustbio-sp-sc-attrs th {
+	background: var(--mn-bg); text-align: left; padding: 7px 12px;
+	font-weight: 600; color: var(--mn-muted); font-size: 11px; text-transform: uppercase; letter-spacing: .04em;
+}
+.trustbio-sp-sc-attrs td { padding: 7px 12px; border-top: 1px solid var(--mn-border); }
+.trustbio-sp-sc-attrs td:first-child { width: 38%; }
+.trustbio-sp-sc-attrs td code {
+	font-family: ui-monospace, Consolas, monospace; font-size: 11.5px;
+	background: #f1f5f9; padding: 2px 6px; border-radius: 4px; color: #4f46e5;
+}
+
+/* ── Maintenance action cards ─────────────────────────────────────────────────── */
+.trustbio-sp-action-grid {
+	display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 16px;
+}
+.trustbio-sp-action-card {
+	background: var(--mn-surface); border-radius: var(--mn-radius);
+	box-shadow: var(--mn-shadow); padding: 22px 20px;
+	display: flex; flex-direction: column; gap: 10px;
+}
+.trustbio-sp-action-card-title { font-size: 14px; font-weight: 700; color: var(--mn-text); }
+.trustbio-sp-action-card-desc  { font-size: 12.5px; color: var(--mn-muted); line-height: 1.5; flex: 1; }
+.trustbio-sp-action-btn {
+	padding: 9px 18px; background: var(--mn-surface); color: var(--mn-text);
+	font-size: 13px; font-weight: 600; border: 1.5px solid var(--mn-border);
+	border-radius: 8px; cursor: pointer; transition: background .15s, border-color .15s;
+	align-self: flex-start;
+}
+.trustbio-sp-action-btn:hover   { background: var(--mn-bg); border-color: var(--mn-primary); }
+.trustbio-sp-action-btn:disabled{ opacity: .6; cursor: not-allowed; }
+.trustbio-sp-action-status {
+	font-size: 12px; color: var(--mn-success); opacity: 0; transition: opacity .2s; display: block;
+}
+.trustbio-sp-action-status.is-visible { opacity: 1; }
+.trustbio-sp-action-status.is-error   { color: var(--mn-danger); }
+
+/* ── Import textarea ──────────────────────────────────────────────────────────── */
+.trustbio-sp-textarea {
+	width: 100%; min-height: 120px; padding: 10px 12px;
+	font-size: 12.5px; font-family: monospace;
+	border: 1.5px solid var(--mn-border); border-radius: 7px; resize: vertical;
+	color: var(--mn-text); background: var(--mn-surface);
+	transition: border-color .15s; box-sizing: border-box;
+}
+.trustbio-sp-textarea:focus { outline: none; border-color: var(--mn-primary); }
+
+/* ── Scrollbar ────────────────────────────────────────────────────────────────── */
+.trustbio-sp-content::-webkit-scrollbar       { width: 6px; }
+.trustbio-sp-content::-webkit-scrollbar-track { background: transparent; }
+.trustbio-sp-content::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 3px; }
+.trustbio-sp-content::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* ── Responsive ───────────────────────────────────────────────────────────────── */
+@media (max-width: 860px) {
+	/* Scoped to the sidebar: unscoped, "display: none" on the label turned the
+	   Settings tab strip into 15 unlabelled icons on any window under 860px. */
+	.trustbio-sp-sidebar { width: 54px; min-width: 54px; padding: 12px 0; }
+	.trustbio-sp-sidebar .trustbio-sp-nav-label { display: none; }
+	.trustbio-sp-sidebar .trustbio-sp-nav-item { justify-content: center; padding: 12px; border-left: none; border-bottom: 3px solid transparent; }
+	.trustbio-sp-sidebar .trustbio-sp-nav-item.is-active { border-bottom-color: var(--mn-primary); border-left-color: transparent; }
+	.trustbio-sp-content { padding: 20px 16px; }
+	.trustbio-sp-stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+	.trustbio-sp-layout { flex-direction: column; }
+	.trustbio-sp-sidebar { width: 100%; min-width: 0; flex-direction: row; padding: 0; overflow-x: auto; }
+	.trustbio-sp-sidebar .trustbio-sp-nav-item { flex-direction: column; font-size: 11px; padding: 10px 14px; }
+	.trustbio-sp-sidebar .trustbio-sp-nav-label { display: block; margin-top: 3px; }
+	.trustbio-sp-stats-grid { grid-template-columns: 1fr 1fr; }
+	.trustbio-sp-setting-row { flex-direction: column; align-items: flex-start; }
+	.trustbio-sp-select,
+	.trustbio-sp-text-input { min-width: 0; width: 100%; }
+}
+
+/* ── AI Readiness — Robots Auditor table ─────────────────────────────────────── */
+.trustbio-sp-tbra-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 13px;
+	margin-top: 8px;
+}
+.trustbio-sp-tbra-table th {
+	text-align: left;
+	padding: 8px 10px;
+	font-size: 11px;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: .04em;
+	color: var(--mn-muted);
+	border-bottom: 1px solid var(--mn-border);
+}
+.trustbio-sp-tbra-table td {
+	padding: 9px 10px;
+	border-bottom: 1px solid var(--mn-border);
+	vertical-align: middle;
+	color: var(--mn-text);
+	line-height: 1.4;
+}
+.trustbio-sp-tbra-table tr:last-child td { border-bottom: none; }
+
+.tbra-status-badge {
+	display: inline-block;
+	padding: 2px 9px;
+	border-radius: 20px;
+	font-size: 11px;
+	font-weight: 600;
+}
+.tbra-status--checking         { background: #f1f5f9; color: #94a3b8; }
+.tbra-status--allowed          { background: #d1fae5; color: #065f46; }
+.tbra-status--blocked          { background: #fee2e2; color: #991b1b; }
+.tbra-status--blocked_by_wildcard { background: #ffedd5; color: #9a3412; }
+.tbra-status--not_listed       { background: #f1f5f9; color: #475569; }
+
+.trustbio-sp-action-btn--sm {
+	padding: 4px 10px;
+	font-size: 12px;
+}
+
+.trustbio-sp-notice {
+	padding: 10px 14px;
+	border-radius: 6px;
+	font-size: 13px;
+	line-height: 1.5;
+}
+.trustbio-sp-notice--warn {
+	background: #fffbeb;
+	border: 1px solid #fcd34d;
+	color: #92400e;
+}
+
+/* ── Custom bots list ────────────────────────────────────────────────────────── */
+.tbra-custom-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 10px;
+	padding: 7px 10px;
+	background: var(--mn-bg, #f1f5f9);
+	border-radius: 6px;
+	margin-bottom: 6px;
+}
+.tbra-custom-row__info { display: flex; align-items: center; gap: 8px; flex: 1; min-width: 0; }
+.tbra-custom-row__label { font-size: 13px; font-weight: 500; color: var(--mn-text); }
+.tbra-custom-row__agent { font-size: 11px; color: #64748b; }
+.tbra-custom-badge {
+	display: inline-block;
+	font-size: 10px;
+	font-weight: 600;
+	padding: 1px 6px;
+	border-radius: 10px;
+	background: #e0e7ff;
+	color: #3730a3;
+	vertical-align: middle;
+	margin-left: 2px;
+}
+
+/* ── "Available in TrustBio Pro" cards ───────────────────────
+   Cards for the add-on's modules on a site that does not have it. They look
+   deliberately unlike the real module cards above: dashed border, flat
+   surface, no switch. A solid card with a dead switch would read as a
+   feature that is present and withheld, which is the thing the directory's
+   Guideline 5 forbids and which these are not.
+   ──────────────────────────────────────────────────────────── */
+.tbf-group--pro { margin-top: 4px; }
+
+.tbf-group--pro .tbf-group-desc a {
+	color: var(--mn-primary);
+	text-decoration: none;
+	font-weight: 600;
+}
+.tbf-group--pro .tbf-group-desc a:hover,
+.tbf-group--pro .tbf-group-desc a:focus { text-decoration: underline; }
+
+/* It is an <a>, not a <div>, so the link defaults have to come off. */
+a.tbf-card--pro,
+a.tbf-card--pro:visited,
+a.tbf-card--pro:hover,
+a.tbf-card--pro:focus {
+	color: inherit;
+	text-decoration: none;
+	box-shadow: none;
+}
+
+.tbf-card--pro {
+	background: transparent;
+	border-style: dashed;
+	border-color: var(--mn-border);
+}
+
+.tbf-card--pro:hover,
+.tbf-card--pro:focus-visible {
+	border-style: solid;
+	border-color: rgba(79, 70, 229, .4);
+	background: var(--mn-surface);
+	box-shadow: var(--mn-shadow-lg);
+}
+
+.tbf-card--pro:focus-visible {
+	outline: 2px solid var(--mn-primary);
+	outline-offset: 2px;
+}
+
+.tbf-card--pro .tbf-card__icon {
+	background: transparent;
+	border: 1.5px dashed var(--mn-border);
+	color: var(--mn-muted);
+}
+.tbf-card--pro:hover .tbf-card__icon {
+	border-style: solid;
+	border-color: rgba(79, 70, 229, .25);
+	color: var(--mn-primary);
+}
+
+.tbf-card__badge--pro {
+	background: rgba(79, 70, 229, .1);
+	color: var(--mn-primary);
+	text-transform: uppercase;
+}
+
+.tbf-card__more {
+	font-size: 12px;
+	font-weight: 600;
+	color: var(--mn-muted);
+}
+.tbf-card__more::after {
+	content: " \2192";
+}
+.tbf-card--pro:hover .tbf-card__more { color: var(--mn-primary); }
+
+/* ============================================================
+   Add-on panels on the Overview screen
+   The trustbio_dashboard_panels hook fires inside .tbd-panels-row, which
+   carries the same 24px gutter as the stats and main rows above it.
+   ============================================================ */
+.trustbio-admin-wrap > .tbd-panels-row {
+	padding: 0 24px 32px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+.trustbio-admin-wrap > .tbd-panels-row:empty { display: none; }
+
+/* A card an add-on renders, on Overview or in Settings. The free plugin owns
+   the design system, so it owns these four classes even though only the
+   add-on uses them today -- without a rule here they render as bare text. */
+.trustbio-sp-card {
+	background: var(--mn-surface);
+	border: 1px solid var(--mn-border);
+	border-radius: var(--mn-radius);
+	box-shadow: var(--mn-shadow);
+	padding: 18px 20px;
+}
+
+.trustbio-sp-card + .trustbio-sp-card { margin-top: 16px; }
+/* Inside .tbd-panels-row the flex gap already separates them. */
+.tbd-panels-row .trustbio-sp-card + .trustbio-sp-card { margin-top: 0; }
+
+.trustbio-sp-card-head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	margin-bottom: 10px;
+}
+.trustbio-sp-card-head h3 {
+	margin: 0;
+	font-size: 14px;
+	font-weight: 700;
+	color: var(--mn-text);
+	line-height: 1.3;
+}
+.trustbio-sp-card-head p { margin: 0; font-size: 13px; color: var(--mn-muted); }
+
+.trustbio-sp-card > p { margin: 0 0 10px; font-size: 13px; color: var(--mn-muted); }
+.trustbio-sp-card > p:last-child { margin-bottom: 0; }
+.trustbio-sp-card .tb-btn:last-child { margin-top: 2px; }
+
+.trustbio-sp-list {
+	margin: 0 0 10px;
+	padding: 0;
+	list-style: none;
+	font-size: 13px;
+	color: var(--mn-text);
+}
+/* Each item is one sentence built from inline parts ("Added FRCP on Dr X,
+   3 days ago"), so it has to flow as text. Laying it out with
+   justify-content: space-between pushed those parts to opposite ends of the
+   card and read as three columns that are not columns. */
+.trustbio-sp-list li {
+	padding: 7px 0;
+	border-bottom: 1px solid var(--mn-border);
+	line-height: 1.5;
+}
+.trustbio-sp-list li:last-child { border-bottom: none; padding-bottom: 0; }
+.trustbio-sp-list strong { font-weight: 600; color: var(--mn-text); }
+
+/* A settings panel the add-on contributes, beside the plugin's own. */
+.trustbio-sp-panel { margin-bottom: 28px; }
+.trustbio-sp-panel:last-child { margin-bottom: 0; }
+
+@media screen and (max-width: 782px) {
+	.trustbio-admin-wrap > .tbd-panels-row { padding: 0 16px 24px; }
+}
+
+/* The add-on's settings panels used to put a bare <p><label>…<span class=
+   "tb-field-hint"> straight into .trustbio-sp-settings-list, and a block of
+   rules here propped that shape up: padding, a separator, and the hint forced
+   onto its own line. Those panels render .trustbio-sp-setting-row through the
+   plugin's own helpers now, so the propping is gone with the shape it
+   propped. Nothing should put a bare <p> in a settings list again — a row
+   belongs to the design system, not to whoever is rendering into it. */

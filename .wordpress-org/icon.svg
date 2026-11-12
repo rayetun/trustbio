@@ -1,0 +1,105 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="TrustBio">
+  <style>
+    /* The travelling arc. Rotated 45deg so it sets off from the tick badge
+       and returns to it; the dash gap is the whole circumference, so exactly
+       one arc is in flight at a time. */
+    .tb-trace {
+      stroke-dasharray: 130 477.52;
+      animation: tb-trace 5.5s cubic-bezier(.45,.05,.35,1) infinite;
+    }
+    @keyframes tb-trace {
+      from { stroke-dashoffset: 0; }
+      to   { stroke-dashoffset: -477.52; }
+    }
+
+    /* The badge answers as the arc lands. */
+    .tb-verify-ring {
+      stroke: #16a34a;
+      animation: tb-verify 5.5s ease-out infinite;
+    }
+    .tb-glow {
+      fill: #16a34a;
+      animation: tb-glow 5.5s ease-out infinite;
+    }
+    @keyframes tb-verify {
+      0%, 78% { stroke-opacity: 0; }
+      88%      { stroke-opacity: 1; }
+      100%     { stroke-opacity: 0; }
+    }
+    @keyframes tb-glow {
+      0%, 78% { opacity: 0; }
+      88%      { opacity: .45; }
+      100%     { opacity: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .tb-trace, .tb-verify-ring, .tb-glow { animation: none; }
+      .tb-trace { stroke-dasharray: none; stroke-opacity: .55; }
+      .tb-verify-ring, .tb-glow { opacity: 0; }
+    }
+  </style>
+  <defs>
+    <linearGradient id="tbSeal" x1="48" y1="40" x2="208" y2="216" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6366f1"/>
+      <stop offset="0.52" stop-color="#4f46e5"/>
+      <stop offset="1" stop-color="#4338ca"/>
+    </linearGradient>
+    <radialGradient id="tbGloss" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.55"/>
+      <stop offset="0.55" stop-color="#ffffff" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="tbTick" x1="168" y1="168" x2="214" y2="214" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#eef2ff"/>
+    </linearGradient>
+    <filter id="tbSoft" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="7"/>
+    </filter>
+    <clipPath id="tbSealClip">
+      <path d="M 128.00 33.00 A 37.37 37.37 0 0 1 175.50 45.73 A 37.37 37.37 0 0 1 210.27 80.50 A 37.37 37.37 0 0 1 223.00 128.00 A 37.37 37.37 0 0 1 210.27 175.50 A 37.37 37.37 0 0 1 175.50 210.27 A 37.37 37.37 0 0 1 128.00 223.00 A 37.37 37.37 0 0 1 80.50 210.27 A 37.37 37.37 0 0 1 45.73 175.50 A 37.37 37.37 0 0 1 33.00 128.00 A 37.37 37.37 0 0 1 45.73 80.50 A 37.37 37.37 0 0 1 80.50 45.73 A 37.37 37.37 0 0 1 128.00 33.00 Z"/>
+    </clipPath>
+    <clipPath id="tbRing">
+      <circle cx="128" cy="128" r="76"/>
+    </clipPath>
+  </defs>
+
+  <!-- the seal -->
+  <path d="M 128.00 33.00 A 37.37 37.37 0 0 1 175.50 45.73 A 37.37 37.37 0 0 1 210.27 80.50 A 37.37 37.37 0 0 1 223.00 128.00 A 37.37 37.37 0 0 1 210.27 175.50 A 37.37 37.37 0 0 1 175.50 210.27 A 37.37 37.37 0 0 1 128.00 223.00 A 37.37 37.37 0 0 1 80.50 210.27 A 37.37 37.37 0 0 1 45.73 175.50 A 37.37 37.37 0 0 1 33.00 128.00 A 37.37 37.37 0 0 1 45.73 80.50 A 37.37 37.37 0 0 1 80.50 45.73 A 37.37 37.37 0 0 1 128.00 33.00 Z" fill="url(#tbSeal)"/>
+
+  <!-- static highlight, clipped to the seal: depth, not movement -->
+  <g clip-path="url(#tbSealClip)">
+    <ellipse cx="96" cy="64" rx="86" ry="70" fill="url(#tbGloss)"/>
+  </g>
+
+  <!-- the author: head and shoulders, clipped to the ring so the torso meets
+       the ring line instead of stopping in mid-air -->
+  <g clip-path="url(#tbRing)">
+    <circle cx="128" cy="103" r="25" fill="#ffffff"/>
+    <path d="M85 212 C85 178 110 150 128 150 C146 150 171 178 171 212 Z" fill="#ffffff"/>
+  </g>
+
+  <!-- inner hairline ring: the "certified" cue, and it stops the scallops
+       reading as a flower. Drawn after the person so the torso sits inside
+       a closed line rather than bleeding over it. -->
+  <circle cx="128" cy="128" r="76" fill="none" stroke="#ffffff" stroke-opacity="0.30" stroke-width="2.5"/>
+
+  <!-- the travelling arc: one lap of the seal, leaving from the badge and
+       returning to it. Rotated 45deg because a <circle> dash starts at
+       3 o'clock and the badge sits at 45deg. -->
+  <circle class="tb-trace" cx="128" cy="128" r="76" fill="none"
+          stroke="#ffffff" stroke-width="3" stroke-linecap="round"
+          transform="rotate(45 128 128)"/>
+
+  <!-- verification tick, overlapping the seal edge at lower right. The tick
+       itself never moves and never disappears—a verification mark that
+       flickers is the one thing this icon must not do. Only its surround
+       answers, in green, as the arc completes its lap. -->
+  <circle class="tb-glow" cx="191" cy="191" r="42" fill="#16a34a" opacity="0" filter="url(#tbSoft)"/>
+  <circle cx="191" cy="191" r="34" fill="url(#tbTick)"/>
+  <circle cx="191" cy="191" r="34" fill="none" stroke="#c7d2fe" stroke-width="2"/>
+  <circle class="tb-verify-ring" cx="191" cy="191" r="34" fill="none"
+          stroke="#16a34a" stroke-width="3" stroke-opacity="0"/>
+  <path d="M177 191.5 L187 201.5 L206 182" fill="none" stroke="#4f46e5" stroke-width="9"
+        stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
