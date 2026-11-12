@@ -44,5 +44,11 @@ jobs:
       - name: Run Plugin Check
         uses: WordPress/plugin-check-action@v1
         with:
-          # Listing assets, not plugin code: they are not shipped in the zip.
-          exclude-directories: '.wordpress-org'
+          # Plugin Check scans the repository checkout, but what ships is the
+          # zip the deploy builds after applying .distignore. Exclude the same
+          # files here, or every run reports hidden_files on .gitattributes,
+          # .gitignore and .distignore and github_directory on .github —
+          # findings about files that are never in the plugin. Left in, that
+          # noise is four permanent entries for the real one to hide behind.
+          exclude-directories: '.wordpress-org,.github'
+          exclude-files: '.gitattributes,.gitignore,.distignore'
