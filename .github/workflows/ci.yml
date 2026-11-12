@@ -28,10 +28,13 @@ jobs:
 
       - name: Lint every PHP file
         run: |
+          # tools/ is excluded: it holds build scripts that run on the
+          # maintainer's machine, never inside WordPress, so the plugin's
+          # 7.4 floor does not apply to them. Everything that ships does.
           fail=0
           while IFS= read -r -d '' file; do
             php -l "$file" > /dev/null || fail=1
-          done < <(find . -name '*.php' -not -path './.git/*' -print0)
+          done < <(find . -name '*.php' -not -path './.git/*' -not -path './tools/*' -print0)
           exit $fail
 
   plugin-check:
@@ -50,5 +53,5 @@ jobs:
           # .gitignore and .distignore and github_directory on .github —
           # findings about files that are never in the plugin. Left in, that
           # noise is four permanent entries for the real one to hide behind.
-          exclude-directories: '.wordpress-org,.github'
+          exclude-directories: '.wordpress-org,.github,tools'
           exclude-files: '.gitattributes,.gitignore,.distignore'
