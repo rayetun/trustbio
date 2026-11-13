@@ -150,6 +150,18 @@ class TrustBio_Author_Archive {
 			$trustbio_person['description'] = wp_strip_all_tags( $trustbio_author->bio );
 		}
 
+		/*
+		 * sameAs. This node went without it until 1.0.1, while the Person
+		 * node on every post the author wrote carried it -- so an author's
+		 * identity links were published everywhere except on the page that
+		 * exists to establish their identity. Shared builder, so the two
+		 * nodes cannot drift apart again.
+		 */
+		$trustbio_same_as = trustbio_build_same_as( $trustbio_author );
+		if ( ! empty( $trustbio_same_as ) ) {
+			$trustbio_person['sameAs'] = $trustbio_same_as;
+		}
+
 		// hasCredential from Phase 11.
 		$trustbio_schema_creds = TrustBio_Credentials::get_schema_credentials( $trustbio_author->id );
 		if ( ! empty( $trustbio_schema_creds ) ) {

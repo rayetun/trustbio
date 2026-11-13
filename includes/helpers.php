@@ -414,6 +414,67 @@ function trustbio_get_same_as_field_slugs(): array {
 }
 
 /**
+ * Every sameAs URL for an author, from their profile fields and the SEO tab.
+ *
+ * Lives here because two different Person nodes need it and only one of them
+ * used to have it: the post-page node built by TrustBio_Schema emitted sameAs,
+ * and the author archive built its own node without. So an author who listed
+ * their ORCID had it published on every post they wrote and not on their own
+ * profile page -- the one page that exists to establish who they are.
+ *
+ * Values go through trustbio_profile_url(), which expands a bare handle and
+ * returns '' for anything it cannot turn into a URL, so a non-URL is dropped
+ * rather than published as a false identity claim.
+ *
+ * @since 1.0.1
+ *
+ * @param object $trustbio_author Author row.
+ * @return array<int,string> Absolute URLs, de-duplicated.
+ */
+function trustbio_build_same_as( object $trustbio_author ): array {
+	$trustbio_author_id = (int) ( $trustbio_author->id ?? 0 );
+
+	if ( $trustbio_author_id <= 0 ) {
+		return array();
+	}
+
+	$trustbio_values  = trustbio_get_author_field_values( $trustbio_author_id );
+	$trustbio_same_as = array();
+
+	// The profile fields that are identity signals rather than decoration.
+	foreach ( trustbio_get_same_as_field_slugs() as $trustbio_slug ) {
+		if ( empty( $trustbio_values[ $trustbio_slug ] ) ) {
+			continue;
+		}
+
+		$trustbio_same_as[] = trustbio_profile_url( $trustbio_slug, (string) $trustbio_values[ $trustbio_slug ] );
+	}
+
+	// Anything typed into the SEO tab. Free text, so the same rule applies:
+	// what is not a URL is dropped rather than half-repaired.
+	$trustbio_extra = get_option( 'trustbio_author_sameas_' . $trustbio_author_id, '' );
+
+	if ( $trustbio_extra ) {
+		foreach ( array_filter( array_map( 'trim', explode( "\n", $trustbio_extra ) ) ) as $trustbio_url ) {
+			$trustbio_same_as[] = trustbio_profile_url( '', (string) $trustbio_url );
+		}
+	}
+
+	/**
+	 * Filters the sameAs URLs for an author.
+	 *
+	 * @since 1.0.1
+	 * @param array<int,string> $same_as Absolute URLs.
+	 * @param object            $author  Author row.
+	 */
+	return (array) apply_filters(
+		'trustbio_author_same_as',
+		array_values( array_unique( array_filter( $trustbio_same_as ) ) ),
+		$trustbio_author
+	);
+}
+
+/**
  * Profile URL shapes for the networks a handle can be expanded for.
  *
  * Only networks whose profile URL is "one host, one path, the handle at the

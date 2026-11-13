@@ -228,39 +228,9 @@ class TrustBio_Schema {
 			$trustbio_person['image'] = $trustbio_avatar;
 		}
 
-		// sameAs — built from social fields that are authority signals.
-		$trustbio_same_as_slugs = trustbio_get_same_as_field_slugs();
-		$trustbio_field_values  = trustbio_get_author_field_values( $trustbio_author->id );
-
-		/*
-		 * sameAs is a claim that two URLs are the same entity, so a value that
-		 * is not a URL must not go in it. esc_url_raw() does not enforce that:
-		 * given an ORCID iD written the way ORCID prints it,
-		 * 0000-0002-1825-0097, it returns http://0000-0002-1825-0097 and that
-		 * gets published. trustbio_profile_url() expands a handle where the
-		 * shape of the profile URL is known and returns '' where it is not.
-		 */
-		$trustbio_same_as = array();
-		foreach ( $trustbio_same_as_slugs as $trustbio_slug ) {
-			if ( empty( $trustbio_field_values[ $trustbio_slug ] ) ) {
-				continue;
-			}
-			$trustbio_same_as[] = trustbio_profile_url(
-				$trustbio_slug,
-				(string) $trustbio_field_values[ $trustbio_slug ]
-			);
-		}
-
-		// Additional sameAs from the SEO tab. Free text, so the same rule:
-		// anything that is not a URL is dropped rather than half-repaired.
-		$trustbio_extra_same_as = get_option( 'trustbio_author_sameas_' . $trustbio_author->id, '' );
-		if ( $trustbio_extra_same_as ) {
-			foreach ( array_filter( array_map( 'trim', explode( "\n", $trustbio_extra_same_as ) ) ) as $trustbio_url ) {
-				$trustbio_same_as[] = trustbio_profile_url( '', (string) $trustbio_url );
-			}
-		}
-
-		$trustbio_same_as = array_values( array_unique( array_filter( $trustbio_same_as ) ) );
+		// sameAs — identity links, built in one place so the author archive
+		// and this node cannot disagree about them again.
+		$trustbio_same_as = trustbio_build_same_as( $trustbio_author );
 		if ( ! empty( $trustbio_same_as ) ) {
 			$trustbio_person['sameAs'] = $trustbio_same_as;
 		}
