@@ -66,7 +66,21 @@ class TrustBio_Review_Date {
 		// lastReviewed is a WebPage property, so it goes on Yoast's WebPage
 		// piece, not its Article piece. Two filters, two nodes.
 		add_filter( 'wpseo_schema_webpage',    array( $this, 'inject_yoast_webpage_schema' ), 10, 1 );
-		add_filter( 'rank_math/json_ld',       array( $this, 'inject_rankmath_schema' ), 10, 2 );
+		/*
+		 * Priority 20, and it has to be later than 10.
+		 *
+		 * Rank Math builds its own graph in Frontend::add_schema(), which is
+		 * also on priority 10. Within one priority WordPress runs callbacks in
+		 * registration order, and TrustBio registers first -- so at priority 10
+		 * this ran against a graph that did not have its WebPage or article
+		 * node yet, matched nothing, and returned the data untouched. No error,
+		 * no warning, just no review date in the structured data of any site
+		 * running Rank Math.
+		 *
+		 * Anything above 10 is ordered by WordPress rather than by which
+		 * plugin happened to load first, which is the actual fix.
+		 */
+		add_filter( 'rank_math/json_ld',       array( $this, 'inject_rankmath_schema' ), 20, 2 );
 	}
 
 	// =========================================================
