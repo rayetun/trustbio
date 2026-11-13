@@ -303,6 +303,8 @@ Yes. **Settings → Maintenance** exports all authors, categories, fields, boxes
 * Fixed: author archive pages showed no social links at all. The query behind them filtered on a field type that no field has ever had, so it matched nothing.
 * Fixed: a profile value that is not a URL — an ORCID iD written the way ORCID prints it, a bare @handle — was published as a broken link in the author box and as a broken sameAs in structured data. Handles are now expanded to the right profile URL, and a value that cannot become one is left out instead of guessed at.
 * Fixed: the last-reviewed date was emitted as "dateReviewed", which is not a schema.org property, so nothing reading the structured data could see it. It is now lastReviewed on a WebPage node, where schema.org defines it.
+* Fixed: on sites using Rank Math the review date never reached the structured data at all. TrustBio added it before Rank Math had finished building its schema, so there was nothing there to add it to and the date was quietly dropped. It is added afterwards now. Yoast was unaffected and is unchanged.
+* Fixed: an author's sameAs identity links appeared in the structured data of every post they wrote, but not on their own author archive page — the one page whose job is to establish who they are. Both are built from one place now.
 * The author box and the author archive now draw from one social icon set, so TikTok, Pinterest and Medium have their own icons in both.
 * For add-ons: a new trustbio_archive_after_hero action on author archive pages, and trustbio_credential_saved, trustbio_credential_deleted and trustbio_credentials_reordered actions on credential writes.
 
@@ -379,3 +381,8 @@ Leave the NPI field blank and no such link is ever built.
 **JSON-LD structured data — self-hosted, no external call**
 
 TrustBio outputs JSON-LD in `<script type="application/ld+json">` tags in your page HTML, which crawlers read like any other HTML. It includes only the fields you have entered: author name, job title, bio, website URL, social profile URLs and verified credentials. There is no outbound HTTP request and no third party involved.
+
+== Upgrade Notice ==
+
+= 1.0.1 =
+Fixes what TrustBio publishes. On Rank Math sites the last-reviewed date never reached your structured data at all — now fixed. Author archive pages show social links again, and a bare ORCID iD is no longer published as a broken link.
