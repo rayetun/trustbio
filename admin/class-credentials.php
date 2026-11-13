@@ -59,7 +59,11 @@ class TrustBio_Credentials {
 
 		// phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching, WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
 		$trustbio_row = $wpdb->get_row(
-			$wpdb->prepare( "SELECT * FROM `{$trustbio_table}` WHERE id = %d", $trustbio_id ),
+			$wpdb->prepare(
+				// phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared, PluginCheck.Security.DirectDB.UnescapedDBParameter
+				"SELECT * FROM `{$trustbio_table}` WHERE id = %d",
+				$trustbio_id
+			),
 			ARRAY_A
 		);
 
