@@ -1,7 +1,7 @@
-=== TrustBio — Author Credentials, Medical Reviewer Bylines & Author Box ===
+=== TrustBio — Author Credentials, Medical Reviewer Bylines & E-E-A-T Author Box ===
 Contributors:      rayetun
 Donate link:       https://wise.com/pay/me/mdrayhanu2
-Tags:              author credentials, medical reviewer, author box, co-authors, guest author
+Tags:              author bio, author box, co-authors, guest author, multiple authors
 Requires at least: 6.2
 Tested up to:      7.1
 Requires PHP:      7.4
